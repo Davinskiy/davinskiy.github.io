@@ -43,6 +43,7 @@ body {
 	background: url(../img/header-bg.jpg) no-repeat center center / cover;
 	color: #ccc;
 	height: 100vh;
+	min-height: 520px;
 }
 .header:after {
 	position: absolute;
