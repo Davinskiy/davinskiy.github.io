@@ -1,0 +1,65 @@
+/*
+	Open Sans
+	
+	300 = Light
+	400 = Normal / Regular
+	600 = SemiBold
+	700 = Bold
+*/
+/* Код для подключения шрифта в /css/stylename.css */
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+	src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+	url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+	src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"),
+	url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 300;
+}
+
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+	src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
+	url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot");
+	src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"),
+	url("../fonts/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 600;
+}
+
+
+
+/* Cezanne */
+
+@font-face {
+	font-family: "Cezanne";
+	src: url("../fonts/Cezanne/Cezanne.eot");
+	src: url("../fonts/Cezanne/Cezanne.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/Cezanne/Cezanne.woff") format("woff"),
+	url("../fonts/Cezanne/Cezanne.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
