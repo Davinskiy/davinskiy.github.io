@@ -5,8 +5,7 @@ function toggleMainMenu(x) {
 }
 
 /* показ/скрытие меню */
-function menuShowHide(sub){
-	sub = sub || false;
+function menuShowHide(){
 
 	var menu = $(".menu-box");
 
