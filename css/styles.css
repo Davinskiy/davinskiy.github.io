@@ -45,9 +45,6 @@ body {
 	height: 100vh;
 	min-height: 500px;
 
-	-webkit-transition: background .01s;
-	-o-transition: background .01s;
-	transition: background .01s;
 }
 .header:after {
 	position: absolute;
