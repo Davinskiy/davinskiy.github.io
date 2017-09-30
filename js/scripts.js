@@ -16,3 +16,25 @@ function menuShowHide(){
 	});
 
 }
+
+
+/* паралакс фона хедера */
+function paralaxBG(){
+
+	var scrollTop = $(document).scrollTop();
+	var header = $(".header");
+
+	if (header.innerHeight() >= scrollTop) {
+		header.css({
+			backgroundPosition : "center " +(scrollTop/2)+"px"
+		});
+	}
+}
+
+// function thisPositionOnPage() {
+// 	return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+// }
+
+$(window).scroll(function(){
+	paralaxBG();
+});
