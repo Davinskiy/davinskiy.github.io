@@ -5,6 +5,7 @@ function toggleMainMenu(x) {
 
 	$(x).blur();
 	$(x).focusout();
+	$(document).focus();
 }
 
 /* показ/скрытие меню */
