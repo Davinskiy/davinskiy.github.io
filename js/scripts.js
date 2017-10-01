@@ -99,7 +99,7 @@ $(".js-move-to").on("click", function(e) {
 		var currentBlockOffset = $(currentBlock).offset().top;
 	}
 
-	console.log(currentBlockOffset)
+	console.log(headerH)
 
 	$("html, body").animate({
 		scrollTop: currentBlockOffset - (parseInt(headerH))
