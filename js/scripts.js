@@ -36,5 +36,14 @@ function paralaxBG(){
 // }
 
 $(window).scroll(function(){
-	paralaxBG();
+	
+	/*  https://github.com/hgoebl/mobile-detect.js  */
+	var md = new MobileDetect(window.navigator.userAgent);
+
+	/* Проверка устройство - если не телефон и не планшет, то делаем паралакс эффект */
+	if (!md.mobile() && !md.tablet()) {
+		paralaxBG();
+	}
 });
+
+
