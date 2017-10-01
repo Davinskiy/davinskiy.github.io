@@ -447,3 +447,93 @@ body {
 		padding: 0;
 	}	
 }
+
+
+
+
+
+/* ************ services ************ */
+
+.services {
+	padding-bottom: 50px;
+}
+.services__wrapper {
+
+}
+.services__header {
+	color: #333;
+}
+
+.services__container {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	
+	justify-content: space-between;
+}
+.services__list-box-element {
+	width: 43%;
+}
+.services__list-container {
+
+}
+.services__list-element {
+	margin-bottom: 10px;
+	font-size: 15px;
+	position: relative;
+	padding-left: 30px;
+}
+.services__list-icon {
+	font-size: 19px;
+	position: absolute;
+	left: 0;
+	top: 3px;
+	color: #f60;
+
+}
+.services__list-icon_warning {
+	color: #F20;
+}
+
+
+@media only screen and (max-width : 1200px) {
+	.services__list-box-element {
+		width: 45%;
+	}
+}
+@media only screen and (max-width : 920px) {
+	.services__list-box-element {
+		width: 50%;
+		margin: 0 10px;
+	}
+}
+@media only screen and (max-width : 800px) {
+	.services__list-box-element {
+		margin: 0;
+		margin-bottom: 1em;
+		width: 95%;
+	}
+	.services__container {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+@media only screen and (max-width : 480px) {
+	.services__list-box-element {
+		width: auto;
+	}
+	.services__list-element {
+		margin-bottom: 8px;
+		padding-left: 20px;
+	}
+	.services__list-icon {
+		font-size: 15px;
+		position: absolute;
+		left: 0;
+		top: 3px;
+	}
+}
+
+

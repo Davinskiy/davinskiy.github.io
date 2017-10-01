@@ -48,22 +48,22 @@ $(window).scroll(function(){
 
 
 /* Плавно меняет цвет фона */
-function changeBGColor(target, colorsArr){
-	var rndTime = Math.random() * 3;
+function changeBGColor(target, colorsArr, time){
+	var time = time || 3; // в секундах
+	var rndTime = Math.random() * time;
 	var rndTime_forTimeout = Math.floor(rndTime * 1000);
-
-	
 
 	target.css({"background-color" : getRandomFrom(colorsArr),
 				"transition" : rndTime + "s"
 				});
 	setTimeout(function(){
-		changeBGColor(target, colorsArr);
+		changeBGColor(target, colorsArr, time);
 	}, rndTime_forTimeout);
 }
 
 /* плавное смена фонового цвета */
-changeBGColor($(".about-me"), ["#27374E","#252527","#061624","#1C0F10","#1C1201","#070C1E","#000000"]);
+changeBGColor($(".about-me"), ["#001","#010","#011","#100","#101","#110","#111"], 10);
+// changeBGColor($(".about-me"), ["#27374E","#252527","#061624","#1C0F10","#1C1201","#070C1E","#000000"]);
 
 function getRandomFrom(arr) {
 	return arr[getRndNum(arr.length)];
@@ -83,6 +83,8 @@ var headerH = $(".header__menu").innerHeight();
 $(".js-move-to").on("click", function(e) {
 	e.preventDefault();
 
+	var easingType = $(this).data("easing") || "easeInOutBack";
+
 
 	if($(".btn-container").hasClass("change")){
 		$(".btn-container").removeClass("change");
@@ -99,10 +101,13 @@ $(".js-move-to").on("click", function(e) {
 		var currentBlockOffset = $(currentBlock).offset().top;
 	}
 
-	console.log(headerH)
+	// console.log(headerH)
 
 	$("html, body").animate({
 		scrollTop: currentBlockOffset - (parseInt(headerH))
-	}, speed);
+	}, {
+		duration : speed,
+		easing: easingType
+	});
 
 });
