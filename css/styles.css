@@ -156,8 +156,7 @@ body {
 	margin: 6px 0;
 	transition: 0.4s;
 }
-.btn-container.change .btn-container__bar,
-.btn-container:hover .btn-container__bar {
+.btn-container.change .btn-container__bar {
 	background-color: #f60;
 }
 
