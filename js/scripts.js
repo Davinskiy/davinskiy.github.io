@@ -2,6 +2,8 @@
 function toggleMainMenu(x) {
 	x.classList.toggle("change");
 	menuShowHide();
+	
+	$(x).blur();
 }
 
 /* показ/скрытие меню */
