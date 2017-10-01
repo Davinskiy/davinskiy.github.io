@@ -47,3 +47,62 @@ $(window).scroll(function(){
 });
 
 
+/* Плавно меняет цвет фона */
+function changeBGColor(target, colorsArr){
+	var rndTime = Math.random() * 3;
+	var rndTime_forTimeout = Math.floor(rndTime * 1000);
+
+	
+
+	target.css({"background-color" : getRandomFrom(colorsArr),
+				"transition" : rndTime + "s"
+				});
+	setTimeout(function(){
+		changeBGColor(target, colorsArr);
+	}, rndTime_forTimeout);
+}
+
+/* плавное смена фонового цвета */
+changeBGColor($(".about-me"), ["#27374E","#252527","#061624","#1C0F10","#1C1201","#070C1E","#000000"]);
+
+function getRandomFrom(arr) {
+	return arr[getRndNum(arr.length)];
+}
+
+function getRndNum(max) {
+	return Math.floor(Math.random() * max);
+}
+
+
+
+/* Smooth scroll to the pages block
+====================================*/
+
+var headerH = $(".header__menu").innerHeight();
+
+$(".js-move-to").on("click", function(e) {
+	e.preventDefault();
+
+
+	if($(".btn-container").hasClass("change")){
+		$(".btn-container").removeClass("change");
+		menuShowHide();
+	}
+
+	var _this = $(this);
+	var speed = parseInt(_this.data("move-speed"))  || 800;
+
+	var currentBlock = $(this).attr("href");
+	if (currentBlock == '#up') {
+		var currentBlockOffset = 0;
+	}else {
+		var currentBlockOffset = $(currentBlock).offset().top;
+	}
+
+	console.log(currentBlockOffset)
+
+	$("html, body").animate({
+		scrollTop: currentBlockOffset - (parseInt(headerH))
+	}, speed);
+
+});

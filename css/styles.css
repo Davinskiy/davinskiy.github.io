@@ -414,11 +414,14 @@ body {
 .about-me__header {
 }
 .about-me__content {
+	padding: 0 200px;
 	text-align: justify;
+	line-height: 1.5;
 	font-size: 15px;
 	color: #aaa;
 }
 .about-me__name {
+	text-align: right;
 	font-size: 17px;
 	padding-bottom: 5px;
 	
@@ -427,4 +430,20 @@ body {
 }
 .about-me__orange {
 	color: #f60;
+}
+
+@media only screen and (max-width : 1000px) {
+	.about-me__content {
+		padding: 0 100px;
+	}	
+}
+@media only screen and (max-width : 780px) {
+	.about-me__content {
+		padding: 0 50px;
+	}	
+}
+@media only screen and (max-width : 600px) {
+	.about-me__content {
+		padding: 0;
+	}	
 }
