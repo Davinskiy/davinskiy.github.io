@@ -542,9 +542,13 @@ body {
 }
 .services__list-box-element {
 	width: 43%;
+	color: #444;
 }
 .services__list-container {
 
+}
+.services__list-box-header {
+	padding-bottom: 15px;
 }
 .services__list-element {
 	margin-bottom: 10px;
