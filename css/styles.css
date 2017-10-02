@@ -414,8 +414,6 @@ body {
 .about-me__header {
 }
 .about-me__content {
-	/*padding: 0 200px;*/
-	text-align: justify;
 	line-height: 1.5;
 	font-size: 15px;
 	color: #aaa;
@@ -423,7 +421,7 @@ body {
 .about-me__name {
 	text-align: right;
 	font-size: 17px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 	
 	font-style: italic;
 	font-weight: 600;
@@ -432,20 +430,71 @@ body {
 	color: #f60;
 }
 
+/* +++++++++ skills ++++++++++ */
+
+.skills {
+	padding-top: 30px;
+}
+.skills__container {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+}
+.skills__element {
+	margin-top: 15px;
+	width: 50%;
+}
+.skills__element-header {
+	font-size: 17px;
+	color: #eee;
+	text-transform: uppercase;
+	padding-bottom: 6px;
+}
+.skills__percent-box {
+	height: 30px;
+	background-color: #2a2a2a;
+	overflow: hidden;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+.skills__this-percent {
+	width: 0;
+	height: 100%;
+	background-color: #f60;
+}
+
 @media only screen and (max-width : 1000px) {
-	.about-me__content {
-		/*padding: 0 100px;*/
-	}	
+		
+}
+@media only screen and (max-width : 920px) {
+	.skills__element {
+		width: 80%;
+	}
 }
 @media only screen and (max-width : 780px) {
-	.about-me__content {
-		/*padding: 0 50px;*/
-	}	
+	.skills__element {
+		width: 100%;
+	}
+	.skills__percent-box {
+		height: 28px;
+	}
 }
-@media only screen and (max-width : 600px) {
-	.about-me__content {
-		padding: 0;
-	}	
+@media only screen and (max-width : 480px) {
+	.skills__element-header {
+		font-size: 15px;
+	}
+	.skills__percent-box {
+		height: 25px;
+	}
 }
 
 
