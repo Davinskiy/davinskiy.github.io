@@ -405,9 +405,30 @@ body {
 /* ************ about-me ************ */
 
 .about-me {
-	background-color: #272822;
+	position: relative;
 	color: #fff;
 }
+.particles-js-canvas-el {
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.about-me:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	opacity: .4;
+	z-index: -1;
+}
+
+
+
 .about-me__wrapper {
 	padding-bottom: 100px;
 }
@@ -472,9 +493,6 @@ body {
 	background-color: #f60;
 }
 
-@media only screen and (max-width : 1000px) {
-		
-}
 @media only screen and (max-width : 920px) {
 	.skills__element {
 		width: 80%;

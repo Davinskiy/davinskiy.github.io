@@ -62,7 +62,7 @@ function changeBGColor(target, colorsArr, time){
 }
 
 /* плавное смена фонового цвета */
-changeBGColor($(".about-me"), ["#001","#010","#011","#100","#101","#110","#111"], 10);
+// changeBGColor($(".about-me"), ["#001","#010","#011","#100","#101","#110","#111"], 10);
 // changeBGColor($(".about-me"), ["#27374E","#252527","#061624","#1C0F10","#1C1201","#070C1E","#000000"]);
 
 function getRandomFrom(arr) {
@@ -83,7 +83,7 @@ var headerH = $(".header__menu").innerHeight();
 $(".js-move-to").on("click", function(e) {
 	e.preventDefault();
 
-	var easingType = $(this).data("easing") || "easeInOutBack";
+	var easingType = $(this).data("easing") || "swing";
 
 
 	if($(".btn-container").hasClass("change")){
@@ -138,3 +138,131 @@ var wow = new WOW(
 );
 /* инициализация */
 wow.init();
+
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+// particlesJS.load('particles-js', 'js/particles.json', function() {
+//   console.log('callback - particles.js config loaded');
+// });
+
+/* точки с линиями на фоне */
+particlesJS('about_me',
+  
+  {
+    "particles": {
+      "number": {
+        "value": 150,
+        "density": {
+          "enable": true,
+          "value_area": 1000
+        }
+      },
+      "color": {
+        "value": "#099"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        },
+        "image": {
+          "src": "img/github.svg",
+          "width": 100,
+          "height": 100
+        }
+      },
+      "opacity": {
+        "value": 1.15,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#099",
+        "opacity": 0.5,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": false,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": false,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 400,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true,
+    "config_demo": {
+      "hide_card": false,
+      "background_color": "#b61924",
+      "background_image": "",
+      "background_position": "50% 50%",
+      "background_repeat": "no-repeat",
+      "background_size": "cover"
+    }
+  }
+
+);
