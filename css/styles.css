@@ -565,7 +565,7 @@ body {
 
 }
 .services__list-icon_warning {
-	color: #F20;
+	color: #F90;
 }
 
 
@@ -609,3 +609,142 @@ body {
 }
 
 
+/* ************ portfolios ************ */
+
+/*
+	1) Миниатюра
+	2) Название проекта 
+	2) Описание проекта (мое описание, я пишу...)
+	3) Впечетление (Что понравилось? Какие секции/пункты были проще верстать и т.д.)
+	4) Полная картинка (в JPG)
+	5) URL на демо стриницу (которая будет находится на том же гите)
+*/
+
+.portfolios {
+	-webkit-box-shadow: inset 0px 3px 10px -3px #aaa;
+	box-shadow: inset 0px 3px 10px -3px #aaa;
+}
+.portfolios__wrapper {
+
+}
+.portfolios__header {
+
+}
+.portfolios__projects-container {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.portfolios__projects-element {
+	margin: 0 auto 50px;
+}
+.portfolios__projects-wrapper {
+	width: 300px;
+	border: 1px solid #e9e9e9;
+}
+
+.portfolios__sliding-box {
+	overflow: hidden;
+	height: 400px;
+}
+.portfolios__miniature-box {
+	background: url("/path/") center center no-repeat / cover;
+	height: 100%;
+}
+.portfolios__info-box {
+	background-color: #111;
+	height: 100%;
+	max-height: 100%;
+
+	padding: 0 10px;
+	text-align: justify;
+}
+.portfolios__miniature-box,
+.portfolios__info-box {
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+
+.portfolios__projects-wrapper:hover .portfolios__miniature-box {
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.portfolios__projects-wrapper:hover .portfolios__info-box {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+
+
+.portfolios__desc {
+
+}
+.portfolios__desc_header {
+
+}
+.portfolios__desc_text {
+	
+}
+.portfolios__impression {
+	
+}
+.portfolios__desc_header,
+.portfolios__impression_header {
+	color: #f60;
+	padding: 10px 0 5px;
+	font-size: 17px;
+}
+.portfolios__desc_text,
+.portfolios__impression_text {
+	color: #ccc;
+	font-size: 16px;
+	cursor: default;
+}
+
+.portfolios__link-to-jpg,
+.portfolios__link-to-project {
+	color: #369;
+	font-size: 15px;
+	text-decoration: underline;
+}
+.portfolios__link-to-project {
+	display: inline-block;
+	padding-top: 10px;
+	color: #f60;
+}
+.portfolios__link-to-project:hover {
+	text-decoration: none;
+}
+.portfolios__icon {
+	color: #f60;
+	margin-right: 10px;
+}
+.portfolios__project-bottom-info {
+	padding: 20px 10px 10px;
+	text-align: center;
+}
+.portfolios__project-header {
+	font-size: 14px;
+}
+.portfolios__link-to-jpg {
+	font-size: 14px;
+}
+
+
+@media only screen and (max-width : 480px) {
+	.portfolios__projects-wrapper {
+		width: 100%;
+	}
+}

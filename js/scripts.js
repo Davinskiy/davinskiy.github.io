@@ -140,11 +140,6 @@ var wow = new WOW(
 wow.init();
 
 
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-// particlesJS.load('particles-js', 'js/particles.json', function() {
-//   console.log('callback - particles.js config loaded');
-// });
-
 /* точки с линиями на фоне */
 particlesJS('about_me',
   
@@ -266,3 +261,15 @@ particlesJS('about_me',
   }
 
 );
+
+
+$(function(){
+	$('.js-okshadow-portfolios').okshadow({
+		color: '#999',
+		textShadow: false,
+		xMax: 5,
+		yMax: 5,
+		fuzzMin: 25,
+		fuzzMax: 25,
+	});
+});
