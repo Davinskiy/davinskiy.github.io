@@ -594,6 +594,7 @@ body {
 	.services__list-element {
 		margin-bottom: 8px;
 		padding-left: 20px;
+		letter-spacing: 0.05em;
 	}
 	.services__list-icon {
 		font-size: 15px;
