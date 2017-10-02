@@ -657,11 +657,12 @@ body {
 	height: 100%;
 }
 .portfolios__info-box {
+	overflow-y: scroll;
 	background-color: #111;
 	height: 100%;
 	max-height: 100%;
 
-	padding: 0 10px;
+	padding: 0 10px 20px;
 	text-align: justify;
 }
 .portfolios__miniature-box,
@@ -748,3 +749,42 @@ body {
 		width: 100%;
 	}
 }
+
+
+/* ****** стилизация полосы прокрутки ******** */
+.scroll-styled::-webkit-scrollbar-button {
+	background-image:url('');
+	background-repeat:no-repeat;
+	width:5px;
+	height:0px
+}
+
+.scroll-styled::-webkit-scrollbar-track {
+	background-color:transparent;
+}
+
+.scroll-styled::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background-color:#f60;
+}
+
+.scroll-styled::-webkit-scrollbar-thumb:hover{
+	background-color:#f60;
+}
+
+.scroll-styled::-webkit-resizer{
+	background-image:url('');
+	background-repeat:no-repeat;
+	width:5px;
+	height:0px
+}
+
+.scroll-styled::-webkit-scrollbar{
+	width: 3px;
+}
+.scroll-styled.scroll-inviz::-webkit-scrollbar{
+	width: 0;
+}
+/* ****** стилизация полосы прокрутки ******** 
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
