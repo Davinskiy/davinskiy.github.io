@@ -78,7 +78,7 @@ function getRndNum(max) {
 /* Smooth scroll to the pages block
 ====================================*/
 
-var headerH = $(".header__menu").innerHeight();
+/*var headerH = $(".header__menu").innerHeight();
 
 $(".js-move-to").on("click", function(e) {
 	e.preventDefault();
@@ -110,7 +110,7 @@ $(".js-move-to").on("click", function(e) {
 		easing: easingType
 	});
 
-});
+});*/
 
 
 /* Добавляем проценты в ширину для элементов блока "Skills" (Навыки) */
@@ -262,7 +262,7 @@ particlesJS('about_me',
 
 );
 
-
+/* тень у блоков при перемешение курсора */
 $(function(){
 	$('.js-okshadow-portfolios').okshadow({
 		color: '#999',
@@ -272,4 +272,27 @@ $(function(){
 		fuzzMin: 25,
 		fuzzMax: 25,
 	});
+});
+
+
+
+/* Smooth scrolling - https://github.com/davist11/jQuery-One-Page-Nav */
+var headerH = $(".header__menu").innerHeight();
+$('.js-menu-container').onePageNav({
+	scrollOffset: headerH, /* my own modification. just added "this.options.scrollOffset" code at 207 (205 origin) line */
+	currentClass: 'current',
+	changeHash: false,
+	scrollSpeed: 750,
+	scrollThreshold: 0.5,
+	filter: '',
+	easing: 'swing',
+	begin: function() {
+		//Hack so you can click other menu items after the initial click
+	},
+	end: function() {
+		
+	},
+	scrollChange: function($currentListItem) {
+		//I get fired when you enter a section and I pass the list item of the section
+	}
 });
