@@ -286,14 +286,39 @@ $('.js-menu-container').onePageNav({
 	filter: '',
 	easing: 'swing',
 	begin: function() {
-		//Hack so you can click other menu items after the initial click
+		/* если была развернута менюшка, убираем ее */
+		if($(".btn-container").hasClass("change")){
+			$(".btn-container").removeClass("change");
+			menuShowHide();
+		}
 	},
 	end: function() {
-		
+
+
 	},
 	scrollChange: function($currentListItem) {
 		//I get fired when you enter a section and I pass the list item of the section
 	}
+});
+
+
+/* плавный скроллинг / не для меню*/
+$(".js-move-to").on("click", function(e) {
+	e.preventDefault();
+	var _this = $(this);
+
+	var currentBlock = $(this).attr("href");
+	if (currentBlock == '#up') {
+		var currentBlockOffset = 0;
+	}else {
+		var currentBlockOffset = $(currentBlock).offset().top - (parseInt(headerH));
+	}
+	$("html, body").animate({
+		scrollTop: currentBlockOffset
+	}, {
+		duration : 500
+	});
+
 });
 
 

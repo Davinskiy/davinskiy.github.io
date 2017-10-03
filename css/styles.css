@@ -535,7 +535,7 @@ body {
 
 }
 .services__header {
-	color: #333;
+	/*color: #333;*/
 }
 
 .services__container {
@@ -627,9 +627,10 @@ body {
 
 }
 .portfolios__header {
-
+	
 }
 .portfolios__projects-container {
+	padding-top: 20px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -749,12 +750,20 @@ body {
 @media only screen and (max-width : 780px) {
 	.portfolios__projects-wrapper {
 		width: 80%;
+		min-width: 300px;
 		margin: 0 auto;
+	}
+}
+@media only screen and (max-width : 726px) {
+	.portfolios__projects-element {
+		width: 100%;
+		margin: 0 0 50px;
 	}
 }
 @media only screen and (max-width : 480px) {
 	.portfolios__projects-wrapper {
 		width: 100%;
+		min-width: initial;
 	}
 }
 
@@ -803,13 +812,24 @@ body {
 .contacts {
 	-webkit-box-shadow: inset 0px 3px 10px -3px #aaa;
 	box-shadow: inset 0px 3px 10px -3px #aaa;
+	padding-bottom: 50px;
 }
 .contacts__wrapper {
 
 }
-.contacts__header {
+.contacts__header {}
+
+.contacts__desc {
+	font-size: 15px;
+	text-align: center;
+	line-height: 1.5;
+}
+.contacts__desc_ps {
+	padding-top: 10px;
+	font-size: 80%;
 }
 .contacts__all-info {
+	padding-top: 30px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -821,13 +841,12 @@ body {
 	flex-wrap: wrap;
 }
 .contacts__info-box {
-	
+	padding-top: 20px;
 }
 .contacts__info-header {
-	text-align: center;
 	color: #f60;
 	font-size: 17px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 }
 .contacts__info-text {
 	padding-bottom: 10px;
@@ -837,12 +856,35 @@ body {
 	font-size: 16px;
 }
 
+.contacts__info-icon {
+	margin-right: 3px;
+}
+.contacts__info-icon_vk {
+	color: #45668E;
+}
+.contacts__info-icon_inst {
+	color: #CE466A;
+}
+.contacts__info-icon_whatsapp {
+	color: #4CCB5A;
+}
+.contacts__info-icon_tg {
+	color: #34ACE0;
+}
+.contacts__info-icon_email {
+	color: #808080;
+}
+.contacts__info-icon_phone {
+	color: #808080;
+}
+
 @media only screen and (max-width : 880px) {
 	.contacts__info-box {
 		margin: 0 20px 10px;
 	}
 	.contacts__all-info {
 		justify-content: space-around;
+		text-align: center;
 	}
 }
 @media only screen and (max-width : 480px) {
@@ -850,9 +892,25 @@ body {
 		font-size: 15px;
 	}
 	.contacts__all-info {
+		text-align: left;
 		flex-direction: column;
 	}
 	.contacts__info-box {
 		margin: 0 0 10px;
 	}
+}
+
+
+/* ************ footer ************ */
+
+.footer {
+	background-color: #111;
+	color: #aaa;
+}
+.footer__wrapper {
+	padding: 30px 0;
+}
+.footer__text {
+	text-align: center;
+	font-size: 14px;
 }
