@@ -618,14 +618,6 @@ body {
 
 /* ************ portfolios ************ */
 
-/*
-	1) Миниатюра
-	2) Название проекта 
-	2) Описание проекта (мое описание, я пишу...)
-	3) Впечетление (Что понравилось? Какие секции/пункты были проще верстать и т.д.)
-	4) Полная картинка (в JPG)
-	5) URL на демо стриницу (которая будет находится на том же гите)
-*/
 
 .portfolios {
 	-webkit-box-shadow: inset 0px 3px 10px -3px #aaa;
@@ -804,3 +796,63 @@ body {
 }
 /* ****** стилизация полосы прокрутки ******** 
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+
+/* ************ contacts ************ */
+
+.contacts {
+	-webkit-box-shadow: inset 0px 3px 10px -3px #aaa;
+	box-shadow: inset 0px 3px 10px -3px #aaa;
+}
+.contacts__wrapper {
+
+}
+.contacts__header {
+}
+.contacts__all-info {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	width: 100%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.contacts__info-box {
+	
+}
+.contacts__info-header {
+	text-align: center;
+	color: #f60;
+	font-size: 17px;
+	padding-bottom: 5px;
+}
+.contacts__info-text {
+	padding-bottom: 10px;
+}
+.contacts__info-element {
+	margin-bottom: 6px;
+	font-size: 16px;
+}
+
+@media only screen and (max-width : 880px) {
+	.contacts__info-box {
+		margin: 0 20px 10px;
+	}
+	.contacts__all-info {
+		justify-content: space-around;
+	}
+}
+@media only screen and (max-width : 480px) {
+	.contacts__info-element {
+		font-size: 15px;
+	}
+	.contacts__all-info {
+		flex-direction: column;
+	}
+	.contacts__info-box {
+		margin: 0 0 10px;
+	}
+}
