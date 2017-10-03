@@ -362,3 +362,17 @@ $(function(){
 		addShadowForPortfolios();
 	}, 100);
 });
+
+
+/* показ / скрытие кнопки вверх при скролле */
+$(document).on("scroll", function() {
+
+	var documentScroll = $(this).scrollTop();
+
+	if(documentScroll > 500) {
+		$(".move-up-btn").css({visibility : "visible", opacity : ".9"});
+	} else {
+		$(".move-up-btn").css({visibility : "hidden", opacity : "0"});
+	}
+
+});
