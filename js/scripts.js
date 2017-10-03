@@ -263,7 +263,7 @@ particlesJS('about_me',
 );
 
 /* тень у блоков при перемешение курсора */
-$(function(){
+function addShadowForPortfolios() {
 	$('.js-okshadow-portfolios').okshadow({
 		color: '#999',
 		textShadow: false,
@@ -272,8 +272,7 @@ $(function(){
 		fuzzMin: 25,
 		fuzzMax: 25,
 	});
-});
-
+}
 
 
 /* Smooth scrolling - https://github.com/davist11/jQuery-One-Page-Nav */
@@ -295,4 +294,46 @@ $('.js-menu-container').onePageNav({
 	scrollChange: function($currentListItem) {
 		//I get fired when you enter a section and I pass the list item of the section
 	}
+});
+
+
+
+/**
+* функция - шаблонизатор. 
+*/
+function replaceTemplate(replaceText, replaceObj, before = '{{', after = '}}'){
+	for(var text in replaceObj){
+		replaceText = replaceText.split(before + text + after).join(replaceObj[text]);;
+	}
+	return replaceText;
+}
+
+
+/* Заполняем секцию портфолио данными */
+$(function(){
+	var portfolioContainer = $(".js-portfolio-container");
+	var tpl = $(".js-portfolio-tpl").html();
+	var allHtmlCode = '';
+
+	for(var i = 0; i < portfoliosData.length; i++){
+		var __tpl = tpl;
+
+		__tpl = replaceTemplate(__tpl, {
+			"title" : portfoliosData[i].title,
+			"miniature" : portfoliosData[i].miniature,
+			"desc" : portfoliosData[i].desc,
+			"impress" : portfoliosData[i].impress,
+			"url-to-work" : portfoliosData[i].url_to_work,
+			"url-to-jpg" : portfoliosData[i].url_to_jpg
+		});
+
+		allHtmlCode += __tpl;
+	}
+
+	portfolioContainer.html(allHtmlCode);
+
+	/* активим тени у блоков */
+	setTimeout(function() {
+		addShadowForPortfolios();
+	}, 100);
 });

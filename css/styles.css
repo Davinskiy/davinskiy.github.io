@@ -731,6 +731,7 @@ body {
 	display: inline-block;
 	padding-top: 10px;
 }
+.portfolios__link-to-jpg:hover,
 .portfolios__link-to-project:hover {
 	text-decoration: none;
 }
