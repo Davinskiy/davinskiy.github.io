@@ -31,6 +31,56 @@ function paralaxBG(){
 	}
 }
 
+
+/* Плавное смена текстка в первом экране */
+function headerStringChanging() {
+	var all = $(".js-string-sliding");
+	var current = all.filter(".current");
+	var next = current.next().eq(0);
+
+	if (next.length == 0) {
+		next = all.eq(0);
+	}
+
+	next.css({
+		position : "absolute",
+		width : "100%",
+		display : "block",
+		right : "-100%",
+		bottom : "0px",
+		opacity : "0"
+	}).animate({
+		right : "0",
+		opacity : "1"
+	}, 1000);
+
+	current.css({
+		position : "relative"
+	}).animate({
+		"right" : "50%",
+		opacity : "0"
+	}, {
+		duration : 1000,
+		complete : function() {
+			all.removeClass("current").attr("style", "");
+			next.addClass("current");
+			
+			setTimeout(function () {
+				headerStringChanging();
+			}, 3000);
+		}
+	});
+
+}
+
+setTimeout(function () {
+	headerStringChanging();
+}, 2000);
+
+
+
+
+
 // function thisPositionOnPage() {
 // 	return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 // }
@@ -364,9 +414,10 @@ $(function(){
 });
 
 
-/* показ / скрытие кнопки вверх при скролле */
 $(document).on("scroll", function() {
 
+	
+	/* показ / скрытие кнопки вверх при скролле */
 	var documentScroll = $(this).scrollTop();
 
 	if(documentScroll > 500) {
@@ -375,4 +426,14 @@ $(document).on("scroll", function() {
 		$(".move-up-btn").css({visibility : "hidden", opacity : "0"});
 	}
 
+
+
+
+	/* если при скролле меню открыть, закрываем его.. */
+	if($(".btn-container").hasClass("change")){
+		$(".btn-container").removeClass("change");
+		menuShowHide();
+	}
+
 });
+

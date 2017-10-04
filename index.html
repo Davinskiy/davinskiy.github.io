@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,7 +19,7 @@
 	<header class="header" id="header">
 		<div class="header__wrapper">
 			
-			<div class="header__menu">
+			<div class="header__menu ">
 				<div class="menu-toggle">
 					<div class="btn-container" onclick="toggleMainMenu(this)">
 						<div class="btn-container__bar bar1"></div>
@@ -28,26 +28,28 @@
 					</div>
 				</div>
 
-				<div class="menu-box">
+				<div class="menu-box    default-width">
 					<ul class="menu-box__container  js-menu-container">
-						<li class="menu-box__element"><a href="#header" class="menu-box__link"  data-easing="easeOutCirc">Home</a></li>
-						<li class="menu-box__element"><a href="#about_me" class="menu-box__link">About Me</a></li>
-						<li class="menu-box__element"><a href="#services" class="menu-box__link">Services</a></li>
-						<li class="menu-box__element"><a href="#portfolios" class="menu-box__link">Portfolios</a></li>
-						<li class="menu-box__element"><a href="#contacts" class="menu-box__link">Contacts</a></li>
+						<li class="menu-box__element"><a href="#header" class="menu-box__link">Главная</a></li>
+						<li class="menu-box__element"><a href="#about_me" class="menu-box__link">Обо мне</a></li>
+						<li class="menu-box__element"><a href="#services" class="menu-box__link">Услуги</a></li>
+						<li class="menu-box__element"><a href="#portfolios" class="menu-box__link">Портфолио</a></li>
+						<li class="menu-box__element"><a href="#contacts" class="menu-box__link">Контакты</a></li>
 					</ul>
 				</div>
 			</div> <!-- /.header__menu -->
 
 			<div class="header__intro">
 				<div class="intro-wrapper">
-					<span class="intro__web-dev">Davinskiy</span>
+					<span class="intro__web-dev  wow bounceIn">Davinskiy</span>
 					<h1 class="intro__header">Быстрая адаптивная 
-						<span class="intro__header_orange">верстка html-писем</span>
-						<span class="intro__header_orange  intro__header_visible">верстка сайтов</span>
+						<div class="intro__str-sliding-box">
+							<div class="intro__str-sliding-element current  js-string-sliding">верстка сайтов</div>
+							<div class="intro__str-sliding-element  js-string-sliding">верстка html-писем</div>
+						</div>
 					</h1>
-					<div class="intro__desc">Создание кроссбраузерной верстки, которая адаптируется <br/>под любые устройства и соответствует всем стандартам.</div>
-					<a href="#contacts" class="intro__contact-me-btn  js-move-to">Связаться со мной</a>
+					<div class="intro__desc  wow fadeIn">Создание кроссбраузерной верстки, которая адаптируется <br/>под любые устройства и соответствует всем стандартам.</div>
+					<a href="#contacts" class="intro__contact-me-btn  js-move-to  wow flipInX">Связаться со мной</a>
 					<a href="#about_me" class="intro__second-page-btn  js-move-to"><i class="fa fa-angle-double-down"></i></a>
 				</div>
 			</div> <!-- /.header__intro -->
@@ -57,8 +59,8 @@
 
 	<section class="about-me" id="about_me">
 		<div class="about-me__wrapper  default-width">
-			<h2 class="about-me__header  section-header"><span>About me</span></h2>
-			<div class="about-me__content">
+			<h2 class="about-me__header  section-header"><span>Обо мне</span></h2>
+			<div class="about-me__content wow fadeInUp">
 				<p class="about-me__name  about-me__orange">Arthur Davinskiy,<br/> Front-end developer.</p>
 				<p>Привет всем! Я Артур, фронт-эндер, занимаюсь адаптивной версткой сайтов и html-писем. Так же занимаюсь натяжками верстки на CMS WordPress. </p>
 				<br />
@@ -69,31 +71,31 @@
 					<ul class="skills__container">
 						<li class="skills__element">
 							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">PhotoShop</div>
-							<div class="skills__percent-box">
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="55%"  data-wow-offset="30"></div>
 							</div>
 						</li>
 						<li class="skills__element">
 							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">Html/Css</div>
-							<div class="skills__percent-box">
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="90%"  data-wow-offset="30"></div>
 							</div>
 						</li>
 						<li class="skills__element">
 							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">JS</div>
-							<div class="skills__percent-box">
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="70%"  data-wow-offset="30"></div>
 							</div>
 						</li>
 						<li class="skills__element">
 							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">JQery</div>
-							<div class="skills__percent-box">
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="50%"  data-wow-offset="30"></div>
 							</div>
 						</li>
 						<li class="skills__element">
 							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">WordPress</div>
-							<div class="skills__percent-box">
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="60%"  data-wow-offset="30"></div>
 							</div>
 						</li>
@@ -107,10 +109,10 @@
 
 	<section class="services" id="services">
 		<div class="services__wrapper  default-width">
-			<h2 class="services__header  section-header"><span>Service</span></h2>
+			<h2 class="services__header  section-header"><span>Услуги</span></h2>
 
 			<div class="services__container">
-				<div class="services__list-box-element">
+				<div class="services__list-box-element  wow fadeInLeft">
 					<h3 class="services__list-box-header">Что я делаю: </h3>
 					<ul class="services__list-container">
 						<li class="services__list-element">
@@ -144,7 +146,7 @@
 					</ul>
 				</div> <!-- /.services__list-box-element -->
 				
-				<div class="services__list-box-element">
+				<div class="services__list-box-element  services__list-box-element_small  wow fadeInRight">
 					<h3 class="services__list-box-header">Цены и сроки: </h3>
 					<ul class="services__list-container">
 						<li class="services__list-element">
@@ -184,7 +186,7 @@
 
 	<section class="portfolios" id="portfolios">
 		<div class="portfolios__wrapper default-width">
-			<h2 class="portfolios__header section-header"><span>Portfolios</span></h2>
+			<h2 class="portfolios__header section-header"><span>Портфолио</span></h2>
 			
 			<div class="portfolios__projects-container  js-portfolio-container">				
 			</div> <!-- /.portfolios__projects-container -->
@@ -194,15 +196,15 @@
 
 	<section class="contacts" id="contacts">
 		<div class="contacts__wrapper default-width">
-			<h2 class="contacts__header section-header"><span>Contacts</span></h2>
-			<div class="contacts__desc">
+			<h2 class="contacts__header section-header"><span>Контакты</span></h2>
+			<div class="contacts__desc  wow fadeIn">
 				Если вы хотите заказать у меня верстку или просто задать интересующий вас вопрос по веб-разработке, можете связаться со мной удобным вам способом. 
 				<div class="contacts__desc_ps">
 					P.S. Если нужен быстрый ответ, пишите в VK или WhatsApp, ну или можете просто позвонить, если этого позволяет регион :)
 				</div>
 			</div>
 			<div class="contacts__all-info">
-				<div class="contacts__info-box">
+				<div class="contacts__info-box  wow fadeIn">
 					<h3 class="contacts__info-header">Соц. сети</h3>
 					<div class="contacts__info-text">
 						<div class="contacts__info-element">
@@ -216,7 +218,7 @@
 					</div>
 				</div>
 
-				<div class="contacts__info-box">
+				<div class="contacts__info-box  wow fadeIn">
 					<h3 class="contacts__info-header">Мессенджеры</h3>
 					<div class="contacts__info-text">
 						<div class="contacts__info-element">
@@ -230,7 +232,7 @@
 					</div>
 				</div>
 
-				<div class="contacts__info-box">
+				<div class="contacts__info-box  wow fadeIn">
 					<h3 class="contacts__info-header">Другие способы</h3>
 					<div class="contacts__info-text">
 						<div class="contacts__info-element">
@@ -251,16 +253,24 @@
 
 	<footer class="footer">
 		<div class="footer__wrapper  default-width">
-			<div class="footer__text">&copy; Все права защищены 2017. <a href="https://davinskiy.github.io">Davinskiy | Front-end Developer</a></div>
+			<div class="footer__text">&copy; Все права защищены 2017. <a href="https://davinskiy.github.io" class="footer__site-link">Davinskiy | Front-end Developer</a></div>
 		</div>
 	</footer> <!-- /.footer -->
+
+
+	<a href="#header" class="move-up-btn  js-move-to">
+		<i class="fa fa-angle-double-up"></i>
+	</a> <!-- move-up-btn -->
 	
 	<!-- Шаблон для портфолио -->
 	<div class="js-portfolio-tpl" style="display: none;">
-		<div class="portfolios__projects-element">
+		<div class="portfolios__projects-element  wow fadeInUp">
 			<div class="portfolios__projects-wrapper  js-okshadow-portfolios">
 				<div class="portfolios__sliding-box">
-					<div class="portfolios__miniature-box" style="background-image: url({{miniature}});"></div>
+					<!-- <div class="portfolios__miniature-box" style="background-image: url({{miniature}});"></div> -->
+					<div class="portfolios__miniature-box">
+						<img src="{{miniature}}" class="portfolios__miniature-img">
+					</div>
 					<div class="portfolios__info-box  scroll-styled">
 						<div class="portfolios__desc">
 							<div class="portfolios__desc_header">Описание: </div>
@@ -270,18 +280,18 @@
 							<div class="portfolios__impression_header">Впечатления: </div>
 							<div class="portfolios__impression_text">{{impress}}</div>
 						</div>
-						<a href="{{url-to-work}}" class="portfolios__link-to-project" title="URL на выполненную работу"><i class="fa fa-link  portfolios__icon" aria-hidden="true"></i>Посмотреть на работу</a>
+						
 					</div>
 				</div>
 				<div class="portfolios__project-bottom-info">
 					<div class="portfolios__project-header">{{title}}</div>
+					<a href="{{url-to-work}}" class="portfolios__link-to-project" title="URL на выполненную работу"><i class="fa fa-link  portfolios__icon"></i>Посмотреть на работу</a> <br/>
 					<a href="{{url-to-jpg}}" class="portfolios__link-to-jpg" title="Изображение (в JPG)" target="_blank"><i class="fa fa-picture-o  portfolios__icon"></i>Посмотреть макет (JPG)</a>
 				</div>
 			</div>
 		</div>
 	</div> <!-- template for portfolios -->
 
-	<a href="#header" class="move-up-btn  js-move-to"><i class="fa fa-angle-double-up"></i></a>
 
 	<!-- Подключние скриптов -->
 	<script src="js/jquery.min.js"></script>
