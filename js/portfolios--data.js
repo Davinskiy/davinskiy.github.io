@@ -10,7 +10,7 @@ var portfoliosData = [
 				Заказчик попался вполне адекватный, что не могло не порадовать. Верстал на флексах.",
 		impress : "Удобный макет, без каких-либо дизайнерских заморочек, довольно простой при верстке. \
 					Был сверстан, как говорится, на одном дыхание. :) Заказчик был доволен. ",
-		url_to_work : "url-to-work ",
+		url_to_work : "portfolios/teplokontakt/index.html",
 		url_to_jpg : "portfolios/teplokontakt/full-image.jpg"
 	},
 	{
@@ -19,7 +19,7 @@ var portfoliosData = [
 		desc : "Очень интересный макет лендинга про дождевики. \
 				Где можно выбрать себе подходящий по размеру и по вкусу цвета (черный / белый) дождевик.",
 		impress : "Интересный, сложный, много JS кода, немного не стандартный, вообщем, отличный макет, побольше бы таких :)",
-		url_to_work : "url-to-work 2",
+		url_to_work : "portfolios/Rainers/index.html",
 		url_to_jpg : "portfolios/Rainers/full-img.jpg"
 	},
 	{
@@ -29,7 +29,7 @@ var portfoliosData = [
 				что было сверстана мною же. На этот раз договорились, что верстка будет на флексах.",
 		impress : "По сути такой же макет, что и раньше, разве что по сложности \
 					ощутимо было задний фон видео, что немного украсил однотипную верстку :)",
-		url_to_work : "url-to-work ",
+		url_to_work : "portfolios/auto-credit.redisign/index.html",
 		url_to_jpg : "portfolios/auto-credit.redisign/full-img.jpg"
 	},
 	{
@@ -38,7 +38,7 @@ var portfoliosData = [
 		desc : "Еще один макет от прежней заказчицы. На этот раз немного интересный - про еду :) \
 				Верстал на флексах, клиентка снова была довольна работой :)",
 		impress : "Верстал долго, за 3 дня )) ибо каждый раз, когда открывал макет в фотошопе, я почему-то слышал зов холодильника..",
-		url_to_work : "url-to-work ",
+		url_to_work : "portfolios/I-eat/index.html",
 		url_to_jpg : "portfolios/I-eat/full-image.png"
 	},
 	{
@@ -47,7 +47,7 @@ var portfoliosData = [
 		desc : 'Классический макет на тематику "спецтехники и их комплектующие". Где-то интересный, где обычный :)',
 		impress : 'Наверное, только то, что заказчица, которая обратилась с данным макетом, сама довольно неплохо сверстала его. \
 					Но она искала другого испольнителя, так как ее верстка, цитируя, "кривая".',
-		url_to_work : "url-to-work ",
+		url_to_work : "portfolios/BaltService/index.html",
 		url_to_jpg : "portfolios/BaltService/full-img.jpg"
 	},
 	{
@@ -58,16 +58,8 @@ var portfoliosData = [
 				Сверстал на бутстрапе.',
 		impress : 'Красота в простоте. :) \
 					Но потрудиться все-таки немного пришлось - видеофон на главном экране. :)',
-		url_to_work : 'url-to-work ',
+		url_to_work : 'portfolios/GPS-monitoring/index.html',
 		url_to_jpg : 'portfolios/GPS-monitoring/full-image.jpg'
-	},
-	{
-		title : 'Букеты из клубники',
-		miniature : 'portfolios/strawberry-buckets/intro-img.jpg',
-		desc : 'Макет про клубничные букеты. Не адаптивный (клиент не захотел адаптив).',
-		impress : 'Понравилось оригинальность макета, не стандартность.',
-		url_to_work : 'url-to-work ',
-		url_to_jpg : 'portfolios/strawberry-buckets/full-img.jpg'
 	},
 	{
 		title : 'Авто кредит',
@@ -77,7 +69,7 @@ var portfoliosData = [
 				"how-we-do__steps__step-items__step__dot-line" и "footer__contacts__form__title_overcase-green". \
 				Хотя бы понятно, что где находиться :))',
 		impress : 'Первый заказ, сделанный на бутстрапе, и вроде неплохе справился - заказчик был доволен. :)',
-		url_to_work : 'url-to-work ',
+		url_to_work : 'portfolios/auto-credit/index.html',
 		url_to_jpg : 'portfolios/auto-credit/full-image.jpg'
 	}
 ];

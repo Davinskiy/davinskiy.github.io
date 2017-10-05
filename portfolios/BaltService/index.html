@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>БалтСервис</title>
+	<link rel="stylesheet"  href="css/font-awesome/css/font-awesome.min.css">
+
+	<link rel="stylesheet"  href="css/fonts.css">
+	<link rel="stylesheet"  href="css/styles.css">
+</head>
+<body>
+		
+	
+	<div class="modal-container">
+		<div class="modal-container__wrapper">
+			
+			
+
+			<div class="modal__order modal-container__modal-item">
+				
+				<div class="modal-close">+</div>
+
+
+				<form action="" class="modal__form-container">
+					<h3 class="modal__form-header">Сделать Заказ</h3>
+					<input type="text" class="modal__field-element modal__name-field" required placeholder="Введите имя"  name="name" />
+					<input type="text" class="modal__field-element modal__phone-field" required placeholder="Введите телефон"  name="phone" />
+					<button class="modal__button order-call" name="go">Заказать звонок</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="modal__bg"></div> <!-- задний фон -->
+	</div> <!-- /.modal-container -->
+
+
+
+
+
+
+	<section class="header">
+		
+		<div class="header__top-info">
+			<div class="top-info_wrapper default-width">
+				
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<img src="img/logo.png" alt="Logotype" class="header__logo-img">
+					</a>
+				</div> <!-- /.header__logo -->
+					
+				<div class="menu-toggle">
+					<div class="btn-container" onclick="toggleMainMenu(this)">
+						<div class="btn-container__bar bar1"></div>
+						<div class="btn-container__bar bar2"></div>
+						<div class="btn-container__bar bar3"></div>
+					</div>
+				</div>
+
+				<div class="header__menu-wrapper">
+
+					<ul class="header__menu-container">
+						<li class="header__menu-element">
+							<a href="#" class="header__menu-link active">Продукция</a>
+
+							<ul class="header__sub-container first-container">
+								<li class="header__sub-element">
+									<a href="#" class="header__menu-link">Гидравлические комплектующие</a>
+									<ul class="header__sub-container second-container">
+										<li class="header__sub-element">
+											<a href="#" class="header__menu-link">Муфты для РВД</a>
+
+											<ul class="header__sub-container second-container">
+												<li class="header__sub-element">
+													<a href="#" class="header__menu-link">Муфта для РВД 1SN/2SN</a>
+												</li>
+												<li class="header__sub-element">
+													<a href="#" class="header__menu-link">Муфта для РВД 4SP/4SH</a>
+												</li>
+												<li class="header__sub-element">
+													<a href="#" class="header__menu-link">Муфта для РВД R7/R8</a>
+												</li>
+												<li class="header__sub-element">
+													<a href="#" class="header__menu-link">Муфта для РВД PTFE 1/ PTFE 2</a>
+												</li>
+												<li class="header__sub-element">
+													<a href="#" class="header__menu-link">Муфта INTERLOCK для РВД R13/R15</a>
+												</li>
+											</ul>
+										</li>
+										<li class="header__sub-element">
+											<a href="#" class="header__menu-link">Фитинги для РВД</a>
+										</li>
+										<li class="header__sub-element">
+											<a href="#" class="header__menu-link">БРС для РВД</a>
+										</li>
+										<li class="header__sub-element">
+											<a href="#" class="header__menu-link">Защита для РВД</a>
+										</li>
+										<li class="header__sub-element">
+											<a href="#" class="header__menu-link">Уплотнения</a>
+										</li>
+									</ul>
+								</li>
+								<li class="header__sub-element">
+									<a href="#" class="header__menu-link">Металлорукава МРВД</a>
+								</li>
+								<li class="header__sub-element">
+									<a href="#" class="header__menu-link">Сильфонные компенсаторы</a>
+								</li>
+								<li class="header__sub-element">
+									<a href="#" class="header__menu-link">Запчасти для спецтехники</a>
+								</li>
+							</ul>
+
+						</li>
+						<li class="header__menu-element">
+							<a href="#" class="header__menu-link">Сервис</a>
+						</li>
+						<li class="header__menu-element">
+							<a href="#" class="header__menu-link">Контакты</a>
+						</li>
+						<li class="header__menu-element">
+							<a href="#" class="header__menu-link">Онлайн заказ</a>
+						</li>
+						<li class="header__menu-element">
+							<a href="#" class="header__menu-link">Прайс-лист</a>
+						</li>
+						
+					</ul> <!-- /.header__menu-container -->
+				</div> <!-- /.header__menu-wrapper -->
+				
+				<div class="header__search-wrapper">
+					<form action="" class="header__search-container">
+						<input type="text" class="header__search-field" name="s" id="search_text">
+						<label class="header__search-label" for="search_text"></label>
+						<button class="header__search-button" name="go"></button>
+					
+						<a href="mailto:metaDonus@mail.ru" class="header__mail-link"></a>
+					
+					</form>
+				</div>
+
+
+			</div>
+		</div> <!-- /.header__top-info -->
+
+
+
+		<div class="header__banner">
+			<div class="header__banner-wrapper default-width">
+				<a href="tel:8123809386" class="header__number">
+					<span class="header__number__small">(812)</span> 380-93-86
+				</a>
+				
+				<a href="#" class="header__btn-link header__order-btn modal" data-modal="modal__order">Сделать Заказ</a>
+				<a href="#" class="header__btn-link header__download-btn">Скачать каталог</a>
+			</div> <!-- /.header__banner-wrapper -->
+		</div> <!-- /.header__banner -->
+
+	</section> <!-- /.header -->
+
+	
+	<section class="news">
+		<div class="news__wrapper default-width">
+			<div class="news__new-item">
+				<div class="news__img-box">
+					<img src="img/filials/kamaz.jpg" alt="kamaz" class="news__img">
+				</div>
+				<div class="news__text-box">
+					<h3 class="news__title"><a href="#">Филиал на крайнем севере в г. Воркута</a></h3>
+					<div class="news__desc">Компания Балтсервис открыла филиал
+на крайнем севере в г. Воркута</div>
+					<span class="news__date">baltservic от 30-01-2017, 09:49</span>
+					
+				</div>
+			</div>
+			
+			<div class="news__new-item">
+				<div class="news__text-box">
+					<h3 class="news__title"><a href="#">Свидетельство о признании изготовителя</a></h3>
+					<div class="news__desc">Настоящим удостоверяется, что ООО «Балтсервис» признается
+Российским морским реестром судоходства как изготовитель.
+Продукция: Рукава высокого давления армированные
+(гибкие соединения), типов SN, SP, SH, PTFE, МБС, R-7, R-8, МТ-1, МТ-2</div>
+					<span class="news__date">baltservic от 30-01-2017, 09:49</span>
+					
+				</div>
+			</div>
+			
+		</div>
+		
+	</section> <!-- /.news -->
+
+
+	<section class="products">
+		<div class="products__wrapper default-width">
+
+			<div class="products__product-item">
+				<img src="img/products/1.jpg" alt="Product image" class="products__img">
+				<div class="products__desc">Запчасти для <br/>
+спецтехники</div>
+			</div>
+			<div class="products__product-item">
+				<img src="img/products/2.jpg" alt="Product image" class="products__img">
+				<div class="products__desc">Комплектующие <br/>
+для РВД</div>
+			</div>
+			<div class="products__product-item">
+				<img src="img/products/3.jpg" alt="Product image" class="products__img">
+				<div class="products__desc">Металлорукава <br/>
+высокого давления</div>
+			</div>
+			<div class="products__product-item">
+				<img src="img/products/4.jpg" alt="Product image" class="products__img">
+				<div class="products__desc">Сильфонные <br/>
+компенсаторы</div>
+			</div>
+
+		</div>
+	</section> <!-- /.products -->
+
+	<section class="service">
+		<div class="service__wrapper default-width">
+			<ul class="service__container">
+				<li class="service__element">
+					<a href="#" class="service__link service__link_company">О компании</a>
+				</li>
+				<li class="service__element">
+					<a href="#" class="service__link service__link_service">Сервис</a>
+				</li>
+				<li class="service__element">
+					<a href="#" class="service__link service__link_faq">Справочник</a>
+				</li>
+				<li class="service__element service__element_number">
+					<a href="tel:8123809386" class="service__link service__link_number">(812) 380-93-86</a>
+				</li>
+				<li class="service__element service__element_email">
+					<a href="mailto:gidravlika@baltservice.org" class="service__link service__link_email">gidravlika@baltservice.org</a>
+				</li>
+			</ul>
+		</div>
+	</section> <!-- /.service -->
+
+	
+	<section class="footer">
+		<div class="footer__wrapper default-width">
+			<div class="footer__info-block">
+				<h3 class="footer__header">Сервис 24 САНКТ- ПЕТЕРБУРГ</h3>
+				<div class="footer__desc">
+					Санкт Петербург, пр. Коломяжский, 10 Д <br/>
+					<span class="footer__name">Буравлев Андрей</span>
+					<span class="footer__numbers">
+						тел.: <a href="tel:+78123809386">+7 (812) 380-93-86</a>
+					          <span class="footer__numbers_right">
+					          	<a href="tel:+79062684553">+7 (906) 268-45-53</a>
+					          </span>
+					</span>
+					<br/>
+					<a href="mailto:gidravlika@baltservice.org">gidravlika@baltservice.org</a>
+				</div>
+			</div>
+			
+		
+			<div class="footer__info-block">
+				<h3 class="footer__header">Сервис 24 ВОРКУТА</h3>
+				<div class="footer__desc">
+					Воркута ул. Московская, 6 А <br />
+					<span class="footer__name">Авксентьев Евгений</span>
+					тел.: <a href="tel:+79129611093">+7-912-961-10-93</a> <br />
+					<a href="mailto:gidravlika@baltservice.org">gidravlika@baltservice.org</a>
+				</div>
+			</div>
+			
+		
+			<div class="footer__info-block">
+				<h3 class="footer__header">Офис</h3>
+				<div class="footer__desc">
+					197375, Санкт Петербург<br/>
+					ул. Маршала Новикова, 28 Е
+				</div>
+			</div>
+			
+		
+			<div class="footer__info-block">
+				<h3 class="footer__header">Отдел продаж</h3>
+				<div class="footer__desc">
+					<span class="footer__name">Инкин Иван</span>
+					тел: <a href="tel:+79675727274">+7-967-572-72-74</a> <br />
+					<a href="mailto:gidravlika@baltservice.org">gidravlika@baltservice.org</a>
+
+				</div>
+			</div>
+			
+		
+			<div class="footer__info-block">
+				<h3 class="footer__header">Отдел снабжения</h3>
+				<div class="footer__desc">
+					<span class="footer__name">Алексашин Антон</span>
+					тел: <a href="tel:+79675727276">+7-967-572-72-76</a> <br/>
+					<a href="mailto:zakupki@baltservice.org">zakupki@baltservice.org</a>
+				</div>
+			</div>
+			
+		
+			<div class="footer__info-block">
+				<h3 class="footer__header">Бухгалтерия</h3>
+				<div class="footer__desc">
+					<span class="footer__name">Гусева Анна</span>
+					тел: <a href="tel:+79602405569">+7 960 240-55-69</a> <br/>
+					<a href="mailto:buhgalter@baltservice.org">buhgalter@baltservice.org</a>
+				</div>
+			</div>
+			
+		
+		</div>
+	</section> <!-- /.footer -->
+
+
+	<!-- Подключние скриптов -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>

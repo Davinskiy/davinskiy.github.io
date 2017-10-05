@@ -1,0 +1,100 @@
+/*
+	300 = Light
+	400 = Normal / Regular
+	600 = SemiBold
+	700 = Bold
+*/
+
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("../fonts/ProximaNova-Light/ProximaNova-Light.eot");
+	src: url("../fonts/ProximaNova-Light/ProximaNova-Light.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/ProximaNova-Light/ProximaNova-Light.woff") format("woff"),
+	url("../fonts/ProximaNova-Light/ProximaNova-Light.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("../fonts/ProximaNova-Regular/ProximaNova-Regular.eot");
+	src: url("../fonts/ProximaNova-Regular/ProximaNova-Regular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/ProximaNova-Regular/ProximaNova-Regular.woff") format("woff"),
+	url("../fonts/ProximaNova-Regular/ProximaNova-Regular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("../fonts/ProximaNova-Semibold/Proxima-Nova-Semibold.otf");
+	src: url("../fonts/ProximaNova-Semibold/Proxima-Nova-Semibold.woff") format("woff"),
+	url("../fonts/ProximaNova-Semibold/Proxima-Nova-Semibold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	src: url("../fonts/ProximaNova-Bold/ProximaNova-Bold.eot");
+	src: url("../fonts/ProximaNova-Bold/ProximaNova-Bold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/ProximaNova-Bold/ProximaNova-Bold.woff") format("woff"),
+	url("../fonts/ProximaNova-Bold/ProximaNova-Bold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+
+/*
+	Open Sans
+	
+	300 = Light
+	400 = Normal / Regular
+	600 = SemiBold
+	700 = Bold
+*/
+/* Код для подключения шрифта в /css/stylename.css */
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+	src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+	url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+	src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"),
+	url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 300;
+}
+
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+	src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
+	url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot");
+	src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"),
+	url("../fonts/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 600;
+}
