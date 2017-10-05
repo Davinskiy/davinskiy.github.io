@@ -430,9 +430,12 @@ body {
 }
 .particles-js-canvas-el {
 	background-color: #000;
-	position: absolute;
+	position: fixed;
+	/*position: absolute;*/
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	z-index: -1;
 }
 .about-me:after {
@@ -544,6 +547,7 @@ body {
 .services {
 	padding-bottom: 50px;
 	overflow: hidden;
+	background-color: #fff;
 }
 .services__wrapper {
 
@@ -647,6 +651,7 @@ body {
 	box-shadow: inset 0px 3px 10px -3px #aaa;
 
 	overflow: hidden;
+	background-color: #fff;
 }
 .portfolios__wrapper {
 
@@ -851,6 +856,9 @@ body {
 	-webkit-box-shadow: inset 0px 3px 10px -3px #aaa;
 	box-shadow: inset 0px 3px 10px -3px #aaa;
 	padding-bottom: 50px;
+
+	background-color: #fff;
+	
 }
 .contacts__wrapper {
 
@@ -945,7 +953,7 @@ body {
 /* ************ footer ************ */
 
 .footer {
-	background-color: #111;
+	/*background-color: #111;*/
 	color: #aaa;
 }
 .footer__wrapper {
