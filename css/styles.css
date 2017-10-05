@@ -878,6 +878,8 @@ body {
 	width: 100%;
 	justify-content: space-between;
 	flex-wrap: wrap;
+
+	text-align: center;
 }
 .contacts__info-box {
 	padding-top: 20px;
@@ -923,7 +925,7 @@ body {
 	}
 	.contacts__all-info {
 		justify-content: space-around;
-		text-align: center;
+		
 	}
 }
 @media only screen and (max-width : 480px) {
@@ -931,7 +933,7 @@ body {
 		font-size: 15px;
 	}
 	.contacts__all-info {
-		text-align: left;
+		/*text-align: left;*/
 		flex-direction: column;
 	}
 	.contacts__info-box {
