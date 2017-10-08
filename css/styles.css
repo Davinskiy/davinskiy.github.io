@@ -256,6 +256,7 @@ body {
 	font-weight: 600;
 }
 .intro__str-sliding-box {
+	display: block;
 	position: relative;
 }
 .intro__str-sliding-element {
