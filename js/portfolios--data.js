@@ -3,6 +3,14 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Арена недвижимости",
+		miniature : "portfolios/real-estate-arena/mini.jpg",
+		desc : "Очень красивый макет по услугам подбора квартир в питере - бесплатно. Сверстан на флексах.",
+		impress : "Довольно простой в использовании макет, с понятным функционалом, что может не порадовать. Плюс, довольно адекватный клиент.",
+		url_to_work : "portfolios/real-estate-arena/index.html",
+		url_to_jpg : "portfolios/real-estate-arena/full-img.jpg"
+	},
+	{
 		title : "Теплоконтакт",
 		miniature : "portfolios/teplokontakt/mini.jpg",
 		desc : "Макет строительного характера, представляющий материалы для обеспечение \
