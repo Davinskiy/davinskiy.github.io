@@ -32,20 +32,23 @@ $( window ).resize(function() {
 $(document).on("scroll", function() {
 	// headerH = header.height();
 
+	var fix_at = $(".advantages").offset().top
+
 	var documentScroll = $(this).scrollTop();
 
-	if(documentScroll > headerH) {
-
-		header.addClass("fixed");
-
+	if(documentScroll > fix_at) {
 		$("body").css({
 			"paddingTop": headerH
 		});
+		header.addClass("fixed");
 	} else {
 		$(".move-up-btn").css({visibility : "hidden"});
 		header.removeClass("fixed");
 		$("body").removeAttr("style");
+		headerH = header.height();
 	}
+
+	console.log(headerH);
 
 });
 
