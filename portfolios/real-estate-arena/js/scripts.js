@@ -21,36 +21,23 @@ function menuShowHide(){
 ====================================*/
 
 var header = $(".js-header");
-var headerH = header.height();
+var headerH = Math.max(header.height(), header.innerHeight());
 
 /* при изменение размера экрана, обновляем значение в переменной headerH */
 $( window ).resize(function() {
-	headerH = header.height();
-});
+	headerH = Math.max(header.height(), header.innerHeight());
 
-
-$(document).on("scroll", function() {
-	// headerH = header.height();
-
-	var fix_at = $(".advantages").offset().top
-
-	var documentScroll = $(this).scrollTop();
-
-	if(documentScroll > fix_at) {
-		$("body").css({
-			"paddingTop": headerH
-		});
-		header.addClass("fixed");
-	} else {
-		$(".move-up-btn").css({visibility : "hidden"});
-		header.removeClass("fixed");
-		$("body").removeAttr("style");
-		headerH = header.height();
-	}
-
-	console.log(headerH);
+	setPadding();
 
 });
+
+/* добавляем поля верху у боди, чтобы было меню при фиксации не перекривал текс в первом экране... */
+function setPadding(){
+	$("body").css({
+		"paddingTop": headerH
+	});
+}
+setPadding();
 
 /* jqeury form styler */
 $(function() {
@@ -107,30 +94,81 @@ $(".js-acord-title").on("click", function(){
 });
 
 
-/* Smooth scrolling - https://github.com/davist11/jQuery-One-Page-Nav */
-$('.js-menu').onePageNav({
-	scrollOffset: (headerH > 100)?97:headerH, /* my own modification. just added "this.options.scrollOffset" code at 207 (205 origin) line */
-	currentClass: 'active',
-	changeHash: false,
-	scrollSpeed: 750,
-	scrollThreshold: 0.8,
-	filter: '',
-	easing: 'swing',
-	begin: function() {
-		console.log(headerH);
+/* поумолчании скрываем блок */
+var block_cls = "advantages";
+var block_about = $("." + block_cls);
+block_about.hide();
 
-		 // если была развернута менюшка, убираем ее 
-		if($(".btn-container").hasClass("change")){
-			$(".btn-container").removeClass("change");
-			menuShowHide();
-		}
-	},
-	end: function() {
-		
-	},
-	scrollChange: function($currentListItem) {
-		//I get fired when you enter a section and I pass the list item of the section
-		
+$(".js-about-company").on("click", function(e){
+	e.preventDefault();
+	var _this = $(this);
+	
+	var icon = _this.find(".fa");
+	
+	if (block_about.is(":not(:visible)")) {
+		icon.removeClass(icon.data("open-icon"));
+		icon.addClass(icon.data("close-icon"));
+
+	}else {
+		icon.removeClass(icon.data("close-icon"));
+		icon.addClass(icon.data("open-icon"));
 	}
+	block_about.slideToggle();
+
+	/* скроллим до этого место */
+	scrollTo(block_about.offset().top);
+
 });
 
+
+/* доп. обработка событий пунктов меню */
+
+$(".js-move-to").on("click", function(e){
+	e.preventDefault();
+	var _this = $(this);
+	var block_to = $(_this.attr("href"));
+
+	if($(".btn-container").hasClass("change")){
+		$(".btn-container").removeClass("change");
+		menuShowHide();
+	}
+
+	if (block_to.hasClass(block_cls)) {
+		if (block_to.is(":not(:visible)")) {
+			$(".js-about-company").trigger("click");
+		}
+	}
+	scrollTo(block_to.offset().top);
+
+});
+
+
+function scrollTo(to, speed){
+	// console.log(to);
+	speed = speed || 800;
+	$("html, body").animate({
+		scrollTop: to - headerH
+	}, speed);
+}
+
+
+ $(document).on("scroll", function() {
+ 	var menu_items_li = $(".js-menu li");
+ 	var menu_items_a = $(".js-menu a");
+ 	var documentScroll = $(this).scrollTop();
+
+ 	// var positions = [];
+
+ 	for(var i = 0; i < menu_items_a.length; i++){
+ 		var item_pos = $(menu_items_a.eq(i).attr("href")).offset().top;
+ 		// positions.push(item_pos);
+
+ 		if ((documentScroll + $( window ).height()) > item_pos) {
+ 			menu_items_li.removeClass("active");
+ 			menu_items_li.eq(i).addClass("active");
+ 		}
+
+ 	}
+ 	
+
+ });

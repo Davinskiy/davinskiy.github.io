@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<header class="header  js-header">
+	<header class="header  fixed  js-header">
 		<div class="header__wrapper  default-width">
 			<div class="header__wrapper-element  header__logo-box">
 				<a href="#" class="header__logo-link">
@@ -42,9 +42,9 @@
 
 				<div class="header__menu-wrapper  js-menu">
 					<ul class="header__menu-container">
-						<li class="header__menu-element  active"><a href="#about" class="header__menu-link">О компании</a></li>
-						<li class="header__menu-element"><a href="#choice_apartment" class="header__menu-link">Подбор квартир</a></li>
-						<li class="header__menu-element"><a href="#contacts" class="header__menu-link">Контакты</a></li>
+						<li class="header__menu-element  active"><a href="#about" class="header__menu-link  js-move-to">О компании</a></li>
+						<li class="header__menu-element"><a href="#choice_apartment" class="header__menu-link  js-move-to">Подбор квартир</a></li>
+						<li class="header__menu-element"><a href="#contacts" class="header__menu-link  js-move-to">Контакты</a></li>
 					</ul>
 				</div>
 			</div>
@@ -83,10 +83,10 @@
 
 
 					<div class="intro__list-buttons">
-						<a href="#" class="intro__list-btn  intro__list-btn_choice-apartment  default-btn">Подобрать квартиру сейчас</a>
-						<a href="#" class="intro__list-btn">
+						<a href="#choice_apartment" class="intro__list-btn  intro__list-btn_choice-apartment  default-btn  js-move-to">Подобрать квартиру сейчас</a>
+						<a href="#" class="intro__list-btn  js-about-company">
 							<span class="intro__list-btn_underline">Подробнее о компании</span> 
-							<i class="fa fa-chevron-up  intro__list-btn-icon" aria-hidden="true"></i>
+							<i class="fa fa-chevron-down  intro__list-btn-icon" aria-hidden="true"  data-open-icon="fa-chevron-down" data-close-icon="fa-chevron-up"></i>
 						</a>
 						
 					</div>
@@ -158,8 +158,8 @@
 		</div>
 	</section> <!-- /.partners -->
 
-	<section class="questionary"  id="choice_apartment">
-		<div class="questionary__wrapper  default-width">
+	<section class="questionary">
+		<div class="questionary__wrapper  default-width"  id="choice_apartment">
 			<div class="questionary__info-box">
 				<h2 class="questionary__info-header section-header">Заполните короткую анкету клиента</h2>
 				<div class="questionary__info-desc">И получите индивидуальную скидку до 25% от застройщика в октябре! Сразу после заполнения
@@ -324,7 +324,6 @@
 	<!-- Подключние скриптов -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.formstyler.min.js"></script>
-	<script src="js/jquery.nav.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>
