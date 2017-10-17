@@ -904,6 +904,11 @@ body {
 	font-size: 16px;
 }
 
+.contacts__link:hover {
+	text-decoration: underline;
+	color: #f60;
+}
+
 .contacts__info-icon {
 	margin-right: 3px;
 }
