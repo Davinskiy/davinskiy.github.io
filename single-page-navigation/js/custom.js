@@ -42,7 +42,7 @@ $(".js-menu").singlePageNavigation({
 	disabledClass : "menu__element_no-clickable",	// Class of items that disable (will shine, but not clickable), default:  ""
 	current : "active",								// Current nav item class name, default:  "current"
 	duration : 500,									// Scrolling speed (ms), default:  700
-	delay : 300,									// Delay before scrolling, default:  0
+	delay : 10,									// Delay before scrolling, default:  0
 	ease : "swing",									// Animate easing type, default:  "swing"
 	offset : header,								// Top offset ([jquery element], [0 - xxx (px)]), default:  0
 	offsetDynamic : 'innerHeight',					// Give an opportunity to set dynamic height for offset element, default : false
@@ -54,7 +54,7 @@ $(".js-menu").singlePageNavigation({
 
 		if($(".btn-container").hasClass("change")){
 			$(".btn-container").removeClass("change");
-			menuShowHide(150);
+			menuShowHide(0);
 		}
 	},
 	finishScrolling : function(){					// Function that execute after scrolling, default:  null
