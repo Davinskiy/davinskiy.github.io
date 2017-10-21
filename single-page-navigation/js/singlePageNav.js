@@ -54,8 +54,8 @@
 							var item_pos = $(menu_items_a.eq(i).attr("href")).offset().top;
 
 							if (doc_view > (item_pos + bottom_offset)) {
-								menu_items_li.removeClass("active");
-								menu_items_li.eq(i).addClass("active");
+								menu_items_li.removeClass(options.current);
+								menu_items_li.eq(i).addClass(options.current);
 							}
 
 						}

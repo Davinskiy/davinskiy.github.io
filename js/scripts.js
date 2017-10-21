@@ -17,12 +17,12 @@ function menuShowHide(){
 
 }
 
+var header = $(".header");
 
 /* паралакс фона хедера */
 function paralaxBG(){
 
 	var scrollTop = $(document).scrollTop();
-	var header = $(".header");
 
 	if (header.innerHeight() >= scrollTop) {
 		header.css({
@@ -128,7 +128,7 @@ function getRndNum(max) {
 /* Smooth scroll to the pages block
 ====================================*/
 
-/*var headerH = $(".header__menu").innerHeight();
+/*var menuH = $(".header__menu").innerHeight();
 
 $(".js-move-to").on("click", function(e) {
 	e.preventDefault();
@@ -151,10 +151,10 @@ $(".js-move-to").on("click", function(e) {
 		var currentBlockOffset = $(currentBlock).offset().top;
 	}
 
-	// console.log(headerH)
+	// console.log(menuH)
 
 	$("html, body").animate({
-		scrollTop: currentBlockOffset - (parseInt(headerH))
+		scrollTop: currentBlockOffset - (parseInt(menuH))
 	}, {
 		duration : speed,
 		easing: easingType
@@ -326,29 +326,25 @@ function addShadowForPortfolios() {
 
 
 /* Smooth scrolling - https://github.com/davist11/jQuery-One-Page-Nav */
-var headerH = $(".header__menu").innerHeight();
-$('.js-menu-container').onePageNav({
-	scrollOffset: headerH, /* my own modification. just added "this.options.scrollOffset" code at 207 (205 origin) line */
-	currentClass: 'current',
-	changeHash: false,
-	scrollSpeed: 750,
-	scrollThreshold: 0.5,
-	filter: '',
-	easing: 'swing',
-	begin: function() {
-		/* если была развернута менюшка, убираем ее */
+var menu = $(".header__menu");
+var menuH = menu.innerHeight();
+
+$(".js-menu-container").singlePageNavigation({
+	current : "current",							// Current nav item class name, default:  "current"
+	duration : 700,									// Scrolling speed (ms), default:  700
+	delay : 10,										// Delay before scrolling, default:  0
+	offset : menu,									// Top offset ([jquery element], [0 - xxx (px)]), default:  0
+	offsetDynamic : 'innerHeight',					// Give an opportunity to set dynamic height for offset element, default : false
+	scrollingOffsetBottom : 0.4, 					// Offset bottom (0.00 - 1.00 - percents (0.45 = 45% of window height), 1 - xxx - pixels), default:  0
+	changeAddress : false,							// Changing address location when nav item clicked, default:  false
+	currentClickable : true,						// Clickable of current nav element, default:  true
+	beforeScrolling : function(){					// Function that execute before scrolling, default:  null
+
 		if($(".btn-container").hasClass("change")){
 			$(".btn-container").removeClass("change");
-			menuShowHide();
+			menuShowHide(0);
 		}
 	},
-	end: function() {
-
-
-	},
-	scrollChange: function($currentListItem) {
-		//I get fired when you enter a section and I pass the list item of the section
-	}
 });
 
 
@@ -361,7 +357,7 @@ $(".js-move-to").on("click", function(e) {
 	if (currentBlock == '#up') {
 		var currentBlockOffset = 0;
 	}else {
-		var currentBlockOffset = $(currentBlock).offset().top - (parseInt(headerH));
+		var currentBlockOffset = $(currentBlock).offset().top - (parseInt(menuH));
 	}
 	$("html, body").animate({
 		scrollTop: currentBlockOffset
