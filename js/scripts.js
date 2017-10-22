@@ -5,11 +5,11 @@ function toggleMainMenu(x) {
 }
 
 /* показ/скрытие меню */
-function menuShowHide(){
+function menuShowHide(_duration){
 
 	var menu = $(".menu-box");
 
-	menu.slideToggle(200, function(){
+	menu.slideToggle(_duration, function(){
 		if (menu.is(":not(:visible)")) {
 			menu.removeAttr("style");
 		}
@@ -332,7 +332,7 @@ var menuH = menu.innerHeight();
 $(".js-menu-container").singlePageNavigation({
 	current : "current",							// Current nav item class name, default:  "current"
 	duration : 700,									// Scrolling speed (ms), default:  700
-	delay : 10,										// Delay before scrolling, default:  0
+	delay : 20,										// Delay before scrolling, default:  0
 	offset : menu,									// Top offset ([jquery element], [0 - xxx (px)]), default:  0
 	offsetDynamic : 'innerHeight',					// Give an opportunity to set dynamic height for offset element, default : false
 	scrollingOffsetBottom : 0.4, 					// Offset bottom (0.00 - 1.00 - percents (0.45 = 45% of window height), 1 - xxx - pixels), default:  0
