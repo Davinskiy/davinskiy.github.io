@@ -3,10 +3,29 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "SEOBAKER",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/seobaker/mini.jpg",
+		desc : "Макет на тематику продвижение в поисковых системах, сверстанный на флексах, адаптивно.",
+		impress : "Красивый, без каких либо заморочек, макет. + очень адекватный и \
+					приятный клиент, что, как всегда, только мотивирует, работотать.",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/seobaker/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/seobaker/full-img.jpg"
+	},
+	{
+		title : "Мужское портмоне | Louis Vuitton",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/wallets/mini.jpg",
+		desc : "Макет про корманные кошельки. Сверстан адаптивно на флексах. \
+				На макете нету, но после верстки был добавлен еще один блок (экран)",
+		impress : "То что много слайдеров :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/wallets/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/wallets/full-img.jpg"
+	},
+	{
 		title : "Арена недвижимости",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/real-estate-arena/mini.jpg",
 		desc : "Очень красивый макет по услугам подбора квартир в питере - бесплатно. Сверстан на флексах.",
-		impress : "Довольно простой в использовании макет, с понятным функционалом, что может не порадовать. Плюс, довольно адекватный клиент.",
+		impress : "Довольно простой в использовании макет, с понятным функционалом, что может не порадовать. \
+					Плюс, довольно адекватный клиент.",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/real-estate-arena/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/real-estate-arena/full-img.jpg"
 	},
