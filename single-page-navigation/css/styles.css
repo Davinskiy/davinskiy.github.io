@@ -114,6 +114,9 @@ section:nth-of-type(2n+2) {
 	background-color: #930;
 }
 
+.section-header--main {
+	font-size: 40px;
+}
 .singles {
 	padding: 30px 0;
 	line-height: 2;
@@ -130,6 +133,21 @@ section:nth-of-type(2n+2) {
 	color: #f60;
 	border: 1px solid;
 	font-size: 14px;
+	line-height: 1.5;
+}
+.footer__link {
+	color: #369;
+	font-size: 18px;
+}
+.footer__link .fa{
+	margin-right: 10px;
+	color: #fff;
+	font-size: 25px;
+	position: relative;
+	top: 3px;
+}
+.footer__link:hover {
+	text-decoration: none;
 }
 
 @media only screen and (max-width : 900px) {
