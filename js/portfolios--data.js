@@ -3,6 +3,30 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Дизайн интерьера",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/interior-design/mini.jpg",
+		desc : "Интересный макет по дизайну интерьера.",
+		impress : "Красивый, интересный.",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/interior-design/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/interior-design/full-img.jpg"
+	},
+	{
+		title : "Ремонт и отделка",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/planiroom/mini.jpg",
+		desc : "Страница-заглушка.",
+		impress : "Удобный шаблончик. Радует глаз :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/planiroom/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/planiroom/full-img.jpg"
+	},
+	{
+		title : "Ателье мебели",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/belcanto/mini.jpg",
+		desc : "Макет по производству мебели в воронеже и москве.",
+		impress : "Макет красивый. И, как всегда, адекватный клиент. :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/belcanto/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/belcanto/full-img.jpg"
+	},
+	{
 		title : "SEOBAKER",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/seobaker/mini.jpg",
 		desc : "Макет на тематику продвижение в поисковых системах, сверстанный на флексах, адаптивно.",
