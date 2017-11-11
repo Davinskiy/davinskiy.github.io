@@ -189,7 +189,7 @@ body {
 		margin: 0 15px;
 	}
 }
-@media only screen and (max-width : 780px) {
+@media only screen and (max-width : 830px) {
 	.header__wrapper {
 		text-align: right;
 
@@ -850,6 +850,27 @@ body {
 /* ****** стилизация полосы прокрутки ******** 
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
+
+/* ************ reviews ************ */
+.reviews {
+	padding-bottom: 50px;
+
+	background-color: #3F5978;
+}
+.reviews__wrapper {
+
+}
+.reviews__header {
+	color: #fff;
+}
+.reviews__container {
+	overflow: hidden;
+	display: inline-block;
+	font-size: 0;
+	width: 100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
 
 /* ************ contacts ************ */
 
