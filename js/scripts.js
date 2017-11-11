@@ -439,14 +439,18 @@ $(document).on("scroll", function() {
 
 setTimeout(function(){
 	$(window).bind('load', function() {
-		setTimeout(function(){
-
-			$('.js-portfolio-container').masonry({
-				itemSelector: '.js-portfolio-element',
-				gutter: 1,
-				fitWidth: true
-			}).css({margin : "auto", display : "block"});
-		}, 500);
-
+		runMasonry();
 	});
 }, 1000);
+runMasonry();
+
+function runMasonry(){
+	setTimeout(function(){
+
+		$('.js-portfolio-container').masonry({
+			itemSelector: '.js-portfolio-element',
+			gutter: 1,
+			fitWidth: true
+		}).css({margin : "auto", display : "block"});
+	}, 500);
+}
