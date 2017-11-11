@@ -437,14 +437,16 @@ $(document).on("scroll", function() {
 
 
 
-$(window).bind('load', function() {
-	setTimeout(function(){
+setTimeout(function(){
+	$(window).bind('load', function() {
+		setTimeout(function(){
 
-		$('.js-portfolio-container').masonry({
-			itemSelector: '.js-portfolio-element',
-			gutter: 1,
-			fitWidth: true
-		}).css({margin : "auto", display : "block"});
-	}, 500);
+			$('.js-portfolio-container').masonry({
+				itemSelector: '.js-portfolio-element',
+				gutter: 1,
+				fitWidth: true
+			}).css({margin : "auto", display : "block"});
+		}, 500);
 
-});
+	});
+}, 1000);
