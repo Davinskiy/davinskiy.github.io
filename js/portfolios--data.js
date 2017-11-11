@@ -8,7 +8,8 @@ var portfoliosData = [
 		desc : "Интересный макет по дизайну интерьера.",
 		impress : "Красивый, интересный.",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/interior-design/index.html",
-		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/interior-design/full-img.jpg"
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/interior-design/full-img.jpg",
+		show: false
 	},
 	{
 		title : "Ремонт и отделка",

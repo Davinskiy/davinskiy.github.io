@@ -388,6 +388,9 @@ $(function(){
 
 	for(var i = 0; i < portfoliosData.length; i++){
 		var __tpl = tpl;
+		if (portfoliosData[i].show === false) {
+			continue;
+		}
 
 		__tpl = replaceTemplate(__tpl, {
 			"title" : portfoliosData[i].title,
