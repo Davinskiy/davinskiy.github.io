@@ -449,7 +449,7 @@ function runMasonry(){
 
 		$('.js-portfolio-container').masonry({
 			itemSelector: '.js-portfolio-element',
-			gutter: 1,
+			gutter: 30,
 			fitWidth: true
 		}).css({margin : "auto", display : "block"});
 	}, 500);
