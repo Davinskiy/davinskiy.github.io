@@ -435,12 +435,16 @@ $(document).on("scroll", function() {
 
 
 
-setTimeout(function(){
 
-	$('.js-portfolio-container').masonry({
-		itemSelector: '.js-portfolio-element',
-		gutter: 1,
-		fitWidth: true
-	}).css({margin : "auto", display : "block"});
 
-},1000);
+$(window).bind('load', function() {
+	setTimeout(function(){
+
+		$('.js-portfolio-container').masonry({
+			itemSelector: '.js-portfolio-element',
+			gutter: 1,
+			fitWidth: true
+		}).css({margin : "auto", display : "block"});
+	}, 500);
+
+});
