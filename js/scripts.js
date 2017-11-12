@@ -441,11 +441,12 @@ $(document).on("scroll", function() {
 
 
 setTimeout(function(){
+	runMasonry();
 	$(window).bind('load', function() {
 		runMasonry();
 	});
 }, 1000);
-runMasonry();
+// runMasonry();
 
 function runMasonry(){
 	setTimeout(function(){
