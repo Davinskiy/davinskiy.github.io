@@ -52,8 +52,8 @@
 					<span class="intro__web-dev  wow bounceIn">Davinskiy</span>
 					<h1 class="intro__header">Быстрая адаптивная 
 						<span class="intro__str-sliding-box">
-							<span class="intro__str-sliding-element current  js-string-sliding">верстка сайтов</span>
-							<span class="intro__str-sliding-element  js-string-sliding">верстка html-писем</span>
+							<span class="intro__str-sliding-element current  js-string-sliding---">верстка сайтов</span>
+							<!-- <span class="intro__str-sliding-element  js-string-sliding">верстка html-писем</span> -->
 						</span>
 					</h1>
 					<div class="intro__desc  wow fadeIn">Создание кроссбраузерной верстки, которая адаптируется <br/>под любые устройства и соответствует всем стандартам.</div>
@@ -68,11 +68,18 @@
 	<section class="about-me" id="about_me">
 		<div class="about-me__wrapper  default-width">
 			<h2 class="about-me__header  section-header"><span>Обо мне</span></h2>
-			<div class="about-me__content wow fadeInUp">
-				<p class="about-me__name  about-me__orange">Arthur Davinskiy,<br/> Front-end developer.</p>
-				<p>Привет всем! Я Артур, фронт-эндер, занимаюсь адаптивной версткой сайтов и html-писем. Так же занимаюсь натяжками верстки на CMS WordPress. </p>
-				<br />
-				<p>Специализируюсь на лендингах, но с удовольствием могу работать и с другими сайтами, такие как новостные порталы, блоги, интернет магазины, сайты-визитки и т. д.. </p>
+			<div class="about-me__content">
+				<div class="text-wrapper  wow fadeInUp">
+					<!-- <p class="about-me__name  about-me__orange">Arthur Davinskiy,<br/> Front-end developer.</p> -->
+					<p class="about-me__name  about-me__orange">Arthur Davinskiy,<br/> Верстальщик.</p>
+					<!-- <p>Привет всем! Я Артур, фронт-эндер, занимаюсь адаптивной версткой сайтов и html-писем. Так же занимаюсь натяжками верстки на CMS WordPress. </p> -->
+					
+					<p>Привет всем! Меня зовут Артур и я занимаюсь адаптивной версткой сайтов под любые устройства!</p>
+					<p>Начал деятельность верстальщика еще в начале этого (2017) года, до этого так же изучал веб, но фулл стек, т.е. и клиентскую часть и серверную часть. Но случилось так, что клиентская часть мне нравится больше. И с тех пор изучаю/занимаюсь чисто версткой.</p>
+					
+					<br />
+					<p>Специализируюсь на лендингах, но с удовольствием могу работать и с другими сайтами, такие как новостные порталы, блоги, интернет магазины, сайты-визитки и т. д.. </p>
+				</div>
 				
 				<div class="skills">
 					<!-- <h3 class="skills__header">Навыки, которые используются в работе:</h3> -->
@@ -84,9 +91,27 @@
 							</div>
 						</li>
 						<li class="skills__element">
-							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">Html/Css</div>
+							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">Html5</div>
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
+								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="75%"  data-wow-offset="30"></div>
+							</div>
+						</li>
+						<li class="skills__element">
+							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">CSS3</div>
 							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="90%"  data-wow-offset="30"></div>
+							</div>
+						</li>
+						<li class="skills__element">
+							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">SASS</div>
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
+								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="50%"  data-wow-offset="30"></div>
+							</div>
+						</li>
+						<li class="skills__element">
+							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">BootStrap 3 <small>(сетка)</small></div>
+							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
+								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="95%"  data-wow-offset="30"></div>
 							</div>
 						</li>
 						<li class="skills__element">
@@ -101,12 +126,12 @@
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="50%"  data-wow-offset="30"></div>
 							</div>
 						</li>
-						<li class="skills__element">
+						<!-- <li class="skills__element">
 							<div class="skills__element-header  wow fadeInUp" data-wow-offset="50">WordPress</div>
 							<div class="skills__percent-box  wow fadeIn" data-wow-offset="30">
 								<div class="skills__this-percent  js-add-percent  wow fadeInLeft" data-percent="60%"  data-wow-offset="30"></div>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div> <!-- /.skills -->
 
@@ -145,12 +170,16 @@
 						</li>
 						<li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
-							Натяжка готового шаблона на WordPress (CMS)
+							Корректировка уже готовой верстки. Исправление ошибок, ускорение загрузки сайта и подготовка на проход валидации.
 						</li>
-						<li class="services__list-element">
+						<!-- <li class="services__list-element">
+							<i class="fa fa-check-square-o  services__list-icon"></i>
+							Натяжка готового шаблона на WordPress (CMS)
+						</li> -->
+						<!-- <li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
 							Также, верстка E-mail писем, которые также адаптируются под любые устройства и поддерживаются большинствами почтовыми клиентами
-						</li>
+						</li> -->
 					</ul>
 				</div> <!-- /.services__list-box-element -->
 				
@@ -159,7 +188,7 @@
 					<ul class="services__list-container">
 						<li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
-							Верстка лендинга от 2 000<i class="fa fa-rub"></i>
+							Верстка лендинга от 3 000<i class="fa fa-rub"></i>
 						</li>
 						<li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
@@ -167,16 +196,16 @@
 						</li>
 						<li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
-							Верстка внутренних страниц от 800<i class="fa fa-rub"></i>
+							Верстка внутренних страниц от 1 000<i class="fa fa-rub"></i>
 						</li>
 						<li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
 							Верстка мобильных версий от 1 000<i class="fa fa-rub"></i>
 						</li>
-						<li class="services__list-element">
+						<!-- <li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
 							Натяжка лендинга на CMS от 1 500<i class="fa fa-rub"></i>
-						</li>
+						</li> -->
 						<li class="services__list-element">
 							<i class="fa fa-check-square-o  services__list-icon"></i>
 							Сроки за 1 psd макет от 1 до 3дней
