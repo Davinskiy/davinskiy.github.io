@@ -3,13 +3,49 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Florida Builders",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/florida-builders/mini.jpg",
+		desc : "Construction and renovation of Residential & Commercial Spaces in Florida",
+		impress : "Первый в моем портфолио сайт с внутренними страница. Но в этом ничего удивительного.. Сам сайт - мне нравится: галерея, фоновый слайдер... достаточно js, чтобы не скучалось :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/florida-builders/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/florida-builders/full-img.jpg",
+		show: false
+	},
+	{
+		title : "Mamka Store",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/mamka-store/mini.jpg",
+		desc : "Модальное окно + счетчик. ",
+		impress : "Было круто такое реализовать, особенно таймер :) Да ",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/mamka-store/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/mamka-store/full-img.jpg",
+		show: true
+	},
+	{
+		title : "18+?",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/adulthood/full-img.jpg",
+		desc : "Модальное окно...",
+		impress : "Интересный был заказ :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/adulthood/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/adulthood/full-img.jpg",
+		show: true
+	},
+	{
+		title : "Правопоритет",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/pravoparitet/mini.jpg",
+		desc : "Сайт на тему: юридические услуги для организаций и предпринимателей",
+		impress : "[попросили афишировать]",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/pravoparitet/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/pravoparitet/full-img.jpg",
+		show: false
+	},
+	{
 		title : "Дизайн интерьера",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/interior-design/mini.jpg",
 		desc : "Интересный макет по дизайну интерьера.",
 		impress : "Красивый, интересный.",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/interior-design/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/interior-design/full-img.jpg",
-		show: false
+		show: true
 	},
 	{
 		title : "Ремонт и отделка",
