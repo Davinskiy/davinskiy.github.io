@@ -115,8 +115,7 @@ var portfoliosData = [
 		miniature : "https://davinskiy.bitbucket.io/portfolios/auto-credit.redisign/miniature.jpg ",
 		desc : "Очередной макет от постоянного клиента. На этот раз редизайн того макета, \
 				что было сверстана мною же. На этот раз договорились, что верстка будет на флексах.",
-		impress : "По сути такой же макет, что и раньше, разве что по сложности \
-					ощутимо было задний фон видео, что немного украсил однотипную верстку :)",
+		impress : "дизайн немного по красивее :)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/auto-credit.redisign/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/auto-credit.redisign/full-img.jpg"
 	},
