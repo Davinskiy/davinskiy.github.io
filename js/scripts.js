@@ -159,18 +159,20 @@ function getPage(fileName){
 	var href = '#' + fileName;
 	var fileName = href.slice(1);
 	
-	$(".content__box-item").css({
-		display : "none"
-	});
+	// $(".content__box-item").css({
+	// 	display : "none"
+	// });
+	$(".content__box-item").fadeOut(200);
 
 	if ($(href).length <= 0) {
 		loadPage(fileName);
 	}else {
 		stopPreloader();
 
-		$(href).css({
-			display : "block"
-		});
+		// $(href).css({
+		// 	display : "block"
+		// });
+		$(href).fadeIn(200);
 	}
 
 	$(".js-menu-item").removeClass("active");
