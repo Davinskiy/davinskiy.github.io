@@ -200,3 +200,8 @@ function startPreloader(){
 	$(".body__preloader").fadeIn();
 	$("body").removeClass("animated");
 }
+
+/*
+* snow bg
+*/
+var aaSnowConfig = {snowflakes: 15};
