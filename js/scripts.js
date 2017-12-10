@@ -1,5 +1,13 @@
 var conf = {
-	ajaxDir : 'ajax/'
+	ajaxDir : 'ajax/',
+	urlHash : '#view=',
+	allPages : [
+				"contacts",
+				"home",
+				"portfolios",
+				"reviews",
+				"services"
+				]
 };
 var header = $(".header");
 
@@ -175,6 +183,9 @@ function getPage(fileName){
 		$(href).fadeIn(200);
 	}
 
+	// уснатавливаем соответствующую адресную строку
+	setLocation(conf.urlHash + fileName);
+
 	$(".js-menu-item").removeClass("active");
 	$('a[href*=' + fileName + ']').addClass("active");
 
@@ -183,9 +194,30 @@ function getPage(fileName){
 
 /* автозагрузка главной страницы */
 $(function(){
-	getPage("home");
+	var url = location.href;
+	var re = new RegExp(conf.urlHash);
+
+	if (re.test(url)) {
+		var fileName = url.substring(url.indexOf(conf.urlHash) + conf.urlHash.length,
+									(url.indexOf("&") == -1)? url.length: url.indexOf("&")
+									);
+
+		if(conf.allPages.indexOf(fileName) < 0)
+			fileName = '';
+	}
+
+	// грузим контент
+	getPage(fileName || "home");
 });
 
+/* устанавливет адресную строку */
+function setLocation(curLoc){
+	try {
+		history.pushState(null, null, curLoc);
+		return;
+	} catch(e) {}
+	location.hash = curLoc;
+}
 
 function stopPreloader(){
 	setTimeout(function(){
