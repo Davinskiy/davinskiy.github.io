@@ -194,5 +194,11 @@
 .fa-copyright:before {
   content: "\f1f9";
 }
+.fa-picture-o:before {
+  content: "\f03e";
+}
+.fa-link:before {
+  content: "\f0c1";
+}
 
 /*----------------------------------------------*/

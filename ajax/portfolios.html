@@ -1,0 +1,26 @@
+<div class="content__box-item  portfolios-box" id="portfolios">
+	<h2 class="portfolios__header section-header">Портфолио</h2>
+
+	<div class="portfolios__desc">
+		<p>
+			В связи с тем, что сервер, на котором поститься этот сайт <small><a href="https://bitbucket.org"  class="underline">(bitbucket.org)</a></small> очень тормозной, в портфолио будут показываться только по 6 проектов. Также вы сможете загрузить больше портфолио, нажав внизу на соответствующую кнопку.
+		</p>
+	</div>
+
+	<div class="portfolios__quatity">
+		<p>
+			Всего работ в портфолио: <span class="portfolios__quatity--number  js-port-quatity"></span>
+		</p>
+	</div>
+
+	<div class="portfolios__projects-container  js-portfolio-container"></div> <!-- /.portfolios__projects-container -->
+
+	<div class="portfolios-box__no-more-projects  js-port-no-more">
+		Больше в портфолио нет работ, по крайней мере, тех, что клиенты разрешили афишировать.
+		<a href="javascript:getPage('contacts')" class="btn-classic">Перейти к контактам</a>
+	</div>
+
+	<div class="portfolios-box__btn-box">
+		<a href="javascript:showPortfolios(6)" class="portfolios-box__btn  btn-default  js-port-btn">Загрузить еще портфолио</a>
+	</div>
+</div> <!-- /.portfolios-box -->

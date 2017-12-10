@@ -15,7 +15,7 @@ var portfoliosData = [
 		title : "Mamka Store",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/mamka-store/mini.jpg",
 		desc : "Модальное окно + счетчик. ",
-		impress : "Было круто такое реализовать, особенно таймер :) Да ",
+		impress : "Было круто такое реализовать, особенно таймер :)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/mamka-store/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/mamka-store/full-img.jpg",
 		show: true

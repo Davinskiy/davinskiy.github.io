@@ -1,0 +1,37 @@
+<div class="portfolios__projects-element  js-portfolio-element">
+	<div class="portfolios__projects-wrapper  js-okshadow-portfolios">
+		<div class="portfolios__sliding-box">
+			<div class="portfolios__miniature-box">
+				<img src="{{miniature}}" class="portfolios__miniature-img" alt="Miniature of portfolio" />
+				<!-- <img src="https://dummyimage.com/300x400/000/fff" class="portfolios__miniature-img" alt="Miniature of portfolio"/> -->
+			</div>
+			<div class="portfolios__info-box  scroll-styled">
+				<div class="portfolios__info-element">
+					<div class="portfolios__info-header">Описание: </div>
+					<div class="portfolios__info-text">{{desc}}</div>
+				</div>
+				<div class="portfolios__info-element">
+					<div class="portfolios__info-header">Впечатления: </div>
+					<div class="portfolios__info-text">{{impress}}</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="portfolios__project-bottom-info">
+			<div class="portfolios__project-header">{{title}}</div>
+			<a href="{{url-to-work}}" 
+					class="portfolios__project-link" 
+					title="URL на выполненную работу" 
+					target="_blank">
+				<i class="fa fa-link  portfolios__icon"></i>Посмотреть на работу
+			</a>
+				<br/>
+			<a href="{{url-to-jpg}}" 
+				class="portfolios__project-link" 
+				title="Изображение (в JPG)" 
+				target="_blank">
+				<i class="fa fa-picture-o  portfolios__icon"></i>Посмотреть макет (JPG)
+			</a>
+		</div>
+	</div>
+</div>
