@@ -417,8 +417,6 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	justify-content: space-between;
 }
 .skills__element {
-	min-height: 200px;
-	height: 200px;
 	min-width: 200px;
 	width: 200px;
 	margin: 10px;
@@ -429,20 +427,21 @@ body.animated .wf-preloader > .wf-preloader__inner {
 
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	flex-grow: 1;
 	padding: 10px;
 }
 .skills__element-header {
 	color: #eee;
-	padding: 5px 15px;
+	padding: 5px 15px 8px;
 	text-align: center;
 }
 .skills__percent-box {
 	border: 1px solid #03636B;
 	color: #fff;
-	height: 100%;
+	height: 27px;
 
-	border-radius: inherit;
+	border-radius: 5px;
 	overflow: hidden;
 	position: relative;
 	
@@ -455,6 +454,9 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	width: 100%;
 	height: 100%;
 	background-color: #03636B;
+	border-radius: inherit;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 	
 	display: flex;
 	align-items: center;

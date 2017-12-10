@@ -23,11 +23,11 @@ function menuShowHide(_duration){
 }
 
 
-/* Добавляем проценты в высоту для элементов блока "Skills" (Навыки) */
+/* Добавляем проценты в ширину для элементов блока "Skills" (Навыки) */
 function addPercents(){
 	$(".js-add-percent").each(function(idx, _this){
 		$(_this).css({
-			height : $(_this).data("percent")
+			width : $(_this).data("percent")
 		}, 1000);
 		$(_this).parent().find(".js-percent-number").text($(_this).data("percent"));
 	});
