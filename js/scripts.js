@@ -27,8 +27,54 @@ function menuShowHide(_duration){
 			menu.removeAttr("style");
 		}
 	});
-
 }
+
+/* закрывает меню */
+function menuClose(){
+	if ($(".btn-container").hasClass("change")) {
+		menuShowHide();
+		$(".btn-container").removeClass("change");
+	}
+}
+
+/***
+**** header fixing with cloning an original header
+***/
+
+var originHeader = $('.js-nav-bar');
+var clonedHeader;
+var clonedHeaderHeight;
+
+/*  header cloning */
+$(function(){
+	clonedHeader = originHeader.clone().addClass("fix-nav");
+	$(".nav-bar").append(clonedHeader);
+	heightIdentify();
+});
+
+/* fixing */
+$(window).scroll(function(){
+	var docscroll = $(document).scrollTop();
+
+	if(docscroll > originHeader.offset().top + clonedHeaderHeight){
+		clonedHeader.addClass("show");
+	}else{
+		clonedHeader.removeClass("show");
+	}
+
+	// если был открыть меню, закрываем его
+	menuClose();
+});
+
+/* checking height */
+function heightIdentify(){
+	clonedHeaderHeight = clonedHeader.outerHeight();
+}
+
+$(window).on("resize", function(){
+	heightIdentify();
+});
+
 
 
 /* Добавляем проценты в ширину для элементов блока "Skills" (Навыки) */
@@ -155,10 +201,8 @@ function loadPage(fileName){
 
 function getPage(fileName){
 	/* скрываем меню, если он был вскроен */
-	if ($(".btn-container").hasClass("change")) {
-		menuShowHide();
-		$(".btn-container").removeClass("change");
-	}
+	menuClose();
+	
 	startPreloader();
 
 	fileName = fileName || '';
@@ -236,4 +280,4 @@ function startPreloader(){
 /*
 * snow bg
 */
-var aaSnowConfig = {snowflakes: 15};
+var aaSnowConfig = {snowflakes: 100};

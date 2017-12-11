@@ -34,20 +34,22 @@
 		</header>
 
 		<nav class="nav-bar">
-			<div class="menu-toggle">
-				<div class="btn-container" onclick="toggleMainMenu(this)">
-					<div class="btn-container__bar bar1"></div>
-					<div class="btn-container__bar bar2"></div>
-					<div class="btn-container__bar bar3"></div>
+			<div class="nav-bar__wrapper  js-nav-bar">
+				<div class="menu-toggle">
+					<div class="btn-container" onclick="toggleMainMenu(this)">
+						<div class="btn-container__bar bar1"></div>
+						<div class="btn-container__bar bar2"></div>
+						<div class="btn-container__bar bar3"></div>
+					</div>
 				</div>
+				<ul class="nav-bar__container  js-menu">
+					<li class="nav-bar__element"><a href="javascript:getPage('home')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Главная</a></li>
+					<li class="nav-bar__element"><a href="javascript:getPage('services')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Услуги</a></li>
+					<li class="nav-bar__element"><a href="javascript:getPage('portfolios')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Портфолио</a></li>
+					<li class="nav-bar__element"><a href="javascript:getPage('reviews')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Отзывы</a></li>
+					<li class="nav-bar__element"><a href="javascript:getPage('contacts')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Контакты</a></li>
+				</ul>
 			</div>
-			<ul class="nav-bar__container  js-menu">
-				<li class="nav-bar__element"><a href="javascript:getPage('home')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Главная</a></li>
-				<li class="nav-bar__element"><a href="javascript:getPage('services')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Услуги</a></li>
-				<li class="nav-bar__element"><a href="javascript:getPage('portfolios')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Портфолио</a></li>
-				<li class="nav-bar__element"><a href="javascript:getPage('reviews')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Отзывы</a></li>
-				<li class="nav-bar__element"><a href="javascript:getPage('contacts')" class="nav-bar__link  js-menu-item" data-menu-item='true' >Контакты</a></li>
-			</ul>
 		</nav>
 		<div class="content js-content">
 			<!-- тут будет загружаться сам контент, динамически, через js -->
