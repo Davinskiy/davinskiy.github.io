@@ -258,6 +258,9 @@ body.animated .wf-preloader > .wf-preloader__inner {
 .nav-bar__link:hover {
 	text-decoration: underline;
 }
+.nav-bar__link.active {
+	pointer-events: none;
+}
 
 .content {
 	background-color: #fff;
