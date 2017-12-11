@@ -882,9 +882,20 @@ body.animated .wf-preloader > .wf-preloader__inner {
 
 
 
+/**** footer ****/
+
+.footer {
+	background-color: #151515;
+	color: #eee;
+	padding: 20px 15px;
+}
+.footer__text {
+	font-size: 13px;
+	text-align: center;
+}
 
 
-
-
+/* ^^^^^^^^^^^^^
+** footer page */
 
 

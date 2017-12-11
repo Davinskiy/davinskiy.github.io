@@ -1,15 +1,16 @@
 var conf = {
 	ajaxDir : 'ajax/',
 	urlHash : '#view=',
-	allPages : [
-				"contacts",
-				"home",
-				"portfolios",
-				"reviews",
-				"services"
-				]
+	allPages : {
+				"contacts" : "Контакты",
+				"home" : "Главная",
+				"portfolios" : "Портфолио",
+				"reviews" : "Отзывы",
+				"services" : "Услуги"
+				}
 };
 var header = $(".header");
+var mainTitle = $("title").text();
 
 /* menu toggle button */
 function toggleMainMenu(x) {
@@ -224,6 +225,9 @@ function getPage(fileName){
 	// уснатавливаем соответствующую адресную строку
 	setLocation(conf.urlHash + fileName);
 
+	var title = conf.allPages[fileName] + " – " + mainTitle;
+	$("title").text(title);
+
 	$(".js-menu-item").removeClass("active");
 	$('a[href*=' + fileName + ']').addClass("active");
 
@@ -240,7 +244,7 @@ $(function(){
 									(url.indexOf("&") == -1)? url.length: url.indexOf("&")
 									);
 
-		if(conf.allPages.indexOf(fileName) < 0)
+		if(!fileName in conf.allPages)
 			fileName = '';
 	}
 
@@ -275,3 +279,11 @@ function startPreloader(){
 * snow bg
 */
 var aaSnowConfig = {snowflakes: 100};
+
+/**
+* Установка года в футере
+*/
+var startYear = 2017;
+var thisYear = new Date().getFullYear();
+$(".js-set-year").text( (thisYear == startYear)? thisYear : startYear + " - " + thisYear );
+/*^^^^^^^^^^^^^^^^^^^^^^^^*/
