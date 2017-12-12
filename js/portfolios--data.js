@@ -5,11 +5,13 @@ var portfoliosData = [
 	{
 		title : "Florida Builders",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/florida-builders/mini.jpg",
-		desc : "Construction and renovation of Residential & Commercial Spaces in Florida",
-		impress : "Первый в моем портфолио сайт с внутренними страница. Но в этом ничего удивительного.. Сам сайт - мне нравится: галерея, фоновый слайдер... достаточно js, чтобы не скучалось :)",
+		desc : "Сайт по услугам созданию и конструирование домов.",
+		impress : "Первый в моем портфолио сайт с внутренными страницами. Хотя в этом ничего и удивительного.. \
+					А вот сам сайт - мне нравится: галерея, фоновый слайдер... достаточно js-программирование, чтобы не скучать :)\
+					<br /> На фото там только одна страница. Придется посерфить, чтобы найти остальные ;)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/florida-builders/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/florida-builders/full-img.jpg",
-		show: false
+		show: true
 	},
 	{
 		title : "Mamka Store",
