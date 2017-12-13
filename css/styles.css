@@ -787,6 +787,7 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	padding: 10px;
 	padding-bottom: 20px;
 	opacity: 0;
+	visibility: hidden;
 	color: #fff;
 
 	overflow-y: auto;
@@ -801,6 +802,7 @@ body.animated .wf-preloader > .wf-preloader__inner {
 }
 .portfolios__projects-wrapper:hover .portfolios__info-box {
 	opacity: 1;
+	visibility: visible;
 	background-color: rgba(0,0,0,.9);
 }
 
