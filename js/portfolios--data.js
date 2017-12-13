@@ -29,7 +29,7 @@ var portfoliosData = [
 		impress : "Интересный был заказ :)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/adulthood/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/adulthood/full-img.jpg",
-		show: true
+		show: false
 	},
 	{
 		title : "Правопоритет",
