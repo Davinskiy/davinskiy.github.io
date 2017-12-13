@@ -278,7 +278,13 @@ function startPreloader(){
 /*
 * snow bg
 */
-var aaSnowConfig = {snowflakes: 100};
+// запускаем только на десктопных версиях, а то не красиво..
+var md = new MobileDetect(window.navigator.userAgent);
+
+if( !md.mobile()  && !md.mobile() ) {
+	var aaSnowConfig = {snowflakes: 150};
+}
+
 
 /**
 * Установка года в футере
