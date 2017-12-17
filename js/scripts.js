@@ -9,6 +9,7 @@ var conf = {
 				"services" : "Услуги"
 				}
 };
+var thisPage;
 var header = $(".header");
 var mainTitle = $("title").text();
 
@@ -53,19 +54,43 @@ $(function(){
 	heightIdentify();
 });
 
-/* fixing */
-$(window).scroll(function(){
-	var docscroll = $(document).scrollTop();
+var arePortfoliosLoading = false;
 
-	if(docscroll > originHeader.offset().top + clonedHeaderHeight){
-		clonedHeader.addClass("show");
-	}else{
-		clonedHeader.removeClass("show");
-	}
+/* fixing - автозагрузка ..*/
+$(function(){
+	$(window).scroll(function(){
+		var docscroll = $(document).scrollTop();
 
-	// если был открыть меню, закрываем его
-	menuClose();
+		if(docscroll > originHeader.offset().top + clonedHeaderHeight){
+			clonedHeader.addClass("show");
+		}else{
+			try{
+				clonedHeader.removeClass("show");
+			}catch(e){}
+		}
+
+		// если был открыть меню, закрываем его
+		menuClose();
+
+
+		/* авто загрузка портфолио */
+		if((docscroll + $(window).height()) >= $(".footer").offset().top){
+			if(thisPage == 'portfolios') {
+
+				if (!arePortfoliosLoading) {
+					showPortfolios();
+					arePortfoliosLoading = true;
+
+					setTimeout(function(){
+						arePortfoliosLoading = false;
+					}, 3000);
+
+				}
+			}
+		}
+	});
 });
+
 
 /* checking height */
 function heightIdentify(){
@@ -231,6 +256,7 @@ function getPage(fileName){
 	$(".js-menu-item").removeClass("active");
 	$('a[href*=' + fileName + ']').addClass("active");
 
+	thisPage = fileName;
 }
 
 
