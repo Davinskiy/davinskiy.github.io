@@ -3,6 +3,24 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Soco Group",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/soco.group/mini.jpg",
+		desc : "Одностраничник с одним экраном - фоновым слайдером. ",
+		impress : "Было немного сложно сделать слайдер фоновым, а так, очень красивая задача :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/soco.group/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/soco.group/full-img.jpg",
+		show: true
+	},
+	{
+		title : "Инвистиции",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/investing/mini.jpg",
+		desc : "Макет от постоянного клиент про инвистиции.",
+		impress : "Красивый макет, все зеленое. Было приятно работотать. :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/investing/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/investing/full-img.jpg",
+		show: true
+	},
+	{
 		title : "Florida Builders",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/florida-builders/mini.jpg",
 		desc : "Сайт по услугам созданию и конструирование домов.",
