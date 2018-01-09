@@ -3,10 +3,19 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "World Of Tanks",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/wot/mini.jpg",
+		desc : "Сайт для любителей игр. ",
+		impress : "Красивый макет. Жаль, что не WarFace :D",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/wot/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/wot/full-img.jpg",
+		show: true
+	},
+	{
 		title : "Soco Group",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/soco.group/mini.jpg",
 		desc : "Одностраничник с одним экраном - фоновым слайдером. ",
-		impress : "Было немного сложно сделать слайдер фоновым, а так, очень красивая задача :)",
+		impress : "Люблю простые, но очень красивые макеты. :)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/soco.group/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/soco.group/full-img.jpg",
 		show: true
