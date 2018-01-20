@@ -3,6 +3,26 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Лендинг детского магазина",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/mamka-landing/mini.jpg",
+		desc : "Еще одна верста от моего ранее клиента.",
+		impress : "Как и раньше очень красивый макет, что очень интересно верстать :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/mamka-landing/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/mamka-landing/full-img.jpg",
+		show: true
+	},
+	{
+		title : "Страница-портфолио",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/04-portfolio/mini.jpg",
+		desc : "По ТЗ нужно было сверстать страницу без флексов и фреймворков. Не знал, почему, но сделал. \
+				Только сейчас понял, это была дипломная работа заказчика :). Вначале нужно было просто \
+				верстать в пиксель перфект, позже зохотел и адаптив. Все сделано..",
+		impress : "Жаль, что у меня не были таких простых дипломныых работ :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/04-portfolio/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/04-portfolio/full-img.jpg",
+		show: true
+	},
+	{
 		title : "World Of Tanks",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/wot/mini.jpg",
 		desc : "Сайт для любителей игр. ",
