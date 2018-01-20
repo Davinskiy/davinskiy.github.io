@@ -192,7 +192,7 @@ body.animated .wf-preloader > .wf-preloader__inner {
 }
 
 .disabled {
-	opacity: .8;
+	opacity: .3;
 	pointer-events: none;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
