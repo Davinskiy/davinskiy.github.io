@@ -305,11 +305,11 @@ function startPreloader(){
 * snow bg
 */
 // запускаем только на десктопных версиях, а то не красиво..
-var md = new MobileDetect(window.navigator.userAgent);
+/*var md = new MobileDetect(window.navigator.userAgent);
 
 if( !md.mobile()  && !md.mobile() ) {
 	var aaSnowConfig = {snowflakes: 150};
-}
+}*/
 
 
 /**
