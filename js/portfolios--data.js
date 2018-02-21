@@ -3,9 +3,18 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Dental marketing",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/stomotolog-uv/mini.jpg",
+		desc : "Еще один макет без излишеств дизайнера.",
+		impress : "Классика жанра :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/stomotolog-uv/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/stomotolog-uv/full-img.jpg",
+		show: true
+	},
+	{
 		title : "Лендинг детского магазина",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/mamka-landing/mini.jpg",
-		desc : "Еще одна верста от моего ранее клиента.",
+		desc : "Еще одна верста для моего ранее клиента.",
 		impress : "Как и раньше очень красивый макет, что очень интересно верстать :)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/mamka-landing/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/mamka-landing/full-img.jpg",
