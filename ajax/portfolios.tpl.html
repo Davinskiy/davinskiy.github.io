@@ -2,7 +2,13 @@
 	<div class="portfolios__projects-wrapper  js-okshadow-portfolios">
 		<div class="portfolios__sliding-box">
 			<div class="portfolios__miniature-box">
-				<img src="{{miniature}}" class="portfolios__miniature-img" alt="Miniature of portfolio" />
+				<!-- <img src="{{miniature}}" class="portfolios__miniature-img" alt="Miniature of portfolio" /> -->
+				<a href="{{url-to-jpg}}"
+				title="Посмотреть на макет (JPG)" 
+				target="_blank">
+					<img src="{{miniature}}" class="portfolios__miniature-img" alt="Miniature of portfolio" />
+				
+				</a>
 				<!-- <img src="https://dummyimage.com/300x400/000/fff" class="portfolios__miniature-img" alt="Miniature of portfolio"/> -->
 			</div>
 			<!-- <div class="portfolios__info-box  scroll-styled">
@@ -18,20 +24,26 @@
 			</div> -->
 		</div>
 		<div class="portfolios__project-bottom-info">
-			<div class="portfolios__project-header">{{title}}</div>
+			<div class="portfolios__project-header">
+				<a href="{{url-to-work}}"
+					title="Посмотреть на выполненную работу" 
+					target="_blank">
+					{{title}}
+				</a>
+			</div>
 			<a href="{{url-to-work}}" 
 					class="portfolios__project-link  btn-classic" 
-					title="URL на выполненную работу" 
+					title="Посмотреть на выполненную верстку" 
 					target="_blank">
 				<i class="fa fa-link  portfolios__icon"></i>Посмотреть на работу
 			</a>
-				<br/>
+			<!-- 	<br/>
 			<a href="{{url-to-jpg}}" 
 				class="portfolios__project-link  btn-classic" 
 				title="Изображение (в JPG)" 
 				target="_blank">
 				<i class="fa fa-picture-o  portfolios__icon"></i>Посмотреть макет (JPG)
-			</a>
+			</a> -->
 		</div>
 	</div>
 </div>
