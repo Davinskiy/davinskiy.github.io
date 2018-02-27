@@ -3,6 +3,15 @@
 /* Данные портфолио | Инфо добавляем в начало массива (выводятся на страницу в таком же порядке) */
 var portfoliosData = [
 	{
+		title : "Echo design",
+		miniature : "https://davinskiy.bitbucket.io/portfolios/echo-design/mini.jpg",
+		desc : "Настоящий акустический поролон ....",
+		impress : "Классика жанра :)",
+		url_to_work : "https://davinskiy.bitbucket.io/portfolios/echo-design/index.html",
+		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/echo-design/full-img.jpg",
+		show: true
+	},
+	{
 		title : "Dental marketing",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/stomotolog-uv/mini.jpg",
 		desc : "Еще один макет без излишеств дизайнера.",
@@ -76,7 +85,7 @@ var portfoliosData = [
 		impress : "Было круто такое реализовать, особенно таймер :)",
 		url_to_work : "https://davinskiy.bitbucket.io/portfolios/mamka-store/index.html",
 		url_to_jpg : "https://davinskiy.bitbucket.io/portfolios/mamka-store/full-img.jpg",
-		show: true
+		show: false
 	},
 	{
 		title : "18+?",
