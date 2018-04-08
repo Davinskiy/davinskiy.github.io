@@ -504,6 +504,7 @@ body.animated .wf-preloader > .wf-preloader__inner {
 .skills {
 	padding-top: 30px;
 	overflow: hidden;
+	width: 100%;
 }
 .skills__header {
 	padding-bottom: 5px;
