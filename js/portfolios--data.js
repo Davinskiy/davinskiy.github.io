@@ -59,7 +59,7 @@ var portfoliosData = [
 		show: true
 	},
 	{
-		title : "Инвистиции",
+		title : "Инвестиции",
 		miniature : "https://davinskiy.bitbucket.io/portfolios/investing/mini.jpg",
 		desc : "Макет от постоянного клиент про инвистиции.",
 		impress : "Красивый макет, все зеленое. Было приятно работотать. :)",
