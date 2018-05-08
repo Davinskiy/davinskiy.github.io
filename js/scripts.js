@@ -168,11 +168,11 @@ var portStart = 0;
 var loadedPortItems = false;
 function showPortfolios(cnt){
 	
-	if (!loadedPortItems) {
+	if (loadedPortItems === false) {
 		loadedPortItems = portfolioContainer.children().length;
 	}
 
-	if (allPortfolios.length >= loadedPortItems) {
+	if (allPortfolios.length < loadedPortItems) {
 		return false;
 	}
 
