@@ -10,7 +10,6 @@ var conf = {
 				}
 };
 var thisPage;
-var header = $(".header");
 var mainTitle = $("title").text();
 
 /* menu toggle button */
@@ -72,14 +71,13 @@ $(function(){
 		// если был открыть меню, закрываем его
 		menuClose();
 
-
 		/* авто загрузка портфолио */
 		if((docscroll + $(window).height()) >= $(".footer").offset().top){
 			if(thisPage == 'portfolios') {
 
 				if (!arePortfoliosLoading) {
-					showPortfolios();
 					arePortfoliosLoading = true;
+					showPortfolios();
 
 					setTimeout(function(){
 						arePortfoliosLoading = false;
@@ -167,10 +165,20 @@ $(function(){
 
 
 var portStart = 0;
+var loadedPortItems = false;
 function showPortfolios(cnt){
+	
+	if (!loadedPortItems) {
+		loadedPortItems = portfolioContainer.children().length;
+	}
+
+	if (allPortfolios.length >= loadedPortItems) {
+		return false;
+	}
+
+
 	cnt = cnt || 6;
 	var _html = '';
-
 
 	for(var i = portStart; i < (portStart+cnt); i++){
 		if (allPortfolios[i] == undefined) {
@@ -180,11 +188,14 @@ function showPortfolios(cnt){
 		}
 		_html += allPortfolios[i];
 	}
-	portStart += cnt;
-	if (portStart == cnt) {
+	if (portStart <= 0) {
 		portfolioContainer.html(_html);
-	}else 
+	}else {
 		portfolioContainer.append(_html);
+	}
+
+	// сдвигаем указатель
+	portStart += cnt;
 
 }
 
@@ -209,15 +220,17 @@ function loadPage(fileName){
 					addPercents();
 				break;
 				case 'portfolios':
-					$(".js-port-quatity").text(allPortfolios.length);
-					portfolioContainer = $(".js-portfolio-container");
-					showPortfolios();
+					setTimeout(function(){
+						$(".js-port-quatity").text(allPortfolios.length);
+						portfolioContainer = $(".js-portfolio-container");
+						showPortfolios();
+					}, 150);
 				break;
 				case 'reviews':
-				setTimeout(function(){
-					VK.init({apiId: 6255802, onlyWidgets: true});
-					VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
-				}, 500);
+					setTimeout(function(){
+						VK.init({apiId: 6255802, onlyWidgets: true});
+						VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+					}, 500);
 				break;
 			}
 		}
