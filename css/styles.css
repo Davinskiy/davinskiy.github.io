@@ -27,20 +27,33 @@ body {
 	-webkit-background-size: 35px auto;
 	        background-size: 35px auto;
 	background-attachment: fixed;*/
-
-	position: relative;
-	z-index: 1;
+	background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px;
+	background-color: #12364a;
+	background-size: 12px 12px;
 }
+body:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-image: radial-gradient(circle, transparent 0%, rgba(7, 9, 11, 0.56) 100%);
+}
+
 @media only screen and (min-width: 640px){
 	body {
 		padding: 50px 0;
-
+/*
 		background: url(../img/green.jpg) center top;
 		background-size: cover;
-		background-attachment: fixed;
+		background-attachment: fixed;*/
 
 		position: relative;
 	}
+
 }
 
 #snowflakesCanvas {
@@ -203,8 +216,8 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	color: #aaa;
 	/*background-color: #fff;*/
 	color: #333;
-	-webkit-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.5);
-	        box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 0px 35px 10px rgba(255,255,255,0.1);
+	        box-shadow: 0px 0px 35px 10px rgba(255,255,255,0.1);
 
 	-webkit-border-radius: 5px;
 
@@ -218,10 +231,12 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	z-index: 99;
 }
 .main-info {
-	text-shadow: #333 1px 0px 0px, #333 0.540302px 0.841471px 0px, #333 -0.416147px 0.909297px 0px, #333 -0.989992px 0.14112px 0px, #333 -0.653644px -0.756802px 0px, #333 0.283662px -0.958924px 0px, #333 0.96017px -0.279415px 0px;
+	/*text-shadow: #333 1px 0px 0px, #333 0.540302px 0.841471px 0px, #333 -0.416147px 0.909297px 0px, #333 -0.989992px 0.14112px 0px, #333 -0.653644px -0.756802px 0px, #333 0.283662px -0.958924px 0px, #333 0.96017px -0.279415px 0px;*/
 	padding: 15px;
-	background: url(../img/header-bg.jpg) center center;
-	background-size: cover;
+	/*background: url(../img/header-bg.jpg) center center;
+	background-size: cover;*/
+	/*background: linear-gradient(45deg, #EECFBA, #C5DDE8);*/
+	/*background-color: #222;*/
 
 	color: #ddd;
 	min-height: 200px;
@@ -234,8 +249,9 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
+	text-align: center;
 }
-.main-info:after {
+/*.main-info:after {
 	position: absolute;
 	content: "";
 	top: 0;
@@ -245,8 +261,7 @@ body.animated .wf-preloader > .wf-preloader__inner {
 	background-color: #000;
 	opacity: 0.6;
 	z-index: -1;
-
-}
+}*/
 .main-info__specialize-slang {
 	text-transform: uppercase;
 	padding-top: 20px;
