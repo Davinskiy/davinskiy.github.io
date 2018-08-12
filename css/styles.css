@@ -568,6 +568,10 @@ warface preloader*/
 	color: #f60;
 }
 
+.services__list-icon-rubles {
+	width: 13px;
+}
+
 .services__btn-box {
 	text-align: center;
 	padding-top: 20px;
@@ -717,6 +721,10 @@ warface preloader*/
 
 .portfolios__icon {
 	margin-right: 5px;
+}
+
+.portfolios__warn-icon {
+	max-width: 100px;
 }
 .portfolios-box__no-more-projects {
 	text-align: center;
