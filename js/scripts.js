@@ -120,21 +120,26 @@ function loadPage(pageName) {
 
 			loadPortfoliosData(); //  загружаем данные портфолио
 
-
-			setTimeout(function(){
-				document.querySelector(".js-portfolios-quantity").innerText = allPortfolios.length;
-				
-				fillPortfolios();
-				Animation.stop();
-				
-			}, 50);
-
+			fillPortfoliosStarter();
+			
 			document.querySelector(".js-portfolios-per-items").innerText = conf.portfoliosMaxItem;
 
 
 		}
 		Animation.stop();
 	};
+}
+
+function fillPortfoliosStarter(){
+
+	if (!allPortfolios.length) {
+		setTimeout(fillPortfoliosStarter, 50);
+		return false;
+	}
+	document.querySelector(".js-portfolios-quantity").innerText = allPortfolios.length;
+	
+	fillPortfolios();
+	Animation.stop();
 }
 
 function fillPortfolios(){
