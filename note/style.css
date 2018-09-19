@@ -1,0 +1,270 @@
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	font-weight: normal;
+	font-size: inherit;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	color: inherit;
+}
+
+html {
+	font-size: 18px;
+}
+
+@media all and (max-width: 1200px) {
+	html {
+		font-size: 17px;
+	}
+}
+
+@media all and (max-width: 992px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media all and (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+body {
+	/* https://stackoverflow.com/questions/40138434/how-to-limit-break-all-to-only-long-words */
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-text-decoration-skip: objects;
+			text-decoration-skip: objects;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "Palatino Linotype", sans-serif;
+	color: #444;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+}
+
+ul, ol, li  {
+	list-style-type: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.hover-underline:hover {
+	text-decoration: underline;
+}
+
+
+.notes {
+	padding: 20px 0;
+}
+.notes__inner {
+	max-width: 992px;
+	margin: auto;
+	padding: 15px;
+
+	border: 1px solid #eee;
+	background-color: #fbfbfb;
+	border-radius: 5px;
+}
+.notes__heading {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+
+	margin-bottom: 30px;
+}
+.notes__actions {
+	text-align: right;
+	text-align: center;
+}
+.notes__actions-btn {
+	font-size: 1rem;
+	color: #930;
+}
+.notes__list {
+	padding: 20px 0;
+}
+.notes__list-quantity {
+	font-size: 0.9rem;
+	text-align: center;
+	padding: 10px 0;
+}
+.notes__list-quantity--bold {
+	font-weight: bold;
+}
+.notes__pagination {
+}
+
+
+.list {}
+.list__container {}
+.list__item {
+	border: 1px solid #dadada;
+	background-color: #fff;
+
+	padding: 15px;
+	position: relative;
+
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+.list__item:last-child {
+	margin-bottom: 0;
+}
+.list__title {
+	font-size: 1.15rem;
+	font-weight: bold;
+}
+.list__remove {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+
+	border: 1px solid #eee;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	font-size: 0;
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+}
+.list__remove:before,
+.list__remove:after {
+	content: "";
+	position: absolute;
+	width: 50%;
+	height: 1px;
+	background-color: #999;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.list__remove:hover:before,
+.list__remove:hover:after {
+	background-color: #930;
+}
+
+.list__remove:after {
+	-webkit-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	        transform: rotate(90deg);
+}
+
+.list__content {
+	padding: 20px 0;
+	font-size: 1rem;
+}
+.list__info {
+	text-align: right;
+	font-size: 0.85rem;
+}
+.list__info-item {}
+
+.pagination {}
+.pagination__container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	background-color: #F5F5F5;
+	border: 1px solid #e9e9e9;
+	border-radius: 5px;
+}
+.pagination__item {
+	margin: 10px 5px;
+}
+.pagination__link {
+	display: block;
+	padding: 5px 10px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+
+.create {
+	padding-top: 20px;
+}
+.create__heading {
+	text-align: center;
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+}
+.create__form {
+
+}
+.create__form-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.create__form-item {
+	border: 1px solid #d6d6d6;
+	background-color: #fff;
+	padding: 10px;
+	resize: none;
+	margin-bottom: 15px;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+.create__form-item-big {
+	height: 200px;
+}
+.create__form-item-btn {
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	padding: 15px;
+	background-color: #86CEEE;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.1111111111111112rem;
+}
+
+::-webkit-input-placeholder {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}
+::-moz-placeholder          {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 19+ */
+:-moz-placeholder           {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}

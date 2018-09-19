@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>localStorage - practice</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<section class="notes">
+		<div class="notes__inner">
+			<h1 class="notes__heading">Notes on your browser</h1>
+			<div class="notes__actions">
+				<a href="javascript:showToggle('.js-create');" class="notes__actions-btn hover-underline">New note +</a>
+			</div>
+
+			<div class="create js-create hidden">
+				<h2 class="create__heading">Creating a new note</h2>
+				<div class="create__form">
+					<form action="javascript:addNote();" class="create__form-container">
+						<input type="text" name="title" id="note_title" class="create__form-item" placeholder="Note title" autocomplete="off" maxlength="125">
+						<textarea name="content" id="note_content" class="create__form-item create__form-item-big" required placeholder="Note content (required)" minlength="10"></textarea>
+						<button class="create__form-item-btn">Create</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="notes__list">
+				<div class="notes__list-quantity js-note-quantity">You do not have any note yet.</div>
+				<div class="list">
+					<ul class="list__container  js-notes-container"></ul>
+				</div>
+			</div>
+			<div class="notes__pagination">
+				<div class="pagination">
+					<ul class="pagination__container">
+						<li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+						<li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
+						<li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+						<li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+						<li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+
+	<div class="js-note-template hidden">
+		<li class="list__item">
+			<h2 class="list__title">{{title}}</h2>
+			<a href="javascript:removeNote({{id}});" class="list__remove" title="Remove this note">&times;</a>
+			<div class="list__content">{{content}}</div>
+			<div class="list__info">
+				<span class="list__info-item">{{time}}</span>
+			</div>
+		</li>
+	</div>
+
+	<script src="scripts.js"></script>
+
+</body>
+</html>
