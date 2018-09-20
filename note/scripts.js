@@ -1,7 +1,6 @@
 let all_notes = [];
 let notes_container = document.querySelector(".js-notes-container");
 let notes_quantity = document.querySelector(".js-note-quantity");
-let per_page_notes = 3;
 
 if (localStorage.getItem("all_notes")) {
 	all_notes = JSON.parse(localStorage.getItem("all_notes"));
