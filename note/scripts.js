@@ -52,20 +52,27 @@ function addNote(){
 	let title = document.getElementById("note_title");
 	let content = document.getElementById("note_content");
 
-	let title_val = title.value || 'Untitled note';
-	let content_val = content.value;
-	let time_stamp = new Date().getTime();
+	let title_val = htmlEntitiesEncode(title.value) || 'Untitled note';
+	let content_val = htmlEntitiesEncode(content.value);
+
 
 	all_notes.unshift({
 		'title' : title_val,
 		'content' : content_val,
-		'time_stamp' : time_stamp,
+		'time_stamp' : new Date().getTime(),
 	});
 
 	title.value  = '';
 	content.value  = '';
 
 	saveNotes();
+}
+
+function htmlEntitiesEncode(html){
+	let obj = document.createElement('p');
+	obj.innerText = html;
+
+	return obj.innerHTML;
 }
 
 function saveNotes(){
@@ -112,4 +119,60 @@ function replaceTemplate(replaceText, replaceObj, before = '{{', after = '}}'){
 		replaceText = replaceText.split(before + text + after).join(replaceObj[text]);;
 	}
 	return replaceText;
+}
+
+
+/* close editing */
+function editNote(_this, id){
+	let box_item = getCartItem(_this, id);
+
+	let editing_item = box_item.querySelectorAll(".js-edit");
+
+	for (let item of editing_item) {
+		// console.log(item);
+		item.setAttribute("contenteditable", 'true');
+		item.setAttribute("data-origin-data", item.innerHTML);
+	}
+
+	classEdit(box_item, 'editing', 'add');
+}
+
+
+/* saving */
+function saveNote(_this, id){
+	let box_item = getCartItem(_this, id);
+
+	let title_val = htmlEntitiesEncode(box_item.querySelector("[data-title]").innerText);
+	let content_val = htmlEntitiesEncode(box_item.querySelector("[data-content]").innerText);
+
+	all_notes[id] = {
+		'title' : title_val,
+		'content' : content_val,
+		'time_stamp' : new Date().getTime(),
+	};
+
+
+	closeEditing(_this, id);
+	showNotes();
+	saveNotes();
+}
+
+/* close editing */
+function closeEditing(_this, id){
+	let box_item = getCartItem(_this, id);
+
+	classEdit(box_item, 'editing', 'remove');
+
+	let editing_item = box_item.querySelectorAll(".js-edit");
+
+	for (let item of editing_item) {
+		item.setAttribute("contenteditable", 'false');
+		item.innerHTML = item.getAttribute("data-origin-data");
+		item.removeAttribute("data-origin-data");
+	}
+}
+
+
+function getCartItem(_this, id){
+	return document.querySelector(".js-note-item[data-id='"+ id +"']");
 }
