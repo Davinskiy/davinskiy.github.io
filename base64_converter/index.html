@@ -15,7 +15,7 @@
 			<div class="converter__desc">On pure JS</div>
 			<div class="converter__action">
 				<input type="file" class="hidden" id="converter_input" accept="image/*" multiple>
-				<label for="converter_input" class="converter__action-btn">Chose Files</label>
+				<label for="converter_input" class="converter__action-btn">Choose Files</label>
 			</div>
 			<div class="converter__list">
 				<div class="list">
@@ -27,10 +27,14 @@
 
 	<div class="js-template hidden">
 		<li class="list__item">
-			<div class="list__media" style="background-image: url({{img_code}});"></div>
+			<div class="list__media">
+				<img class="list__media-img img-{{id}}" src="{{img_code}}">
+			</div>
 			<div class="list__info">
 				<h3 class="list__info-heading">{{name}}</h3>
-				<input type="text" class="list__info-code-field" value="{{img_code}}" readonly>
+
+				<i class="list__info-show-code js-show-code" onclick="showCode(this, '.img-{{id}}', '.field-{{id}}' );">Show base64 code</i>
+				<input type="text" class="list__info-code-field js-field-item field-{{id}}" value="1" readonly>
 
 				<div class="list__info-bottom">
 					<div class="list__info-bottom-item">

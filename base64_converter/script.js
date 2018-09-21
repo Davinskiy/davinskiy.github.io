@@ -26,6 +26,7 @@ file_input.addEventListener("change", function(e){
 
 			tmp = replaceTemplate(tmp, {
 				'name' : name,
+				'id' : i,
 				'size' : size,
 				'type' : type,
 				'img_code' : e.target.result,
@@ -75,3 +76,20 @@ function bytesToSize(bytes) {
 	var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
 	return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 };
+
+function showCode(_this, img_selector, field_selector){
+
+	let img_item = document.querySelector(img_selector);
+	let field_item = document.querySelector(field_selector);
+
+	let all_fields = document.querySelectorAll(".js-field-item[value^='data']");
+
+	// очищаем все элементы input, где есть вставка кода
+	for (let field of all_fields){
+		field.setAttribute("value", '');
+	}
+
+	setTimeout(function(){
+		field_item.setAttribute("value", img_item.getAttribute("src"));
+	}, 50);
+}

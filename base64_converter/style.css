@@ -120,6 +120,8 @@ ul, ol, li {
 	max-width: 500px;
 	cursor: pointer;
 }
+.converter__action-btn {
+}
 .converter__list {
 	text-align: left;
 }
@@ -146,9 +148,16 @@ ul, ol, li {
 .list__media {
 	width: 150px;
 	border: 1px solid #999;
-
-	background: center center no-repeat;
-	background-size: contain;
+	
+	position: relative;
+}
+.list__media-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
 }
 .list__info {
 	height: 100%;
@@ -173,6 +182,9 @@ ul, ol, li {
 	padding: 5px;
 	font-size: .9rem;
 }
+.list__info-code-field:not([value^='data']) {
+	display: none;
+}
 .list__info-bottom {
 	margin-top: auto;
 	display: -webkit-box;
@@ -188,6 +200,12 @@ ul, ol, li {
 }
 .list__info-bottom-item--bold {
 	font-weight: bold;
+}
+
+.list__info-show-code {
+	cursor: pointer;
+	text-decoration: underline;
+	margin-right: auto;
 }
 
 @media all and (max-width: 500px){
