@@ -83,11 +83,11 @@ ul, ol, li {
 }
 
 
-.converter {
+.encoder {
 	padding: 20px;
 	text-align: center;
 }
-.converter__inner {
+.encoder__inner {
 	max-width: 992px;
 	background-color: #fff;
 	border: 1px solid #d6d6d6;
@@ -95,19 +95,19 @@ ul, ol, li {
 	margin: auto;
 	padding: 20px 15px;
 }
-.converter__heading {
+.encoder__heading {
 	font-weight: bold;
 	font-size: 1.4rem;
 	margin-bottom: 10px;
 }
-.converter__desc {
+.encoder__desc {
 	font-size: 0.95rem;
 	margin-bottom: 20px;
 }
-.converter__action {
+.encoder__action {
 	margin-bottom: 30px;
 }
-.converter__action-btn {
+.encoder__action-btn {
 	text-transform: uppercase;
 	font-size: .95rem;
 	border: 1px solid #000;
@@ -120,9 +120,9 @@ ul, ol, li {
 	max-width: 500px;
 	cursor: pointer;
 }
-.converter__action-btn {
+.encoder__action-btn {
 }
-.converter__list {
+.encoder__list {
 	text-align: left;
 }
 
