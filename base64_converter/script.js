@@ -9,6 +9,9 @@ file_input.addEventListener("change", function(e){
 	let images = file_input.files;
 	let images_len = images.length;
 
+	if (!images_len)
+		return false;
+
 	list_container.innerHTML = '';
 
 	for (let i = 0; i < images_len; i++){
