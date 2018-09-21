@@ -40,7 +40,15 @@
 			<h2 class="list__title  js-edit" data-title>{{title}}</h2>
 			<a href="javascript:removeNote({{id}});" class="list__remove edit-hide" title="Remove this note">&times;</a>
 			<a href="javascript:closeEditing(this, {{id}});" class="list__remove edit-show" title="Close editing">&times;</a>
-			<div class="list__content js-edit" data-content>{{content}}</div>
+
+			<div class="content__wrapper">
+				<input type="checkbox" id="content_{{id}}" class="content__toggle-btn hidden">
+				<div class="list__content js-edit" data-content>{{content}}</div>
+				<div class="text-right">
+					<label class="content__more" for="content_{{id}}">...</label>
+				</div>
+			</div>
+
 			<div class="list__info">
 				<a href="javascript:editNote(this, {{id}});" class="list__info-item link underline hover-underline-out edit-hide">Edit note</a>
 				<a href="javascript:saveNote(this, {{id}});" class="list__info-item link underline hover-underline-out edit-show">Save</a>

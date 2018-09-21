@@ -76,6 +76,13 @@ ul, ol, li  {
 	list-style-type: none;
 }
 
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+
 .link {
 	color: #930;
 }
@@ -279,3 +286,49 @@ ul, ol, li  {
 ::-moz-placeholder          {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 19+ */
 :-moz-placeholder           {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 18- */
 :-ms-input-placeholder      {color:#888; font-size: 1rem; font-family: "Palatino Linotype", sans-serif;}
+
+
+
+
+
+
+.list__content {
+	max-height: 300px;
+	overflow: hidden;
+}
+.content__wrapper {
+	position: relative;
+	margin-bottom: 20px;
+}
+.content__more {
+	cursor: pointer;
+	display: inline-block;
+
+	line-height: 1;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	max-width: 200px;
+	margin-left: auto;
+	
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding: 0 20px 5px;
+
+	background: linear-gradient(to bottom, transparent, #fff);
+	background: linear-gradient(135deg, rgba(255,255,255,.5), #fff 50%);
+}
+.editing .content__more {
+	display: none;
+}
+.content__toggle-btn:checked + * + * {
+	display: none;
+}
+.editing .list__content,
+.content__toggle-btn:checked + .list__content {
+	max-height: 100%;
+	overflow: visible;
+}
