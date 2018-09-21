@@ -92,4 +92,15 @@ function showCode(_this, img_selector, field_selector){
 	setTimeout(function(){
 		field_item.setAttribute("value", img_item.getAttribute("src"));
 	}, 50);
+
+
+	// омг, зачем я это делаю... не смотрите ниже :/
+	delete _this;
+	delete img_selector;
+	delete field_selector;
+	delete img_item;
+	delete field_item;
+	delete all_fields;
+
+	return true;
 }
