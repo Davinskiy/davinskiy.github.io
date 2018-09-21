@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>FileReader - practice</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<section class="converter">
+		<div class="converter__inner">
+			<h1 class="converter__heading">Image to Base64 Converter</h1>
+			<div class="converter__desc">On pure JS</div>
+			<div class="converter__action">
+				<input type="file" class="hidden" id="converter_input" accept="image/*" multiple>
+				<label for="converter_input" class="converter__action-btn">Chose Files</label>
+			</div>
+			<div class="converter__list">
+				<div class="list">
+					<ul class="list__container js-list-container"></ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="js-template hidden">
+		<li class="list__item">
+			<div class="list__media" style="background-image: url({{img_code}});"></div>
+			<div class="list__info">
+				<h3 class="list__info-heading">{{name}}</h3>
+				<input type="text" class="list__info-code-field" value="{{img_code}}" readonly>
+
+				<div class="list__info-bottom">
+					<div class="list__info-bottom-item">
+						Type: <span class="list__info-bottom-item--bold">{{type}}</span>
+					</div>
+					<div class="list__info-bottom-item">
+						Size: <span class="list__info-bottom-item--bold">{{size}}</span>
+					</div>
+				</div>
+				
+			</div>
+		</li>
+	</div>
+
+	<!-- scripts -->
+	<script src="script.js"></script>
+</body>
+</html>
