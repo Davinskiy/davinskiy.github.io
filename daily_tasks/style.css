@@ -1,0 +1,474 @@
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	font-weight: normal;
+	font-size: inherit;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	color: inherit;
+	resize: none;
+}
+
+html {
+	font-size: 18px;
+}
+
+@media all and (max-width: 1200px) {
+	html {
+		font-size: 17px;
+	}
+}
+
+@media all and (max-width: 992px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media all and (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+body {
+	/* https://stackoverflow.com/questions/40138434/how-to-limit-break-all-to-only-long-words */
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-text-decoration-skip: objects;
+			text-decoration-skip: objects;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "Palatino Linotype", sans-serif;
+	color: #111;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+}
+
+ul, ol, li  {
+	list-style-type: none;
+}
+
+.link {
+	color: #930;
+}
+
+.hidden {
+	display: none;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.hover-underline:hover {
+	text-decoration: underline;
+}
+
+.hover-underline-out {
+	text-decoration: underline;
+}
+.hover-underline-out:hover {
+	text-decoration: none;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+
+.block {
+	display: block;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.border {
+	border: 1px solid #999;
+}
+
+.no-select {
+	user-select: none;
+}
+
+.action-btn {
+	background-color: #346ED5;
+	color: #fff;
+
+	font-style: normal;
+	display: inline-block;
+	padding: 10px 20px;
+	user-select: none;
+	cursor: pointer;
+
+	border: none;
+}
+.action-btn:active,
+.action-btn:hover {
+	background-color: #275CB8;
+}
+
+
+
+::-webkit-input-placeholder {color:#888; font-size: .85rem; font-family: "Palatino Linotype", sans-serif;}
+::-moz-placeholder          {color:#888; font-size: .85rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 19+ */
+:-moz-placeholder           {color:#888; font-size: .85rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#888; font-size: .85rem; font-family: "Palatino Linotype", sans-serif;}
+
+.tasks {}
+
+
+
+
+
+.creating {
+	padding: 10px;
+	text-align: center;
+}
+.creating__heading {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.creating__form {
+
+}
+.creating__form-container {
+	margin: auto;
+	max-width: 780px;
+}
+.creating__form-fields {}
+.creating__form-field-item {
+	padding: 10px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.creating__form-field-item:last-child {
+	margin-bottom: 0;
+}
+.creating__form-field-item--big {
+	height: 120px;
+}
+.creating__form-action {
+	padding: 20px 0;
+}
+.creating__form-action-btn {
+
+}
+
+.additional {
+	padding: 10px;
+	padding-top: 30px;
+}
+.additional__item {
+	border: 1px solid #999;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.additional__field {
+	padding: 10px;
+	width: 100%;
+	font-size: .85rem;
+}
+.additional__field--big {
+	height: 150px;
+}
+.additional__sub {
+	padding: 10px;
+}
+
+
+
+/*.creating__*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tasks__box-container {
+	padding: 10px 5px;
+}
+.tasks__item {
+	border: 1px solid #999;
+	padding: 10px;
+	border-radius: 5px;
+
+	margin-bottom: 20px;
+}
+.tasks__desc {}
+.tasks__desc-caption {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 10px;
+}
+.tasks__desc-caption-desc {
+	font-size: .8rem;
+	color: #999;
+	margin-right: 15px;
+	flex-shrink: 0;
+}
+.tasks__desc-caption-text {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.tasks__desc-info {}
+.tasks__desc-info-toggle {
+	cursor: pointer;
+	font-size: .8em;
+	user-select: none;
+}
+.tasks__desc-info-toggle-input {}
+
+.tasks__desc-info-text:empty,
+input.toggle:not(:checked) + * {
+	display: none;
+}
+.tasks__desc-info-text {
+	padding: 10px;
+	font-size: .95em;
+}
+
+/***********************************/
+
+.days {
+	text-align: center;
+	padding: 20px 0;
+}
+.days__caption {
+	font-size: .9rem;
+}
+.days__select {
+	font-size: .9rem;
+	padding: 5px;
+	cursor: pointer;
+}
+
+
+.todo {
+	padding: 10px;
+	border-radius: 5px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border: 2px solid #f4f4f4;
+	border-bottom: none;
+
+	background: linear-gradient(to bottom, #f4f4f4, transparent);
+
+
+	margin-bottom: 20px;
+}
+
+.tasks__item:not(.show-details) .todo {
+	display: none;
+}
+
+.todo__container {
+	border: 1px solid #aaa;
+	max-width: 780px;
+	margin: auto;
+
+	border-radius: 5px;
+}
+.todo__item {
+	border-bottom: 1px solid #aaa;
+	padding: 10px;
+	padding-left: 37px;
+
+	position: relative;
+	z-index: 1;
+}
+.todo__item.done:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	left: 13px;
+	top: 15px;
+
+	width: 5px;
+	height: 12px;
+	border: 1px solid #069B89;
+	border-top: none;
+	border-left: none;
+	transform-origin: right bottom;
+	transform: rotate(40deg);
+	transition: 0.3s;
+}
+.todo__item:last-child {
+	border-bottom: none;
+}
+.todo__heading {
+	display: block;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+.todo__desc {
+	font-size: .9rem;
+	padding: 10px;
+}
+.todo__desc:empty {
+	display: none;
+}
+
+
+.todo__comment-text {
+	cursor: pointer;
+	font-size: .8em;
+	user-select: none;
+}
+
+.todo__comment-field {
+	margin-top: 10px;
+	width: 100%;
+	height: 135px;
+	
+	padding: 10px;
+
+	font-size: .85rem;
+}
+
+.todo__comment-action {
+	text-align: right;
+}
+.todo__comment-action-btn {
+	
+}
+
+
+/* ********* modals ********* */
+
+.modals {
+	visibility: hidden;
+	opacity: 0;
+
+	transition: .2s;
+
+	position: fixed;
+	z-index: 99999999999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.modals.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modals__wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	padding-top: 30px;
+	padding-bottom: 20px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modals__item {
+	display: none;
+	position: relative;
+	z-index: 1;
+	background-color: #f5f5f5;
+	padding: 20px 15px;
+	text-align: center;
+	border-radius: 10px;
+}
+.modals__item.show {
+	display: block;
+}
+.modals__bg {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	min-height: 100%;
+	background-color: rgba(0,0,0,.9);
+	z-index: 0;
+}
+.modals__times-icon {
+	text-align: center;
+	display: block;
+	font-size: 3rem;
+	color: #d00;
+	font-weight: bold;
+	line-height: 1;
+}
+.modals__item-text {
+	padding-bottom: 20px;
+}
+.modals__close-btn {
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	
+	border: 1px solid #999;
+	background-color: #fff;
+
+	border-radius: 10px;
+	padding: 5px 20px;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+}
+
+/* ^^^^^^^^^ modals ^^^^^^^^^ */
