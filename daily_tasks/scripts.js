@@ -15,7 +15,7 @@ const task_items_template = document.querySelector(".js-task-items-template").in
 
 
 let all_tasks = [],
-	todayTS = getDateTS();
+	todayTS = getDateTS() + ((1000 * 60*60 * 24) * 0);
 
 if (localStorage.getItem("all_tasks")) {
 	all_tasks = JSON.parse(localStorage.getItem("all_tasks"));
@@ -248,6 +248,7 @@ function fillDates() {
 		if (!all_tasks[i].process.length) {
 			fillEmptyCell(i, todayTS);
 		}
+		// console.log(all_tasks[i].process.length);
 
 		let last_ts = all_tasks[i].process[0].ts;
 		let day = 0;
@@ -255,13 +256,16 @@ function fillDates() {
 
 		while ((day++) < 1000) {
 
-			if (last_ts == todayTS)
+
+			if (last_ts >= todayTS)
 				break;
 
 			last_ts = getDateTS(last_ts);
 			fillEmptyCell(i, last_ts);
 		}
+		// console.log('--------------------');
 	}
+	tasksExport();
 }
 
 function fillEmptyCell(id, ts) {
@@ -284,6 +288,7 @@ function showTasks() {
 		let all_task_items = '';
 
 		for (let o = 0, o_len = task.process.length; o < o_len; o++){
+			// console.log(task);
 
 			let tmp = option_template;
 			let ts = task.process[o].ts;
@@ -292,6 +297,8 @@ function showTasks() {
 				'date' : getFormatDate(ts),
 			});
 		}
+
+		// console.log('--------------------');
 
 		// подзадачи/цели
 		let tasks = task.tasks;
@@ -321,6 +328,38 @@ function showTasks() {
 	}
 	tasks_container.innerHTML = all_html;
 }
+
+// Binary Search в деле )
+function getIndexByTS(arr, num) {
+	let left = 0;
+	let right = arr.length;
+
+	let i = 0;
+
+	if	(num > arr[left].ts) return -1;
+
+	while(true) {
+		
+		if ((i++) > 1000) break;
+
+		let center = parseInt((right + left) / 2);
+		
+		if(arr[center].ts == num)
+			return center;
+
+		if(arr[center].ts < num)
+			right = center;
+
+		if(arr[center].ts > num)
+			left = center;
+		
+		if(left == right || arr[center].ts == arr[arr.length-1].ts)
+			return -2;
+
+		// console.log(left, center, right);
+	}
+}
+
 
 
 /** modal opening **/
