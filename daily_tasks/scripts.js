@@ -285,7 +285,6 @@ function showTasks() {
 
 		let tmp = tasks_template;
 		let options = '';
-		let all_task_items = '';
 
 		for (let o = 0, o_len = task.process.length; o < o_len; o++){
 			// console.log(task);
@@ -301,18 +300,9 @@ function showTasks() {
 		// console.log('--------------------');
 
 		// подзадачи/цели
-		let tasks = task.tasks;
-		for (let t = 0, t_len = tasks.length; t < t_len; t++){
-			let task = tasks[t];
-			// console.log(tasks[t]);
+		let all_task_items = getSubTasks(i, 0);
 
-			let tmp = task_items_template;
-			all_task_items += replaceTemplate(tmp, {
-				'id' : t,
-				'title' : task.title,
-				'desc' : nl2br(task.desc),
-			});
-		}
+		// console.log(all_task_items);
 
 
 		tmp = replaceTemplate(tmp, {
@@ -327,6 +317,44 @@ function showTasks() {
 		all_html += tmp;
 	}
 	tasks_container.innerHTML = all_html;
+}
+
+function getSubTasks(mainID, dateID){
+	let all_task_items = '';
+	let process = all_tasks[mainID].process;
+	let tasks = all_tasks[mainID].tasks;
+	for (let t = 0, t_len = tasks.length; t < t_len; t++){
+		let task = tasks[t];
+
+		let state = process[dateID].state[t];
+		let comment = process[dateID].comments[t];
+
+		let tmp = task_items_template;
+		all_task_items += replaceTemplate(tmp, {
+			'id' : t,
+			'element-id' : mainID+'-'+t,
+			'box_classes' : (state)?'done':'',
+			'comment' : (comment)?comment:'',
+			'title' : task.title,
+			'desc' : nl2br(task.desc),
+		});
+	}
+
+	return all_task_items;
+}
+
+
+// изменения даты отображение
+function changeShowingTasks(_this) {
+	let mainTask = getClosest(_this, "js-task-item");
+	let mainTaskId = mainTask.getAttribute("data-id");
+
+	let dateIndex = getIndexByTS(all_tasks[mainTaskId].process, _this.value);
+	let all_sub_tasks = getSubTasks(mainTaskId, dateIndex);
+	
+	mainTask.querySelector(".js-sub-task-container").innerHTML = all_sub_tasks;
+
+	// console.log(all_sub_tasks);
 }
 
 // Binary Search в деле )
@@ -353,11 +381,71 @@ function getIndexByTS(arr, num) {
 		if(arr[center].ts > num)
 			left = center;
 		
-		if(left == right || arr[center].ts == arr[arr.length-1].ts)
+		if(left == right)
 			return -2;
 
 		// console.log(left, center, right);
 	}
+}
+
+function taskDone(_this) {
+	let mainTask = getClosest(_this, "js-task-item");
+	let mainTaskId = mainTask.getAttribute("data-id");
+	let subTask = getClosest(_this, "js-sub-task-item");
+	let subTaskId = subTask.getAttribute("data-id");
+
+	let dateTS = getSelectedDateTS(mainTask);
+	let dateIndex = getIndexByTS(all_tasks[mainTaskId].process, dateTS);
+
+	console.log(mainTaskId, subTaskId);
+
+	let state = all_tasks[mainTaskId].process[dateIndex].state[subTaskId] = !all_tasks[mainTaskId].process[dateIndex].state[subTaskId];
+
+	if (state) {
+		classEdit(subTask, 'done', 'add');
+	} else {
+		classEdit(subTask, 'done', 'remove');
+	}
+
+	return tasksExport();
+}
+
+function addComment(_this) {
+	let mainTask = getClosest(_this, "js-task-item");
+	let mainTaskId = mainTask.getAttribute("data-id");
+	let subTask = getClosest(_this, "js-sub-task-item");
+	let subTaskId = subTask.getAttribute("data-id");
+
+	let comment_box = subTask.querySelector(".js-comment");
+	let comment_field = subTask.querySelector(".js-comment-field");
+
+	let comment = comment_field.value;
+
+	let dateTS = getSelectedDateTS(mainTask);
+	let dateIndex = getIndexByTS(all_tasks[mainTaskId].process, dateTS);
+
+	// let state = all_tasks[mainTaskId].process[dateIndex].state[subTaskId] = !all_tasks[mainTaskId].process[dateIndex].state[subTaskId];
+	comment_box.innerHTML = nl2br(comment);
+
+	all_tasks[mainTaskId].process[dateIndex].comments[subTaskId] = comment;
+
+	return tasksExport();
+}
+
+function getClosest(el, className) {
+	let parent = el.parentElement;
+
+	if (parent.nodeName == 'BODY') return;
+	if (hasClass(parent, className)) return parent;
+
+	return getClosest(parent, className);
+}
+
+function getSelectedDateTS(el) {
+	el = el || '';
+
+	if (!el || el.length <= 0) return;
+	return el.querySelector(".js-select-days").value;
 }
 
 

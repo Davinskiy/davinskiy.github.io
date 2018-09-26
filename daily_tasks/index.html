@@ -70,18 +70,18 @@
 	</div>
 
 	<div class="js-tasks-template hidden">
-		<li class="tasks__item js-task-{{id}} {{box_classes}}">
+		<li class="tasks__item js-task-item js-task-{{id}} {{box_classes}}" data-id="{{id}}">
 
 			<div class="todo">
 				
 				<div class="days">
 					<span class="days__caption">Выбрать дату: </span>
-					<select name="days" class="days__select">
+					<select name="days" class="days__select js-select-days" onchange="changeShowingTasks(this);">
 						{{options}}
 					</select>
 				</div>
 
-				<ul class="todo__container">{{all_sub_tasks}}</ul>
+				<ul class="todo__container  js-sub-task-container">{{all_sub_tasks}}</ul>
 			</div>
 
 			<div class="tasks__desc">
@@ -103,15 +103,17 @@
 	</div>
 
 	<div class="js-task-items-template hidden">
-		<li class="todo__item task_item_{{id}}">
-			<h3 class="todo__heading" onclick="classToggle('.task_item_{{id}}', 'done')">{{title}}</h3>
+		<li class="todo__item js-sub-task-item task_item_{{element-id}}  {{box_classes}}" data-id="{{id}}">
+			<h3 class="todo__heading" onclick="taskDone(this)">{{title}}</h3>
 			<div class="todo__desc">{{desc}}</div>
 
-			<label for="comment__{{id}}" class="todo__comment-text hover-underline-out">Комментарий ?</label>
-			<input type="checkbox" id="comment__{{id}}" class="todo__comment-toggle  hidden toggle">
+			<div class="todo_comment js-comment">{{comment}}</div>
+
+			<label for="comment__{{element-id}}" class="todo__comment-text hover-underline-out">Комментарий ?</label>
+			<input type="checkbox" id="comment__{{element-id}}" class="todo__comment-toggle  hidden toggle">
 			<div class="todo__comment-action">
-				<textarea class="todo__comment-field" name="comment" placeholder="Комментарий (если есть)"></textarea>
-				<label for="comment__{{id}}" class="todo__comment-action-btn action-btn">Сохранить</label>
+				<textarea class="todo__comment-field  js-comment-field" name="comment" placeholder="Комментарий (если есть)"></textarea>
+				<label for="comment__{{element-id}}" class="todo__comment-action-btn action-btn" onclick="addComment(this)">Сохранить</label>
 			</div>
 		</li>
 	</div>

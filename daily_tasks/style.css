@@ -193,11 +193,15 @@ ul, ol, li  {
 	padding-top: 30px;
 }
 .additional__item {
+	background: -webkit-linear-gradient(left, #78c0df, #79b8a9);
+	background: -o-linear-gradient(left, #78c0df, #79b8a9);
+	background: linear-gradient(to right, #78c0df, #79b8a9);
 	border: 1px solid #999;
 	margin-bottom: 20px;
 	padding: 10px;
 }
 .additional__field {
+	background-color: #fff;
 	padding: 10px;
 	width: 100%;
 	font-size: .85rem;
@@ -366,6 +370,27 @@ input.toggle:not(:checked) + * {
 	display: none;
 }
 
+.todo_comment {
+	font-style: italic;
+	border: 1px dashed;
+	padding: 10px;
+	padding-top: 30px;
+	margin: 10px 0;
+
+	position: relative;
+}
+/*.todo_comment:before {*/
+.todo_comment:not(:empty):before {
+	content: "Комментарий: ";
+	position: absolute;
+	top: 10px;
+	font-size: .75rem;
+
+	color: #069B89;
+}
+.todo_comment:empty {
+	display: none;
+}
 
 .todo__comment-text {
 	cursor: pointer;
