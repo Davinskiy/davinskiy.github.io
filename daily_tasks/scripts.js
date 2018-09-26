@@ -213,7 +213,7 @@ function createTask(_this){
 }
 
 function tasksExport() {
-	return localStorage.setItem('all_tasks', JSON.stringify(all_tasks));
+	return localStorage.setItem('all_daily_tasks', JSON.stringify(all_tasks));
 }
 
 function getDateTS(ts) {
