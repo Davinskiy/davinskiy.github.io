@@ -17,8 +17,8 @@ const task_items_template = document.querySelector(".js-task-items-template").in
 let all_tasks = [],
 	todayTS = getDateTS() + ((1000 * 60*60 * 24) * 0);
 
-if (localStorage.getItem("all_tasks")) {
-	all_tasks = JSON.parse(localStorage.getItem("all_tasks"));
+if (localStorage.getItem("all_daily_tasks")) {
+	all_tasks = JSON.parse(localStorage.getItem("all_daily_tasks"));
 	fillDates();
 	showTasks();
 }
