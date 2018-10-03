@@ -210,28 +210,47 @@ ul, ol, li {
 
 .sprite__code {
 	padding: 30px 0;
-	font-size: .9rem;
 }
+
 .sprite__code-file {
 	font-weight: bold;
-	font-size: 1.125rem;
+	font-size: 1rem;
+
+	border: 1px solid;
+	padding: 5px 10px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	margin: auto;
+
+	background-color: #fff;
+	color: #000;
+
+	text-decoration: underline;
+
+	transition: .2s;
 }
 .sprite__code-file:hover {
-	text-decoration: underline;
+	opacity: 0.6;
 }
+
+.sprite__code-icon {
+	max-width: 50px;
+}
+
+
 
 
 /**
 * radio style
 **/
 .radio-label {
-	display: block;
+	display: inline-block;
 	font-size: 0;
 	margin: 5px;
 	cursor: pointer;
-	text-align: left;
-
-	margin-bottom: 10px;
 }
 
 .radio-imi {
