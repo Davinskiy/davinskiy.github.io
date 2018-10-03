@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>SVG Sprite Creator | Pure JS</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<section class="sprite">
+		<div class="sprite__inner">
+			<h1 class="sprite__heading">SVG Sprite Creator</h1>
+			<div class="sprite__desc">From your images (icons)</div>
+
+			<div class="sprite__action">
+				<input type="file" class="hidden" id="sprite_input" accept="image/*" multiple>
+				<label for="sprite_input" class="sprite__action-btn">Choose Images</label>
+			</div>
+
+			<div class="hash-type">
+				<div class="hash-type__caption">Select hash type</div>
+				<label class="radio-label">
+					<input type="radio" name="hash_type" class="radio-native hidden" id="radio1" value="id" checked/>
+					<span class="radio-imi"></span>
+					<span class="radio-text">ID <span class="radio-text--small">(0 - xxx)</span></span>
+				</label>
+				<label class="radio-label">
+					<input type="radio" name="hash_type" class="radio-native hidden" id="radio2" value="name"/>
+					<span class="radio-imi"></span>
+					<span class="radio-text">Name <span class="radio-text--small">(image name without extension)</span></span>
+				</label>
+			</div>
+
+			<div class="sprite__code hidden  js-sprite-box">
+				<textarea class="hidden js-sprite-to" readonly></textarea>
+				Download: <a href="javascript:download();"><span class="sprite__code-file js-sprite-name"></span></a>
+			</div>
+			
+			<div class="sprite__list">
+				<div class="list">
+					<ul class="list__container js-list-container"></ul>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<div class="js-prev-template hidden">
+		<li class="list__item">
+			<div class="list__media">
+				<img class="list__media-img img-%id%" src="%img_code%">
+			</div>
+			<div class="list__info">
+				<h3 class="list__info-heading">%name%</h3>
+				
+				<div class="list__info-bottom">
+					<div class="list__info-bottom-item">
+						Width: <span class="list__info-bottom-item--bold">%width%</span>
+					</div>
+					<div class="list__info-bottom-item">
+						Height: <span class="list__info-bottom-item--bold">%height%</span>
+					</div>
+					<div class="list__info-bottom-item">
+						Type: <span class="list__info-bottom-item--bold">%type%</span>
+					</div>
+					<div class="list__info-bottom-item">
+						Size: <span class="list__info-bottom-item--bold">%size%</span>
+					</div>
+				</div>
+				
+			</div>
+		</li>
+	</div>
+
+
+	<div class="js-svg-template hidden">
+		<svg id="icon" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+				<style>
+					svg .icon { display: none }
+					svg .icon:target { display: inline } 
+				</style>
+			</defs>
+			%icons%
+		</svg>
+	</div>
+
+	<div class="js-svg-icon-item-template hidden">
+		<svg viewBox="0 0 %width% %height%">
+			<g id="%name%" class="icon">
+				<image xlink:href="%img_code%" width="%width%" height="%height%"/>
+			</g>
+		</svg>
+	</div>
+
+	<!-- scripts -->
+	<script src="script.js"></script>
+</body>
+</html>
