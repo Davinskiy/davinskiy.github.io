@@ -19,18 +19,34 @@
 				<label for="sprite_input" class="sprite__action-btn">Choose Images</label>
 			</div>
 
-			<div class="hash-type">
-				<div class="hash-type__caption">Select hash type</div>
-				<label class="radio-label">
-					<input type="radio" name="hash_type" class="radio-native hidden" id="radio1" value="id" checked/>
-					<span class="radio-imi"></span>
-					<span class="radio-text">ID <span class="radio-text--small">(0 - xxx)</span></span>
-				</label>
-				<label class="radio-label">
-					<input type="radio" name="hash_type" class="radio-native hidden" id="radio2" value="name"/>
-					<span class="radio-imi"></span>
-					<span class="radio-text">Name <span class="radio-text--small">(image name without extension)</span></span>
-				</label>
+			<div class="sets">
+				<div class="sets__item">
+					<div class="sets__caption">Select hash type</div>
+					<label class="radio-label">
+						<input type="radio" name="hash_type" class="radio-native hidden" value="id" checked/>
+						<span class="radio-imi"></span>
+						<span class="radio-text">ID <span class="radio-text--small">(0 - xxx)</span></span>
+					</label>
+					<label class="radio-label">
+						<input type="radio" name="hash_type" class="radio-native hidden" value="name"/>
+						<span class="radio-imi"></span>
+						<span class="radio-text">Name <span class="radio-text--small">(image name without extension)</span></span>
+					</label>
+				</div>
+
+				<div class="sets__item">
+					<div class="sets__caption">Code format</div>
+					<label class="radio-label">
+						<input type="radio" name="code_type" class="radio-native hidden" value="beauty" checked/>
+						<span class="radio-imi"></span>
+						<span class="radio-text">Beauty code</span>
+					</label>
+					<label class="radio-label">
+						<input type="radio" name="code_type" class="radio-native hidden" value="minified"/>
+						<span class="radio-imi"></span>
+						<span class="radio-text">Minified code</span>
+					</label>
+				</div>
 			</div>
 
 			<div class="sprite__code hidden  js-sprite-box">
@@ -77,26 +93,26 @@
 		</li>
 	</div>
 
+<!-- templates -->
+<div class="js-svg-template hidden">
+<svg id="icon" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<style>
+			svg .icon { display: none }
+			svg .icon:target { display: inline } 
+		</style>
+	</defs>
+	%icons%
+</svg>
+</div>
 
-	<div class="js-svg-template hidden">
-		<svg id="icon" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<defs>
-				<style>
-					svg .icon { display: none }
-					svg .icon:target { display: inline } 
-				</style>
-			</defs>
-			%icons%
-		</svg>
-	</div>
-
-	<div class="js-svg-icon-item-template hidden">
-		<svg viewBox="0 0 %width% %height%">
-			<g id="%name%" class="icon">
-				<image xlink:href="%img_code%" width="%width%" height="%height%"/>
-			</g>
-		</svg>
-	</div>
+<div class="js-svg-icon-item-template hidden">
+	<svg viewBox="0 0 %width% %height%">
+		<g id="%name%" class="icon">
+			<image xlink:href="%img_code%" width="%width%" height="%height%"/>
+		</g>
+	</svg>
+</div>
 
 	<!-- scripts -->
 	<script src="script.js"></script>

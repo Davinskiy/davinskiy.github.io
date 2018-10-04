@@ -13,6 +13,7 @@ document.querySelector(".js-sprite-name").innerHTML = sprite_name;
 
 file_input.addEventListener("change", function(e){
 	let hash_type = document.querySelector("input[name=hash_type]:checked").value;
+	let code_type = document.querySelector("input[name=code_type]:checked").value;
 	let images = file_input.files;
 	let images_len = images.length;
 
@@ -46,7 +47,7 @@ file_input.addEventListener("change", function(e){
 
 			image.onload = function() {
 				let prev_tmp = icon_preview_template;
-				let svg_item_tmp = svg_item_template;
+				let svg_item_tmp = (code_type == 'minified')? codeMinified(svg_item_template) : svg_item_template;
 				width = this.width;
 				height = this.height;
 
@@ -71,9 +72,11 @@ file_input.addEventListener("change", function(e){
 
 				if (images_len - 1 == i) {
 
-					document.querySelector(".js-sprite-to").value = replaceTemplate(svg_template, {
+					let svg_code = replaceTemplate(svg_template, {
 						'icons' : svg_item_template__html,
 					}).trim();
+
+					document.querySelector(".js-sprite-to").value = (code_type == 'minified')? codeMinified(svg_code) : svg_code;
 					removeClass(document.querySelector(".js-sprite-box"), 'hidden');
 				}
 			};
@@ -84,6 +87,12 @@ file_input.addEventListener("change", function(e){
 
 });
 
+function codeMinified(code) {
+	return replaceTemplate(code, {
+		'\n' : '',
+		'\t' : '',
+	}, '', '');
+}
 
 function download() {
 	let element = document.createElement('a');
