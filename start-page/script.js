@@ -1,26 +1,8 @@
 const links_container = document.querySelector('.js-links-container');
 const page_template = document.querySelector('.js-page-template').innerHTML;
-// const add_page_template = document.querySelector('.js-add-page-template').innerHTML;
 
 
 let all_pages = [];
-// let all_pages = [
-// 	{
-// 		'url' : 'https://vk.com/',
-// 		'title' : 'ВК - соц. сеть',
-// 		'visits' : 23,
-// 	},
-// 	{
-// 		'url' : 'http://landing-up.ru/',
-// 		'title' : 'Продающие лендинги | landing-up.ru',
-// 		'visits' : 8,
-// 	},
-// 	{
-// 		'url' : 'https://jhasuev.github.io/',
-// 		'title' : 'Верстальщик | Жамал Хасуев',
-// 		'visits' : 55,
-// 	},
-// ];
 
 if (localStorage.getItem('start_pages_list')) {
 	all_pages = JSON.parse(localStorage.getItem('start_pages_list'));
