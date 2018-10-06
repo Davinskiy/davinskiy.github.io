@@ -98,7 +98,7 @@ function showAllPages(){
 		html += replaceTemplate(page_template, {
 			'url' : _page.url,
 			'id' : page,
-			'title' : _page.title,
+			'title' : (_page.title)? _page.title : 'Unknown Page',
 			'order' : _page.visits * -1,
 		});
 	}
