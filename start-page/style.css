@@ -1,0 +1,402 @@
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	font-weight: normal;
+	font-size: inherit;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	color: inherit;
+}
+
+html {
+	font-size: 18px;
+}
+
+@media all and (max-width: 1200px) {
+	html {
+		font-size: 17px;
+	}
+}
+
+@media all and (max-width: 992px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media all and (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+body {
+	/* https://stackoverflow.com/questions/40138434/how-to-limit-break-all-to-only-long-words */
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-text-decoration-skip: objects;
+					text-decoration-skip: objects;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "Palatino Linotype", sans-serif;
+
+	background-color: #fff;
+	color: #222;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+}
+
+.inviz,
+.hidden {
+	display: none;
+}
+
+ul, ol, li {
+	list-style-type: none;
+}
+
+.links {}
+.links__inner {
+	padding: 0 15px;
+	max-width: 780px;
+	margin: auto;
+}
+.links__list {
+	min-height: 100vh;
+
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.links__list-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+
+	margin: 0 -8px;
+	padding: 20px 0;
+	width: 100%;
+}
+.links__list-item {
+	width: 100%;
+	max-width: 130px;
+	text-align: center;
+	margin: 8px;
+	border-radius: 5px;
+
+	position: relative;
+	background-color: #fbfbfb;
+	border: 1px solid #eee;
+}
+.links__list-item:hover {
+	background-color: transparent;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+	        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.links__list-link {
+	padding: 20px 10px;
+	display: block;
+	/*border: 1px solid red;*/
+}
+.links__list-media {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	padding: 10px;
+	border-radius: 50%;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+	        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+	margin: auto;
+
+	width: 40px;
+	height: 40px;
+
+	position: relative;
+
+	font-size: 0;
+}
+.links__list-media-img {}
+.links__list-media-icon {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.links__list-media-icon:before,
+.links__list-media-icon:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 1px;
+	background-color: #333;
+	width: 85%;
+}
+.links__list-media-icon:after {
+	-webkit-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	        transform: rotate(90deg);
+}
+.links__list-title {
+	padding-top: 10px;
+	font-size: 0.8rem;
+
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+.links__list-btn {
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+.links__list-btn {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	padding: 5px 10px;
+	border-radius: 3px;
+
+	display: none;
+	cursor: pointer;
+}
+.links__list-item:hover .links__list-btn {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.links__list-btn:hover {
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+.links__list-btn hr {
+	width: 3px;
+	height: 3px;
+	margin: 1px 0;
+
+	border: none;
+	border-radius: 50%;
+	background-color: #333;
+}
+
+
+
+
+
+
+/* ********* modals ********* */
+
+.modals {
+	/*display: none;*/
+	position: fixed;
+	z-index: 99999999999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.modals__wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	padding-top: 30px;
+	padding-bottom: 20px;
+
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.modals__item {
+	/*display: none;*/
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+	-webkit-filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.5));
+	        filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.5));
+	padding: 20px 15px;
+	margin: 0 20px;
+
+	border-radius: 5px;
+}
+.modals__bg {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	min-height: 100%;
+	background-color: rgba(0,0,0,.3);
+	z-index: 0;
+}
+.modals__close {
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	
+
+	left: 100%;
+	bottom: 100%;
+	-webkit-transform: translate(-50%, 50%);
+	    -ms-transform: translate(-50%, 50%);
+	        transform: translate(-50%, 50%);
+
+
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	        box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	color: #f60;
+	line-height: 30px;
+
+	border-radius: 50%;
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+.modals__close:hover {
+	opacity: 0.7;
+}
+
+
+
+::-webkit-input-placeholder {color:#000; font-size: .9rem; font-family: "Palatino Linotype", sans-serif;}
+::-moz-placeholder          {color:#000; font-size: .9rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 19+ */
+:-moz-placeholder           {color:#000; font-size: .9rem; font-family: "Palatino Linotype", sans-serif;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#000; font-size: .9rem; font-family: "Palatino Linotype", sans-serif;}
+
+
+
+.page-adding {
+}
+.page-adding__form {
+
+}
+.page-adding__form-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	width: 250px;
+	max-width: 100%;
+}
+.page-adding__form-item-field {
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid;
+	background-color: #fff;
+	border-radius: 3px;
+
+	color:#000;
+	font-size: .9rem;
+	font-family: "Palatino Linotype", sans-serif;
+
+	-webkit-transition: .3s;
+
+	-o-transition: .3s;
+
+	transition: .3s;
+}
+.page-adding__form-item-field:focus {
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	border-color: transparent;
+}
+.page-adding__form-item-btn {
+	padding: 10px;
+	border: 1px solid;
+
+	margin-top: 10px;
+
+	font-size: 1.2rem;
+	cursor: pointer;
+	font-family: "Palatino Linotype", sans-serif;
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+
+	font-style: normal;
+	text-align: center;
+
+	background-color: #1d6d70;
+	color: #fff;
+}
+.page-adding__form-item-btn:hover {
+	background-color: #fff;
+	color: #1d6d70;
+}
+
+.page-adding__form-item-btn--red {
+	background-color: #900;
+}
+.page-adding__form-item-btn--red:hover {
+	color: #900;
+}
+
+/* ^^^^^^^^^ modals ^^^^^^^^^ */
