@@ -49,10 +49,11 @@
 				</div>
 			</div>
 
+			<!-- <div class="sprite__code js-sprite-box"> -->
 			<div class="sprite__code hidden  js-sprite-box">
 				<textarea class="hidden js-sprite-to" readonly></textarea>
-				<a href="javascript:download();" class="sprite__code-file">
-					<img class="sprite__code-icon" src="https://cdn.pixabay.com/photo/2016/06/15/14/54/download-1459070_960_720.png" alt="svg download icon">
+				<a href="javascript:download();" class="sprite__code-file" title="Download sprite file">
+					<i class="sprite__code-icon"></i>
 					<span class="js-sprite-name"></span>
 				</a>
 			</div>
@@ -63,39 +64,38 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 
-	<div class="js-prev-template hidden">
-		<li class="list__item">
-			<div class="list__media">
-				<img class="list__media-img img-%id%" src="%img_code%">
-			</div>
-			<div class="list__info">
-				<h3 class="list__info-heading">%name%</h3>
-				
-				<div class="list__info-bottom">
-					<div class="list__info-bottom-item">
-						Width: <span class="list__info-bottom-item--bold">%width%</span>
-					</div>
-					<div class="list__info-bottom-item">
-						Height: <span class="list__info-bottom-item--bold">%height%</span>
-					</div>
-					<div class="list__info-bottom-item">
-						Type: <span class="list__info-bottom-item--bold">%type%</span>
-					</div>
-					<div class="list__info-bottom-item">
-						Size: <span class="list__info-bottom-item--bold">%size%</span>
-					</div>
-				</div>
-				
-			</div>
-		</li>
-	</div>
-
 <!-- templates -->
+
+<div class="js-prev-template hidden">
+<!-- 	<li class="list__item">
+		<div class="list__media">
+			<img class="list__media-img img-%id%" src="%img_code%">
+		</div>
+		<div class="list__info">
+			<h3 class="list__info-heading">%name%</h3>
+			
+			<div class="list__info-bottom">
+				<div class="list__info-bottom-item">
+					Width: <span class="list__info-bottom-item--bold">%width%</span>
+				</div>
+				<div class="list__info-bottom-item">
+					Height: <span class="list__info-bottom-item--bold">%height%</span>
+				</div>
+				<div class="list__info-bottom-item">
+					Type: <span class="list__info-bottom-item--bold">%type%</span>
+				</div>
+				<div class="list__info-bottom-item">
+					Size: <span class="list__info-bottom-item--bold">%size%</span>
+				</div>
+			</div>
+			
+		</div>
+	</li> -->
+</div>
 <div class="js-svg-template hidden">
-<svg id="icon" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- <svg id="icon" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<defs>
 		<style>
 			svg .icon { display: none }
@@ -103,15 +103,14 @@
 		</style>
 	</defs>
 	%icons%
-</svg>
+</svg> -->
 </div>
-
 <div class="js-svg-icon-item-template hidden">
-	<svg viewBox="0 0 %width% %height%">
+<!-- 	<svg viewBox="0 0 %width% %height%">
 		<g id="%name%" class="icon">
 			<image xlink:href="%img_code%" width="%width%" height="%height%"/>
 		</g>
-	</svg>
+	</svg> -->
 </div>
 
 	<!-- scripts -->

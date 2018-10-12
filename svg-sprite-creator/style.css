@@ -215,7 +215,9 @@ ul, ol, li {
 .sprite__code-file {
 	font-size: 1rem;
 
-	padding: 10px 40px;
+	padding: 10px 20px;
+
+	text-decoration: underline;
 
 	display: inline-flex;
 	align-items: center;
@@ -236,11 +238,37 @@ ul, ol, li {
 }
 
 .sprite__code-icon {
-	margin-right: 10px;
-	max-width: 50px;
-	max-height: 30px;
+	color: #000;
+	border-bottom: 3px solid;
+	width: 30px;
+	height: 30px;
+
+	margin-right: 20px;
+	position: relative;
 }
 
+.sprite__code-icon:before,
+.sprite__code-icon:after {
+	content: "";
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+.sprite__code-icon:before {
+	top: 0;
+	width: 10px;
+	height: 15px;
+	background-color: #000;
+}
+.sprite__code-icon:after {
+	top: 15px;
+	width: 0px;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom: none;
+	border-top: 10px solid;
+}
 
 
 

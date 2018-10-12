@@ -1,9 +1,9 @@
 const file_input = document.querySelector("input[type=file]");
 const list_container = document.querySelector(".js-list-container");
-const icon_preview_template = document.querySelector(".js-prev-template").innerHTML;
+const icon_preview_template = getCommentTemplate(document.querySelector(".js-prev-template"));
 
-const svg_template = document.querySelector(".js-svg-template").innerHTML;
-const svg_item_template = document.querySelector(".js-svg-icon-item-template").innerHTML;
+const svg_template = getCommentTemplate(document.querySelector(".js-svg-template"));
+const svg_item_template = getCommentTemplate(document.querySelector(".js-svg-icon-item-template"));
 const sprite_name = 'sprite.svg';
 const sprite_pref = 'i_';
 
@@ -123,6 +123,16 @@ function bytesToSize(bytes) {
 	let i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
 	return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 };
+
+function getCommentTemplate(el) {
+	el = el.firstChild;
+	while(el){
+		if (el.nodeName == '#comment')
+			return el.nodeValue;
+		el = el.nextSibling;
+	}
+	return null;
+}
 
 function addClass(elements, className){
 	return editClass(elements, className, 'add');
