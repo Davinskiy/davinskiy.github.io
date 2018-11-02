@@ -294,3 +294,8 @@ function loadPortfoliosData(){
 
 	};
 }
+
+// перезагрузка контента при навигации истории посещении ( назад - вперед )
+window.onhashchange = function(){
+	getPage('', true);
+};
