@@ -1,0 +1,197 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	outline: 0;
+
+	font-size: inherit;
+	color: inherit;
+}
+
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+
+
+.icon {
+	display: inline-flex;
+	width: 25px;
+	height: 20px;
+	border: 1px solid #aaa;
+}
+.icon-full {}
+.icon-full * {
+	border: 1px solid #aaa;
+	width: 100%;
+	margin: 1px;
+}
+
+
+.icon-min {}
+
+
+.icon-default {
+	align-items: flex-end;
+}
+.icon-default * {
+	border: 1px solid #aaa;
+	width: 100%;
+	height: 40%;
+	margin: 1px;
+}
+
+
+
+.frames {
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	color: #fff;
+	font-size: 16px;
+}
+.frames__main {
+	flex: auto;
+	position: relative;
+}
+.frames__main-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.frames__boxes {
+	border-top: 1px solid #fff;
+	overflow: hidden;
+	height: 300px;
+
+	display: flex;
+	flex-direction: column;
+
+	transition: all .3s, font-size 0s;
+}
+
+
+
+.frames__boxes-inner {
+	flex: 1;
+	display: flex;
+}
+.frames__box-item {
+	width: 33.333333333333336%;
+	transition: .2s;
+	/*border: 2px solid #aaa;*/
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.frames__box-caption {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: -webkit-linear-gradient(right, #000, #222);
+	background: -o-linear-gradient(right, #000, #222);
+	background: linear-gradient(to left, #000, #222);
+
+	padding: 5px 10px;
+	height: 28px;
+	
+	font-weight: normal;
+	
+	user-select: none;
+	cursor: pointer;
+	transition: .1s;
+}
+.frames__box-caption:hover {
+	background: -webkit-linear-gradient(right, #333, #444);
+	background: -o-linear-gradient(right, #333, #444);
+	background: linear-gradient(to left, #333, #444);
+}
+.CodeMirror {
+	/*overflow: scroll;*/
+	height: 100%;
+	flex: 1;
+	border-top: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+
+	position: relative;
+}
+
+.frames .CodeMirror {
+	height: 100%;
+	font-size: 16px;
+	border-bottom: 1px solid #aaa;
+}
+
+/* filling */
+
+/* mainframe */
+
+.frame-min .frames .frames__boxes {
+	height: 40px;
+	font-size: 0;
+}
+.frame-full .frames .frames__boxes {
+	height: 100%;
+}
+
+.frames__boxes-actions {
+	background-color: #222;
+	height: 40px;
+	border-bottom: 1px solid #aaa;
+
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+}
+.frames__boxes-actions-item {
+	margin: 0 4px;
+	font-size: 0;
+	cursor: pointer;
+
+	transition: .2s;
+}
+.frames__boxes-actions-item:hover {
+	opacity: 0.7;
+}
+
+/* frame item */
+.box-item-is-filling .frames__box-item {
+	width: 30px;
+}
+.box-item-is-filling .frames__box-item.fill {
+	width: 100%;
+}
+.box-item-is-filling .frames__box-item:not(.fill) {}
+.box-item-is-filling .frames__box-item:not(.fill) .frames__box-caption {
+	padding: 0;
+	height: 100%;
+}
+.box-item-is-filling .frames__box-item:not(.fill) .frames__box-caption .inner {
+	transform: rotate(-90deg);
+}
+.box-item-is-filling .frames__box-item:not(.fill) .CodeMirror {
+	height: 0%;
+	min-height: 0%;
+	overflow: hidden;
+}

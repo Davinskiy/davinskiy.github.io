@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Редактор кода</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="frames">
+	<div class="frames__main">
+		<iframe src="javascript:''" id="view" frameborder="0" class="frames__main-frame"></iframe>
+	</div>
+	<div class="frames__boxes">
+		<div class="frames__boxes-actions">
+			<div class="frames__boxes-actions-item" onclick="fillFrames('full')">
+				<div class="icon icon-full">
+					<hr><hr><hr>
+				</div>
+			</div>
+				
+			<div class="frames__boxes-actions-item" onclick="fillFrames('min')">
+				<div class="icon icon-min"></div>
+			</div>
+				
+			<div class="frames__boxes-actions-item" onclick="fillFrames('default')">
+				<div class="icon icon-default">
+					<hr><hr><hr>
+				</div>
+			</div>
+
+		</div>
+		<div class="frames__boxes-inner">
+			<div class="frames__box-item js-box-item">
+				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">HTML</span></h3>
+				<textarea id="html" data-lang-type="text/html" class="frames__item js-field-box"></textarea>
+			</div>
+			<div class="frames__box-item js-box-item">
+				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">CSS</span></h3>
+				<textarea id="css" data-lang-type="css" class="frames__item js-field-box"></textarea>
+			</div>
+			<div class="frames__box-item js-box-item">
+				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">JS</span></h3>
+				<textarea id="js" data-lang-type="javascript" class="frames__item js-field-box"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="js-frame-template hidden">
+	<!--
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>%title%</title>
+	</head>
+	<style>%css%</style>
+	<body>
+		%html%
+		<script>
+			%js%
+		</script>
+	</body>
+	</html> -->
+
+	<!-- <!DOCTYPE html> -->
+</div>
+
+<script src="lib/codemirror.js"></script>
+<link  href="lib/codemirror.css" rel="stylesheet">
+<link  href="theme/night.css" rel="stylesheet">
+<!-- modes -->
+<script src="mode/xml/xml.js"></script>
+<script src="mode/css/css.js"></script>
+<script src="mode/javascript/javascript.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
