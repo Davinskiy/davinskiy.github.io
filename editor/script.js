@@ -131,6 +131,12 @@ for (let obj of document.querySelectorAll('.js-field-box')) {
 		lineWrapping : true,
 		tabSize : 4,
 		indentWithTabs : true,
+		extraKeys: {
+			'Tab': 'indentMore',
+		},
+		execCommand : {
+
+		}
 	});
 	editors[obj.id].on('change', editor => {
 		showResult();
