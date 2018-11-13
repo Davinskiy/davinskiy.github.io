@@ -3,28 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Редактор кода</title>
+	<title data-origin-title="Редактор кода">Редактор кода</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="frame-auto">
 
 <div class="frames">
 	<div class="frames__main">
-		<iframe src="javascript:''" id="view" frameborder="0" class="frames__main-frame"></iframe>
+		<div class="frames__main-inner">
+			<div class="frames__main-info">
+				<span class="frames__main-info-title js-document-title" contenteditable oninput="setTitle(this.innerText)" data-untitled-text="Без имени"></span>
+			</div>
+			<div class="frames__main-frame-wrapper">
+				<iframe src="javascript:''" id="view" frameborder="0" class="frames__main-frame"></iframe>
+			</div>
+		</div>
 	</div>
 	<div class="frames__boxes">
 		<div class="frames__boxes-actions">
-			<div class="frames__boxes-actions-item" onclick="fillFrames('full')">
+			<div class="frames__boxes-actions-item  hide-on-frame-full" onclick="fillFrames('frame-full')" title="Переключиться на редакторы">
 				<div class="icon icon-full">
 					<hr><hr><hr>
 				</div>
 			</div>
 				
-			<div class="frames__boxes-actions-item" onclick="fillFrames('min')">
+			<div class="frames__boxes-actions-item  hide-on-frame-min" onclick="fillFrames('frame-min')" title="Переключиться к результату">
 				<div class="icon icon-min"></div>
 			</div>
 				
-			<div class="frames__boxes-actions-item" onclick="fillFrames('default')">
+			<div class="frames__boxes-actions-item  hide-on-frame-auto" onclick="fillFrames('frame-auto')" title="Обычное редактирование">
 				<div class="icon icon-default">
 					<hr><hr><hr>
 				</div>
@@ -34,15 +41,15 @@
 		<div class="frames__boxes-inner">
 			<div class="frames__box-item js-box-item">
 				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">HTML</span></h3>
-				<textarea id="html" data-lang-type="text/html" class="frames__item js-field-box"></textarea>
+				<textarea id="html" data-lang-type="text/html" class="frames__item js-field-box js-load-text" oninput="saveText(this)"></textarea>
 			</div>
 			<div class="frames__box-item js-box-item">
 				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">CSS</span></h3>
-				<textarea id="css" data-lang-type="css" class="frames__item js-field-box"></textarea>
+				<textarea id="css" data-lang-type="css" class="frames__item js-field-box js-load-text" oninput="saveText(this)"></textarea>
 			</div>
 			<div class="frames__box-item js-box-item">
 				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">JS</span></h3>
-				<textarea id="js" data-lang-type="javascript" class="frames__item js-field-box"></textarea>
+				<textarea id="js" data-lang-type="javascript" class="frames__item js-field-box js-load-text" oninput="saveText(this)"></textarea>
 			</div>
 		</div>
 	</div>
@@ -50,18 +57,14 @@
 
 <div class="js-frame-template hidden">
 	<!--
-	<html lang="en">
-	<head>
+	<html%html_attr%>
+	<head%head_attr%>
+		%head_inner%
 		<meta charset="UTF-8">
 		<title>%title%</title>
 	</head>
 	<style>%css%</style>
-	<body>
-		%html%
-		<script>
-			%js%
-		</script>
-	</body>
+	<body%body_attr%>%body_inner%%html%<script>%js%</script></body>
 	</html> -->
 
 	<!-- <!DOCTYPE html> -->
@@ -74,6 +77,7 @@
 <script src="mode/xml/xml.js"></script>
 <script src="mode/css/css.js"></script>
 <script src="mode/javascript/javascript.js"></script>
+<script src="lib/emmet.js"></script>
 
 <script src="script.js"></script>
 
