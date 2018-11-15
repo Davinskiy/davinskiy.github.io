@@ -5,6 +5,8 @@ const js = document.getElementById("js");
 const doc_template = getCommentTemplate(document.querySelector(".js-frame-template")).trim();
 const main_title = document.getElementsByTagName('title')[0];
 const doc_title = document.querySelector('.js-document-title');
+const main_box_resize = document.querySelector('.js-resize-main-block');
+const resizing_layout = document.querySelector('.js-resizing-layout');
 const anchor = "#document_json=";
 
 let typing_interval = 500; // ms
@@ -124,7 +126,8 @@ function hasClass(obj, className){
 
 let editors = {};
 for (let obj of document.querySelectorAll('.js-field-box')) {
-	editors[obj.id] = CodeMirror.fromTextArea(obj, {
+	let id = obj.id;
+	editors[id] = CodeMirror.fromTextArea(obj, {
 		mode: obj.getAttribute('data-lang-type'),
 		lineNumbers: true,
 		theme : 'night',
@@ -138,10 +141,10 @@ for (let obj of document.querySelectorAll('.js-field-box')) {
 
 		}
 	});
-	editors[obj.id].on('change', editor => {
+	editors[id].on('change', editor => {
 		showResult();
 	});
-	emmetCodeMirror(editors[obj.id]);
+	emmetCodeMirror(editors[id]);
 }
 
 /** копирование аттрибутов из строки в объект **/
@@ -193,7 +196,7 @@ function saveDocument() {
 	}
 	let doc_json = JSON.stringify(doc_obj);
 	localStorage.setItem('document_json', doc_json);
-	setLocation(anchor + encodeURI(doc_json));
+	// setLocation(anchor + encodeURI(doc_json));
 }
 
 function loadDocument(doc_json) {
@@ -220,6 +223,33 @@ function setLocation(curLoc){
 	} catch(e) {}
 	location.hash = curLoc;
 }
+
+
+
+main_box_resize.onmousedown = function(e) {
+	document.body.classList.add("resizing");
+};
+main_box_resize.onmouseup = function(e) {
+	document.body.classList.remove("resizing");
+};
+resizing_layout.onmouseup = function(e) {
+	document.body.classList.remove("resizing");
+};
+resizing_layout.onmousemove = function(e) {
+	if (document.body.classList.value.indexOf('resizing') != -1) {
+		
+		let h = (document.documentElement.clientHeight - e.clientY) + 10;
+		let min_h = main_box_resize.clientHeight;
+
+		if (h <= min_h * 2) {
+			h = min_h;
+		}
+		if (h >= min_h) {
+			document.querySelector('.js-boxes').style.height = h + 'px';
+		}
+	}
+};
+
 
 /**
 * функция - шаблонизатор. 

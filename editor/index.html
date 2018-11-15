@@ -36,37 +36,26 @@
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/51129167" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
+<div class="resizing-layout js-resizing-layout"></div>
 <div class="frames">
 	<div class="frames__main">
 		<div class="frames__main-inner">
 			<div class="frames__main-info">
 				<span class="frames__main-info-title js-document-title" contenteditable oninput="setTitle(this.innerText)" data-untitled-text="Без имени"></span>
+
+				<!-- <div class="frames__main-info-actions">
+					<img class="frames__main-info-actions-btn" src="img/icons/settings.svg" alt="settings svg icon">
+				</div> -->
+				
 			</div>
 			<div class="frames__main-frame-wrapper">
 				<iframe src="javascript:''" id="view" frameborder="0" class="frames__main-frame" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor" scrolling="auto" allowTransparency="true" allowpaymentrequest="true" allowfullscreen="true"></iframe>
 			</div>
 		</div>
 	</div>
-	<div class="frames__boxes">
-		<div class="frames__boxes-actions">
-			<div class="frames__boxes-actions-item  hide-on-frame-full" onclick="fillFrames('frame-full')" title="Переключиться на редакторы">
-				<div class="icon icon-full">
-					<hr><hr><hr>
-				</div>
-			</div>
-				
-			<div class="frames__boxes-actions-item  hide-on-frame-min" onclick="fillFrames('frame-min')" title="Переключиться к результату">
-				<div class="icon icon-min"></div>
-			</div>
-				
-			<div class="frames__boxes-actions-item  hide-on-frame-auto" onclick="fillFrames('frame-auto')" title="Обычное редактирование">
-				<div class="icon icon-default">
-					<hr><hr><hr>
-				</div>
-			</div>
+	<div class="frames__boxes js-boxes">
+		<i class="frames__boxes-sizible js-resize-main-block"></i>
 
-		</div>
 		<div class="frames__boxes-inner">
 			<div class="frames__box-item js-box-item">
 				<h3 class="frames__box-caption" onclick="fillTheBoxes(this.parentElement)"><span class="inner">HTML</span></h3>
@@ -81,6 +70,7 @@
 				<textarea id="js" data-lang-type="javascript" class="frames__item js-field-box js-load-text" oninput="saveText(this)"></textarea>
 			</div>
 		</div>
+
 	</div>
 </div>
 
