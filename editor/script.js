@@ -196,7 +196,7 @@ function saveDocument() {
 	}
 	let doc_json = JSON.stringify(doc_obj);
 	localStorage.setItem('document_json', doc_json);
-	// setLocation(anchor + encodeURI(doc_json));
+	setLocation(anchor + encodeURI(doc_json));
 }
 
 function loadDocument(doc_json) {
