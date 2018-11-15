@@ -306,6 +306,7 @@ img {
 .box-item-is-filling .frames__box-item:not(.fill) .frames__box-caption {
 	padding: 0;
 	height: 100%;
+	min-height: 100px;
 }
 .box-item-is-filling .frames__box-item:not(.fill) .frames__box-caption .inner {
 	-webkit-transform: rotate(-90deg);
