@@ -28,7 +28,6 @@ file_input.addEventListener("change", function(e){
 		let img = images[i];
 
 		let name = img['name'];
-			name = name.substr(0, name.lastIndexOf('.'));
 
 		name = (hash_type == 'name') ? name : sprite_pref + i;
 
