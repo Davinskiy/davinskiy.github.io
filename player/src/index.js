@@ -13,8 +13,9 @@ function playVideo(obj){
 		getMediaProgress(this);
 	}, false);
 
-	video.addEventListener("onended", function() {
-		getMediaProgress(this);
+	video.addEventListener("ended", function() {
+		this.currentTime = 0.00;
+		getClosest(this, 'js-video-cnt').classList.add('play-icon');
 	}, false);
 }
 
@@ -36,7 +37,7 @@ window.videoPause = function(video){
 		video = getClosest(video, 'js-video-cnt').querySelector('video');
 	if(!video.paused){
 		video.pause();
-		video_cnt.classList.add('pause');
+		video_cnt.classList.add('play-icon');
 	}
 }
 
@@ -45,7 +46,7 @@ window.videoPlay = function(video){
 		video = getClosest(video, 'js-video-cnt').querySelector('video');
 	if(video.paused){
 		video.play();
-		video_cnt.classList.remove('pause');
+		video_cnt.classList.remove('play-icon');
 	}
 }
 

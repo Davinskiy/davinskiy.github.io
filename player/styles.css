@@ -46,7 +46,7 @@ body {
 .video__controls-play:hover {
 	transform: scale(1.5);
 }
-.video.pause .video__controls-play {
+.video.play-icon .video__controls-play {
 	opacity: 1;
 	visibility: visible;
 }
