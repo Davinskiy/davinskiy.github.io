@@ -74,6 +74,9 @@ body {
 .video__controls-mute-icon {
 
 }
-.mute .times {
+.video__controls-mute-icon .times {
 	display: none;
+}
+.mute .video__controls-mute-icon .times {
+	display: block;
 }

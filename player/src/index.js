@@ -3,10 +3,17 @@ let video_cnt = document.querySelector(".js-video-cnt");
 function playVideo(obj){
 	let video = obj.querySelector('video');
 
-	video.play();
-
 	setTimeout(() => {
+		video.play();
 		video.muted = false;
+
+		setTimeout(() => {
+			console.log(video.currentTime);
+			if(video.currentTime < (1/1000)*99) {
+				obj.classList.add('play-icon');
+			}
+		}, 99);
+
 	}, 150);
 
 	video.addEventListener("timeupdate", function() {
