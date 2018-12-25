@@ -64,3 +64,16 @@ body {
 	background-color: red;
 	display: block;
 }
+
+.video__controls-mute {
+	position: absolute;
+	right: 5px;
+	bottom: 8px;
+	cursor: pointer;
+}
+.video__controls-mute-icon {
+
+}
+.mute .times {
+	display: none;
+}

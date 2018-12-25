@@ -2,12 +2,18 @@ let video_cnt = document.querySelector(".js-video-cnt");
 
 function playVideo(obj){
 	let video = obj.querySelector('video');
+
 	video.play();
+
 	setTimeout(() => {
 		video.muted = false;
 	}, 150);
 
 	video.addEventListener("timeupdate", function() {
+		getMediaProgress(this);
+	}, false);
+
+	video.addEventListener("onended", function() {
 		getMediaProgress(this);
 	}, false);
 }
@@ -22,24 +28,33 @@ function getMediaProgress(video){
 
 	let progress_bar = getClosest(video, 'js-video-cnt').querySelector('.js-video-progress');
 
-	// console.log(progress_bar);
 	progress_bar.style.width = percent + '%';
 }
 
-window.videoPause = function(_this){
-	let video = getClosest(_this, 'js-video-cnt').querySelector('video');
+window.videoPause = function(video){
+	if (video.nodeName != 'VIDEO')
+		video = getClosest(video, 'js-video-cnt').querySelector('video');
 	if(!video.paused){
 		video.pause();
 		video_cnt.classList.add('pause');
 	}
 }
 
-window.videoPlay = function(_this){
-	let video = getClosest(_this, 'js-video-cnt').querySelector('video');
+window.videoPlay = function(video){
+	if (video.nodeName != 'VIDEO')
+		video = getClosest(video, 'js-video-cnt').querySelector('video');
 	if(video.paused){
 		video.play();
 		video_cnt.classList.remove('pause');
 	}
+}
+
+window.videoMute = function(video){
+	if (video.nodeName != 'VIDEO')
+		video = getClosest(video, 'js-video-cnt').querySelector('video');
+
+	video.muted = !video.muted;
+	video_cnt.classList.toggle('mute');
 }
 
 function getClosest(el, className) {
