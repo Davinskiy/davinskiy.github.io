@@ -7,18 +7,23 @@
 </head>
 <body>
 
-	<div class="video">
+	<div class="video js-video-cnt">
 		<video id="myVideo" class="video__container" src="//v1-rtc.1internet.tv/video/multibitrate/video/2018/12/13/3c7a1fae-88d5-48cb-a451-17fa7f8082ef_20180511_Dekabristi_new_950.mp4" muted></video>
-		<!-- <video id="myVideo" class="video__container" src="---video.mp4" playsinline autoplay muted loop></video> -->
-		<div class="video__controls">
-			<div class="video__controls-play">
-				<svg version="1.1" viewBox="0 0 512 512" fill="#f90" xml:space="preserve">
+		<!-- <video class="video__container" src="---video.mp4" playsinline autoplay muted loop></video> -->
+		<div class="video__controls" onclick="event.stopPropagation();videoPause(this);">
+			<div class="video__controls-play" onclick="event.stopPropagation();videoPlay(this);">
+				<svg version="1.1" viewBox="0 0 512 512" fill="#fff" xml:space="preserve">
 				<path d="M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80
 					c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176
 					c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57
 					S349.156,266.641,344.48,269.57z"/>
 				</svg>
 			</div>
+
+			<div class="video__controls-progress">
+				<i class="video__controls-progress-inner js-video-progress" style="width: 0%;"></i>
+			</div>
+
 		</div>
 	</div>
 

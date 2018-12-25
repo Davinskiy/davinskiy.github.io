@@ -6,20 +6,61 @@
 
 body {
 	background-color: #eee;
+	padding: 15px;
 }
 
 .video {
-	font-size: 0;
-	text-align: center;
-	padding: 15px;
-}
-.video__container {
 	width: 480px;
 	max-width: 100%;
+	margin: auto;
+	position: relative;
+	font-size: 0;
+}
+.video__container {
+	width: 100%;
 }
 .video__controls {
-
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .video__controls-play {
-	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 50px;
+	height: 50px;
+
+	transform: scale(.8);
+	transition: .1s;
+	cursor: pointer;
+
+	opacity: 0;
+	visibility: hidden;
+}
+.video__controls-play:hover {
+	transform: scale(1.5);
+}
+.video.pause .video__controls-play {
+	opacity: 1;
+	visibility: visible;
+}
+
+.video__controls-progress {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 7px;
+	background-color: rgba(0,0,0,.5);
+}
+.video__controls-progress-inner {
+	height: 100%;
+	background-color: red;
+	display: block;
 }
