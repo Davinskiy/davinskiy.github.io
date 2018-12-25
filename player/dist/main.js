@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// js\nlet video = document.getElementById(\"myVideo\");\n\nfunction mediaAutoPlay(obj){\n\tvideo.play();\n\tsetTimeout(() => {\n\t\tobj.muted = false;\n\t}, 150);\n}\n\nmediaAutoPlay(video);\n\nvideo.addEventListener('click',function(){\n\tif(!video.paused){\n\t\tvideo.pause();\n\t}\n}, false);\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
