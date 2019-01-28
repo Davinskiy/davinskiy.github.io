@@ -7,55 +7,50 @@
 	<meta name="keywords" content="Жамал Хасуев, Хасуев, psd to html, front-end developer, верстальщик, верстальщик в Чечне, программист в Грозном, Фронт-эндер">
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<title>Верстальщик | Жамал Хасуев</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body onload="getPage('', true);">
-	
-	<div class="main-container">
 
-		<navbar class="menu js-menu">
 
+	<nav class="menu container">
+		<div class="menu__inner">
 			<div class="menu-toggle" onclick="menuToggle(this);">
-				<div class="menu-toggle__element"></div>
-				<div class="menu-toggle__element"></div>
-				<div class="menu-toggle__element"></div>
+				<i class="menu-toggle__element"></i>
+				<i class="menu-toggle__element"></i>
+				<i class="menu-toggle__element"></i>
 			</div>
-
-			<div class="menu__wrapper">
-				<ul class="menu__container  js-menu">
-					<li class="menu__item"><a href="#home" onclick="getPage(this);return false;" class="menu__link  js-menu-item"> <i></i> Главная</a></li>
-					<li class="menu__item"><a href="#services" onclick="getPage(this);return false;" class="menu__link  js-menu-item"> <i></i> Услуги</a></li>
-					<li class="menu__item"><a href="#portfolios" onclick="getPage(this);return false;" class="menu__link  js-menu-item"> <i></i> Портфолио</a></li>
-					<li class="menu__item"><a href="#reviews" onclick="getPage(this);return false;" class="menu__link  js-menu-item"> <i></i> Отзывы</a></li>
-					<li class="menu__item"><a href="#contacts" onclick="getPage(this);return false;" class="menu__link  js-menu-item"> <i></i> Контакты</a></li>
-				</ul>
-			</div>
-		</navbar> <!-- /.menu -->
-		
-		<div class="content">
-			<i class="wf-preloader">
-				<i class="wf-preloader__inner"></i>
-			</i>
-			<div class="content js-content empty"></div>
+			<ul class="menu__container js-menu">
+				<li class="menu__item"><a href="#about" onclick="getPage(this);return false;" class="menu__link">Обо мне</a></li>
+				<li class="menu__item"><a href="#cooperation" onclick="getPage(this);return false;" class="menu__link">Сотрудничество</a></li>
+				<li class="menu__item"><a href="#portfolios" onclick="getPage(this);return false;" class="menu__link">Портфолио</a></li>
+				<li class="menu__item"><a href="#contacts" onclick="getPage(this);return false;" class="menu__link">Контакты</a></li>
+			</ul>
 		</div>
+	</nav> <!-- /.menu -->
 
-		<footer class="footer">
-			<div class="footer__text">
-				<span class="js-set-year"></span> &copy; Верстальщик | <a href="https://vk.com/jhasuev" class="link-classic"  target="blank">Жамал Хасуев</a>
-			</div>
-		</footer>
 
-	</div> <!-- /.main-container -->
+	<section class="content">
+		<i class="wf-preloader">
+			<i class="wf-preloader__inner"></i>
+		</i>
+		<div class="content js-content empty"></div>
+	</section>
+
+	<footer class="footer">
+		<div class="container"><span class="js-set-year"></span> &copy; Верстальщик | <a href="https://vk.com/jhasuev" target="_blank" class="link">Жамал Хасуев</a></div>
+	</footer> <!-- /.footer -->
+	
 
 	<!-- Подключние скриптов -->
 	<script src="js/portfolios--data.js"></script>
 	<script src="js/scripts.js"></script>
-	<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46205202 = new Ya.Metrika({ id:46205202, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46205202" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+	<!-- Yandex.Metrika counter --> <!-- <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46205202 = new Ya.Metrika({ id:46205202, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46205202" style="position:absolute; left:-9999px;" alt="" /></div></noscript> --> <!-- /Yandex.Metrika counter -->
 		<!-- BEGIN JIVOSITE CODE {literal1} -->
-	<script type='text/javascript'>
+	<!-- <script type='text/javascript'>
 	(function(){ var widget_id = 's89CmqIm1B';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-	</script>
+	</script> -->
 	<!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>

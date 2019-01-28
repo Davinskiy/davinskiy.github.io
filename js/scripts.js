@@ -2,20 +2,19 @@ let conf = {
 	ajaxDir : 'ajax/',
 	portfoliosMaxItem : 6,
 	allPages : {
-				"#contacts" : "Контакты",
-				"#home" : "Главная",
+				"#about" : "Главная",
+				"#cooperation" : "Услуги",
 				"#portfolios" : "Портфолио",
-				"#reviews" : "Отзывы",
-				"#services" : "Услуги"
+				// "#reviews" : "Отзывы",
+				"#contacts" : "Контакты",
 				}
 };
 let thisPage;
 let mainTitle = document.querySelector('title').innerText;
 
 /* menu */
-let menuObj = document.querySelector(".js-menu");
 function menuToggle(){
-	if (hasClass(menuObj, 'show-menu')) {
+	if (hasClass(document.body, 'show-menu')) {
 		Menu.hide();
 	} else {
 		Menu.show();
@@ -25,10 +24,10 @@ function menuToggle(){
 
 let Menu = {
 	show : function(){
-		classEdit(menuObj, 'show-menu', 'add');
+		classEdit(document.body, 'show-menu', 'add');
 	},
 	hide : function(){
-		classEdit(menuObj, 'show-menu', 'remove');
+		classEdit(document.body, 'show-menu', 'remove');
 	}
 };
 
@@ -46,7 +45,7 @@ function getPage(_this, autodetect){
 	}
 
 	if (conf.allPages.hasOwnProperty(href) == false) { // существует ли такая страница
-		href = '#home';
+		href = '#about';
 	}
 	let pageName = href.substr(1);
 
@@ -104,7 +103,7 @@ function loadPage(pageName) {
 			content.innerHTML += '<div class="content__box-item js-content-item  ' + pageName + '-box" id="' + pageName + '">' + req.responseText + '</div>';
 		}
 
-		if (pageName == 'home') {
+		if (pageName == 'about') {
 			let percentItems = document.querySelectorAll(".js-add-percent");
 			for (let i = 0; i < percentItems.length; i++) {
 				classEdit(percentItems[i], 'active', 'remove');
@@ -122,7 +121,7 @@ function loadPage(pageName) {
 
 			fillPortfoliosStarter();
 			
-			document.querySelector(".js-portfolios-per-items").innerText = conf.portfoliosMaxItem;
+			// document.querySelector(".js-portfolios-per-items").innerText = conf.portfoliosMaxItem;
 
 
 		}
@@ -136,7 +135,7 @@ function fillPortfoliosStarter(){
 		setTimeout(fillPortfoliosStarter, 50);
 		return false;
 	}
-	document.querySelector(".js-portfolios-quantity").innerText = allPortfolios.length;
+	// document.querySelector(".js-portfolios-quantity").innerText = allPortfolios.length;
 	
 	fillPortfolios();
 	Animation.stop();
@@ -159,8 +158,8 @@ function fillPortfolios(){
 	}
 
 	if (allPortfolios.length <= 0) {
-		classEdit(document.querySelector(".js-portfolios-empty"), 'show', 'add')
-		document.querySelector(".js-portfolios-btn").style.display = 'none';
+		classEdit(document.body, 'no-portfolios', 'add')
+		// document.querySelector(".js-portfolios-btn").style.display = 'none';
 	}
 }
 
@@ -204,7 +203,8 @@ document.querySelector('.js-set-year').innerText = (thisYear == startYear)? this
 /* classEdit(selector, 'class-open', 'remove') */
 /* classEdit(selector, 'class-open', 'add') */
 function classEdit(element, className, actionType) {
-
+	// console.log(typeof element, className, actionType);
+	if (!element) return;
 	let arr = element.className.split(" ");
 
 	if (actionType == "add") {
@@ -225,6 +225,7 @@ function classEdit(element, className, actionType) {
 }
 
 function hasClass(element, className) {
+	if (!element) return;
 
 	if (element.className.split(" ").indexOf(className) != -1)
 		return true;
@@ -280,11 +281,17 @@ function loadPortfoliosData(){
 				continue;
 			}
 
+			let site_class = '';
+			if (!portfoliosData[i].site) {
+				site_class = 'hidden';
+			}
+
 			__tpl = replaceTemplate(__tpl, {
 				"title" : portfoliosData[i].title,
 				"miniature" : portfoliosData[i].miniature,
-				"desc" : portfoliosData[i].desc,
-				"impress" : portfoliosData[i].impress,
+				// "desc" : portfoliosData[i].desc,
+				"site_class" : site_class,
+				"site" : portfoliosData[i].site,
 				"url-to-work" : portfoliosData[i].url_to_work,
 				"url-to-jpg" : portfoliosData[i].url_to_jpg
 			});
