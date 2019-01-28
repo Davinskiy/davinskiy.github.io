@@ -20,9 +20,9 @@ let portfoliosData = [
 	},
 	{
 		title : "ТехОсмотр онлайн",
-		miniature : pDir + "tech-view-circle/mini.jpg",
+		miniature : pDir + "tech-view-circle/mini.png",
 		url_to_work : pDir + "tech-view-circle/index.html",
-		url_to_jpg : pDir + "tech-view-circle/full-img.jpg",
+		url_to_jpg : pDir + "tech-view-circle/full-img.png",
 		site : "",
 	},
 	{
