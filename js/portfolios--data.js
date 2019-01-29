@@ -5,6 +5,41 @@ let pDir = 'https://davinskiy.bitbucket.io/portfolios/';
 
 let portfoliosData = [
 	{
+		title : "Бизнес на путешествиях",
+		miniature : pDir + "dnq/mini.jpg",
+		url_to_work : pDir + "dnq/index.html",
+		url_to_jpg : pDir + "dnq/full-img.jpg",
+		site : "https://cruise.dnq.me",
+	},
+	{
+		title : "Центр утилизации каталитических систем",
+		miniature : pDir + "catholyzers/mini.jpg",
+		url_to_work : pDir + "catholyzers/index.html",
+		url_to_jpg : pDir + "catholyzers/full-img.jpg",
+		site : "https://lomkatov.ru/",
+	},
+	{
+		title : "Пропуска МКАД ТТК СК",
+		miniature : pDir + "mcad-passes_/mini.jpg",
+		url_to_work : pDir + "mcad-passes_/index.html",
+		url_to_jpg : pDir + "mcad-passes_/full-img.jpg",
+		site : "https://propuska-mkad-ttk-sk.ru/",
+	},
+	{
+		title : "Banks Guarantee",
+		miniature : pDir + "banks-guarantee/mini.jpg",
+		url_to_work : pDir + "banks-guarantee/index.html",
+		url_to_jpg : pDir + "banks-guarantee/full-img.jpg",
+		site : "http://brvplus.ru/",
+	},
+	{
+		title : "Ключи магической вселенной",
+		miniature : pDir + "vratamir/mini.jpg",
+		url_to_work : pDir + "vratamir/index.html",
+		url_to_jpg : pDir + "vratamir/full-img.jpg",
+		site : "http://vratamir.com/lp/ovfree2019/",
+	},
+	{
 		title : "Медицинский Центр АО «Адмиралтейские верфи»",
 		miniature : pDir + "verficlinic/mini.jpg",
 		url_to_work : pDir + "verficlinic/index.html",
@@ -26,20 +61,6 @@ let portfoliosData = [
 		site : "",
 	},
 	{
-		title : "Бизнес на путешествиях",
-		miniature : pDir + "dnq/mini.jpg",
-		url_to_work : pDir + "dnq/index.html",
-		url_to_jpg : pDir + "dnq/full-img.jpg",
-		site : "",
-	},
-	{
-		title : "Центр утилизации каталитических систем",
-		miniature : pDir + "catholyzers/mini.jpg",
-		url_to_work : pDir + "catholyzers/index.html",
-		url_to_jpg : pDir + "catholyzers/full-img.jpg",
-		site : "",
-	},
-	{
 		title : "Конструктор для создания креативов",
 		miniature : pDir + "legolise/mini.jpg",
 		url_to_work : pDir + "legolise/index.html",
@@ -47,32 +68,11 @@ let portfoliosData = [
 		site : "",
 	},
 	{
-		title : "Ключи магической вселенной",
-		miniature : pDir + "vratamir/mini.jpg",
-		url_to_work : pDir + "vratamir/index.html",
-		url_to_jpg : pDir + "vratamir/full-img.jpg",
-		site : "",
-	},
-	{
-		title : "Пропуска МКАД ТТК СК",
-		miniature : pDir + "mcad-passes_/mini.jpg",
-		url_to_work : pDir + "mcad-passes_/index.html",
-		site : "https://propuska-mkad-ttk-sk.ru/",
-		url_to_jpg : pDir + "mcad-passes_/full-img.jpg",
-	},
-	{
-		title : "Fashion Landing",
+		title : "Мисс Урал",
 		miniature : pDir + "fashion-land/mini.jpg",
 		url_to_work : pDir + "fashion-land/index.html",
 		url_to_jpg : pDir + "fashion-land/full-img.jpg",
 		site : "",
-	},
-	{
-		title : "Banks Guarantee",
-		miniature : pDir + "banks-guarantee/mini.jpg",
-		url_to_work : pDir + "banks-guarantee/index.html",
-		site : "http://brvplus.ru/",
-		url_to_jpg : pDir + "banks-guarantee/full-img.jpg",
 	},
 	{
 		title : "Duty Awards",
@@ -228,6 +228,7 @@ let portfoliosData = [
 		title : 'Авто кредит',
 		miniature : pDir + 'auto-credit/miniature.jpg',
 		url_to_work : pDir + 'auto-credit/index.html',
-		url_to_jpg : pDir + 'auto-credit/full-image.jpg'
+		url_to_jpg : pDir + 'auto-credit/full-image.jpg',
+		site: "https://fgk.ua/lp/",
 	}
 ];
