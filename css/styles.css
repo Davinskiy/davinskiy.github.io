@@ -149,8 +149,8 @@ abbr {
 	cursor: pointer;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 25px;
-	height: 16px;
+	width: 31px;
+	height: 20px;
 	transition: .3s;
 }
 
@@ -804,7 +804,7 @@ warface preloader*/
 	}
 	.menu__inner {
 		display: block;
-		padding: 10px 15px;
+		padding: 15px;
 		position: relative;
 	}
 	.menu__container {
