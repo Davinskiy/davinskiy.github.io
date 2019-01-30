@@ -38,6 +38,7 @@ let portfoliosData = [
 		url_to_work : pDir + "vratamir/index.html",
 		url_to_jpg : pDir + "vratamir/full-img.jpg",
 		site : "http://vratamir.com/lp/ovfree2019/",
+		show: false,
 	},
 	{
 		title : "Медицинский Центр АО «Адмиралтейские верфи»",

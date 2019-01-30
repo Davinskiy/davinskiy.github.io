@@ -428,7 +428,7 @@ abbr {
 }
 .clients__item {
 	width: 100%;
-	max-width: 220px;
+	max-width: 250px;
 	margin: 0 20px 40px;
 
 	position: relative;
