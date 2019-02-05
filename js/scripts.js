@@ -126,6 +126,8 @@ function loadPage(pageName) {
 
 		}
 		Animation.stop();
+
+		setTimeout(lazyLoadInit, 300);
 	};
 }
 
@@ -306,3 +308,43 @@ function loadPortfoliosData(){
 window.onhashchange = function(){
 	getPage('', true);
 };
+
+
+document.onscroll = lazyLoadInit;
+
+function lazyLoadInit(){
+	let lazy_images = document.querySelectorAll('img.lazy-img');
+	let w_h = window.innerHeight;
+
+	lazy_images.forEach(function(lazy){
+		if (w_h > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
+			lazy.src = lazy.getAttribute('data-src');
+			classEdit(lazy, 'lazy-img', 'remove');
+		}
+	});
+
+	let lazy_bg_images = document.querySelectorAll('.lazy-bg-img');
+
+	lazy_bg_images.forEach(function(lazy){
+		if (w_h > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
+			lazy.style.backgroundImage = 'url('+ lazy.getAttribute('data-url') +')';
+			classEdit(lazy, 'lazy-bg-img', 'remove');
+		}
+	});
+};
+
+function getPositionTop(el) {
+	var yPos = 0;
+
+	while (el) {
+		if (el.tagName == "BODY") {
+			var yScroll = el.scrollTop || document.documentElement.scrollTop;
+			yPos += (el.offsetTop - yScroll + el.clientTop);
+		} else {
+			yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+		}
+
+		el = el.offsetParent;
+	}
+	return yPos;
+}
