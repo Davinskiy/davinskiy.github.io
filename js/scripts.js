@@ -163,6 +163,8 @@ function fillPortfolios(){
 		classEdit(document.body, 'no-portfolios', 'add')
 		// document.querySelector(".js-portfolios-btn").style.display = 'none';
 	}
+
+	setTimeout(lazyLoadInit, 300);
 }
 
 // console.log();
