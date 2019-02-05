@@ -313,6 +313,8 @@ window.onhashchange = function(){
 
 
 document.onscroll = lazyLoadInit;
+window.onresize = lazyLoadInit;
+setInterval(lazyLoadInit, 3000);
 
 function lazyLoadInit(){
 	let lazy_images = document.querySelectorAll('img.lazy-img');
