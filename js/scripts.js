@@ -319,9 +319,11 @@ setInterval(lazyLoadInit, 3000);
 function lazyLoadInit(){
 	let lazy_images = document.querySelectorAll('img.lazy-img');
 	let w_h = window.innerHeight;
+	let lazy_at = 1;
 
 	lazy_images.forEach(function(lazy){
-		if (w_h > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
+		lazy_at = (lazy.getAttribute('data-lazy-at')*1) || 1;
+		if (w_h*lazy_at > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
 			lazy.src = lazy.getAttribute('data-src');
 			classEdit(lazy, 'lazy-img', 'remove');
 		}
@@ -330,7 +332,8 @@ function lazyLoadInit(){
 	let lazy_bg_images = document.querySelectorAll('.lazy-bg-img');
 
 	lazy_bg_images.forEach(function(lazy){
-		if (w_h > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
+		lazy_at = (lazy.getAttribute('data-lazy-at')*1) || 1;
+		if (w_h*lazy_at > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
 			lazy.style.backgroundImage = 'url('+ lazy.getAttribute('data-url') +')';
 			classEdit(lazy, 'lazy-bg-img', 'remove');
 		}
