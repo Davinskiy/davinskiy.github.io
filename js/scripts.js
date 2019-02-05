@@ -317,25 +317,21 @@ window.onresize = lazyLoadInit;
 setInterval(lazyLoadInit, 3000);
 
 function lazyLoadInit(){
-	let lazy_images = document.querySelectorAll('img.lazy-img');
 	let w_h = window.innerHeight;
 	let lazy_at = 1;
 
-	lazy_images.forEach(function(lazy){
+	document.querySelectorAll('img.lazy-img, .lazy-bg-img').forEach(function(lazy){
 		lazy_at = (lazy.getAttribute('data-lazy-at')*1) || 1;
-		if (w_h*lazy_at > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
-			lazy.src = lazy.getAttribute('data-src');
-			classEdit(lazy, 'lazy-img', 'remove');
-		}
-	});
+		let lazy_pos = getPositionTop(lazy);
+		if (w_h*lazy_at > lazy_pos && lazy_pos > 0) {
 
-	let lazy_bg_images = document.querySelectorAll('.lazy-bg-img');
-
-	lazy_bg_images.forEach(function(lazy){
-		lazy_at = (lazy.getAttribute('data-lazy-at')*1) || 1;
-		if (w_h*lazy_at > getPositionTop(lazy) && getPositionTop(lazy) > 0) {
-			lazy.style.backgroundImage = 'url('+ lazy.getAttribute('data-url') +')';
-			classEdit(lazy, 'lazy-bg-img', 'remove');
+			if (lazy.getAttribute('data-src')) {
+				lazy.src = lazy.getAttribute('data-src')
+				classEdit(lazy, 'lazy-img', 'remove');
+			} else {
+				lazy.style.backgroundImage = 'url('+ lazy.getAttribute('data-url') +')';
+				classEdit(lazy, 'lazy-bg-img', 'remove');
+			}
 		}
 	});
 };
