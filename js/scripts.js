@@ -5,7 +5,7 @@ let conf = {
 				"#about" : "Главная",
 				"#cooperation" : "Услуги",
 				"#portfolios" : "Портфолио",
-				// "#reviews" : "Отзывы",
+				/* "#reviews" : "Отзывы", */
 				"#contacts" : "Контакты",
 				}
 };
@@ -44,14 +44,18 @@ function getPage(_this, autodetect){
 		href = _this.getAttribute('href');
 	}
 
-	if (conf.allPages.hasOwnProperty(href) == false) { // существует ли такая страница
+	/* существует ли такая страница */
+	if (conf.allPages.hasOwnProperty(href) == false) {
 		href = '#about';
 	}
 	let pageName = href.substr(1);
 
-	setLocation(href); // меняем адресную строку
-	detectCurrentMenu(); // отмечаем выбранный пункт меню
-	setTitle(href); // меняем название (тайтл) страницы
+	/* меняем адресную строку */
+	setLocation(href);
+	/* отмечаем выбранный пункт меню */
+	detectCurrentMenu();
+	/* меняем название (тайтл) страницы */
+	setTitle(href);
 
 	if (document.querySelector(href)) {
 		showPage(href);
@@ -117,12 +121,10 @@ function loadPage(pageName) {
 		if (pageName == 'portfolios') {
 			Animation.start();
 
-			loadPortfoliosData(); //  загружаем данные портфолио
+			/* загружаем данные портфолио */
+			loadPortfoliosData();
 
 			fillPortfoliosStarter();
-			
-			// document.querySelector(".js-portfolios-per-items").innerText = conf.portfoliosMaxItem;
-
 
 		}
 		Animation.stop();
@@ -137,8 +139,6 @@ function fillPortfoliosStarter(){
 		setTimeout(fillPortfoliosStarter, 50);
 		return false;
 	}
-	// document.querySelector(".js-portfolios-quantity").innerText = allPortfolios.length;
-	
 	fillPortfolios();
 	Animation.stop();
 }
@@ -161,13 +161,10 @@ function fillPortfolios(){
 
 	if (allPortfolios.length <= 0) {
 		classEdit(document.body, 'no-portfolios', 'add')
-		// document.querySelector(".js-portfolios-btn").style.display = 'none';
 	}
 
 	setTimeout(lazyLoadInit, 300);
 }
-
-// console.log();
 
 function setTitle(key){
 	let title = conf.allPages[key] + " – " + mainTitle;
@@ -207,7 +204,7 @@ document.querySelector('.js-set-year').innerText = (thisYear == startYear)? this
 /* classEdit(selector, 'class-open', 'remove') */
 /* classEdit(selector, 'class-open', 'add') */
 function classEdit(element, className, actionType) {
-	// console.log(typeof element, className, actionType);
+
 	if (!element) return;
 	let arr = element.className.split(" ");
 
@@ -263,7 +260,6 @@ function replaceTemplate(replaceText, replaceObj, before = '{{', after = '}}'){
 }
 
 let portfoliosTpl = '';
-// let portfolioContainer = $(".js-portfolio-container");
 let allPortfolios = new Array();
 
 /* Заполняем секцию портфолио данными */
@@ -276,9 +272,10 @@ function loadPortfoliosData(){
 	
 	req.onreadystatechange = function(){
 		if (req.readyState != 4 ) return false;
-		portfoliosTpl = req.responseText; // теперь тут находится голый шаблон портфолио
+		/* теперь тут находится голый шаблон портфолио */
+		portfoliosTpl = req.responseText; 
 		
-		// заполняем этот заблон данными
+		/* заполняем этот заблон данными */
 		for(let i = 0; i < portfoliosData.length; i++){
 			let __tpl = portfoliosTpl;
 			if (portfoliosData[i].show === false) {
@@ -293,7 +290,7 @@ function loadPortfoliosData(){
 			__tpl = replaceTemplate(__tpl, {
 				"title" : portfoliosData[i].title,
 				"miniature" : portfoliosData[i].miniature,
-				// "desc" : portfoliosData[i].desc,
+				/* "desc" : portfoliosData[i].desc, */
 				"site_class" : site_class,
 				"site" : portfoliosData[i].site,
 				"url-to-work" : portfoliosData[i].url_to_work,
@@ -306,7 +303,7 @@ function loadPortfoliosData(){
 	};
 }
 
-// перезагрузка контента при навигации истории посещении ( назад - вперед )
+/* перезагрузка контента при навигации истории посещении ( назад - вперед ) */
 window.onhashchange = function(){
 	getPage('', true);
 };

@@ -408,8 +408,6 @@ abbr {
 	color: #fff;
 	padding: 0 20px 10px;
 }
-.clients__inner {}
-.clients__heading {}
 .clients__container {
 	padding-top: 25px;
 	display: -webkit-box;
@@ -517,7 +515,6 @@ abbr {
 	padding-bottom: 20px;
 	font-weight: 600;
 }
-.list__container {}
 .list__item {
 	margin-bottom: 10px;
 	position: relative;
@@ -542,8 +539,6 @@ abbr {
 	    -ms-user-select: none;
 	        user-select: none;
 }
-.portfoios__inner {}
-.portfoios__list {}
 .portfoios__list-container {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -591,8 +586,6 @@ abbr {
 
 	background-color: #F4F4F4;
 }
-.portfoios__list-top-dots {}
-.dots {}
 .dots__container {
 	display: -webkit-box;
 	display: -ms-flexbox;
