@@ -348,3 +348,15 @@ function getPositionTop(el) {
 	}
 	return yPos;
 }
+
+/* load stylesheets */
+(function(){
+	setTimeout(function(){
+		document.querySelectorAll('link[data-href]').forEach(function(link){
+			link.setAttribute("href", link.getAttribute("data-href"));
+		});
+		setTimeout(function(){
+			document.body.style.display = "";
+		}, 200);
+	}, 200);
+})();
