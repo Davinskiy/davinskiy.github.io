@@ -323,7 +323,7 @@ function lazyLoadInit(){
 		if (w_h*lazy_at > lazy_pos && lazy_pos > 0) {
 
 			if (lazy.getAttribute('data-src')) {
-				lazy.src = lazy.getAttribute('data-src')
+				lazy.src = lazy.getAttribute('data-src');
 				classEdit(lazy, 'lazy-img', 'remove');
 			} else {
 				lazy.style.backgroundImage = 'url('+ lazy.getAttribute('data-url') +')';
