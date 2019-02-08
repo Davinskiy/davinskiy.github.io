@@ -323,7 +323,7 @@ function lazyLoadInit(){
 		if (w_h*lazy_at > lazy_pos && lazy_pos > 0) {
 
 			if (lazy.getAttribute('data-src')) {
-				lazy.src = lazy.getAttribute('data-src');
+				lazy.src = lazy.getAttribute('data-src')
 				classEdit(lazy, 'lazy-img', 'remove');
 			} else {
 				lazy.style.backgroundImage = 'url('+ lazy.getAttribute('data-url') +')';
@@ -348,15 +348,3 @@ function getPositionTop(el) {
 	}
 	return yPos;
 }
-
-/* load stylesheets */
-(function(){
-	setTimeout(function(){
-		document.querySelectorAll('link[data-href]').forEach(function(link){
-			link.setAttribute("href", link.getAttribute("data-href"));
-		});
-		setTimeout(function(){
-			document.body.style.display = "";
-		}, 200);
-	}, 200);
-})();
