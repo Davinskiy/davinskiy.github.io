@@ -371,7 +371,6 @@ abbr {
 }
 .advantages__item {
 	margin: 0 10px 40px;
-	/*width: 100%;*/
 }
 .advantages__icon {
 	background: center center no-repeat;
@@ -433,13 +432,9 @@ abbr {
 	z-index: 1;
 }
 .clients__info {
-	background-color: #fff;
-	-webkit-filter: drop-shadow(0px 0px 20px rgba(100,100,100, 0.8));
-	        filter: drop-shadow(0px 0px 20px rgba(100,100,100, 0.8));
 	color: #333;
-	border-radius: 5px;
 
-	padding: 10px 15px;
+	padding: 10px 15px 30px;
 	text-align: left;
 	width: 320px;
 
@@ -448,7 +443,6 @@ abbr {
 	left: -320px;
 	right: -320px;
 	margin: auto;
-	margin-bottom: 20px;
 
 	line-height: 1.35;
 
@@ -461,6 +455,19 @@ abbr {
 	-o-transition: .15s;
 	transition: .15s;
 }
+.clients__info:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	z-index: -1;
+	background-color: #fff;
+	-webkit-filter: drop-shadow(0px 0px 20px rgba(100,100,100, 0.8));
+	        filter: drop-shadow(0px 0px 20px rgba(100,100,100, 0.8));
+	border-radius: 5px;
+}
 .clients__info:hover,
 .clients__img:hover ~ .clients__info {
 	-webkit-transform: translateY(0px);
@@ -472,7 +479,7 @@ abbr {
 .clients__info:after {
 	content: "";
 	position: absolute;
-	top: 100%;
+	bottom: 10px;
 	left: 0;
 	right: 0;
 	margin: auto;
