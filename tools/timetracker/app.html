@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Time Tracker</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+	<div class="container" id="tracker-app" style="display: none" :style="{display:'block'}">
+		<div class="row">
+			<div class="col py-5">
+				<h1 class="text-center mb-4">Time Tracker</h1>
+
+				<div class="modals">
+					<div class="modals__wrapper">
+						<div class="modals__item  task-adding" id="task-adding">
+							<div class="task-adding__wrapper">
+								<div class="modals__close" onclick="modalClose(event)">&times;</div>
+								<h2 class="text-center">Новый проект/задача</h2>
+								<form action="" @submit.prevent="addProject();" class="form pt-4">
+									
+									<div class="form-group">
+										<label for="exampleInputEmail1">Название задачи/проекта</label>
+										<input type="text" ref="new_title" name="title" class="form-control mb-2" required placeholder="Сверстать лендинг" autocomplete="off">
+									</div>
+
+									<div class="form-group">
+										<label for="exampleInputEmail1">Описание задачи/проекта</label>
+										<input type="text" ref="new_desc" name="desc" class="form-control mb-2" placeholder="Выполнить внезапно и очень быстро" autocomplete="off">
+									</div>
+									
+									<div class="form-group">
+										<label for="exampleInputEmail1">Почасовая ставка</label>
+										<!-- <input type="number" ref="new_rate" :value="rate" name="rate" class="form-control" autocomplete="off"> -->
+										<input type="number" ref="new_rate" value="400" name="rate" class="form-control" autocomplete="off">
+									</div>
+
+									<button class="btn btn-block btn-primary">Добавить задачу</button>
+								</form>
+							</div>
+						</div>
+						<div class="modals__bg" onclick="modalClose(event)"></div>
+					</div>
+				</div> <!-- /.modals -->
+
+				<!-- <pre>{{this.tasks}}</pre> -->
+
+				<div class="text-right mb-4 pb-2">
+					<button onclick="modalOpen(event, '#task-adding')" class="btn btn-outline-primary">Добавить задачу / проект</button>
+				</div>
+
+				<div class="alert p-relative" v-for="(task, task_id) in tasks" :class="'alert-'+task.status">
+					<div class="task-remove" @click="remove(task_id)">&times;</div>
+					<h4 class="alert-heading pr-3">{{task.title}}</h4>
+					
+					<p class="m-0">{{task.desc}}</p>
+					
+					<div class="times pt-3 list-group" v-if="task.times.length && task.show_times">
+						<div	class="times-item list-group-item list-group-item-action"
+								v-for="(time, key) in task.times"
+								:class="{'active':task.times.length-1==key}"
+								>
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1">{{time.title||'Название подзадачи/шага'}}</h5>
+								<small>{{(getSpendeingTime(time.start,time.end))}}</small>
+							</div>
+							<!-- <p class="mb-0">{{time.comment||'Комментарий для подзадачи/шага'}}</p> -->
+							<p class="mb-0">{{time.comment}}</p>
+							<div v-if="task.times.length-1==key && task.status!='secondary' && task.status!='success'" class="pt-3">
+								<button @click="switchStatus(task_id, 'secondary')" class="btn btn-secondary">Поставить на паузу</button>
+								<button @click="switchStatus(task_id, 'success')" class="btn btn-success">Завершить</button>
+							</div>
+						</div>
+					</div>
+
+					<div v-if="task.status != 'success'" class="pt-3">
+						<button @click="switchStatus(task_id, 'primary')" v-if="!task.times.length" class="btn btn-primary">Начать</button>
+						<button @click="switchStatus(task_id, 'primary')" v-else-if="task.status != 'primary'" class="btn btn-primary">Продолжить</button>
+
+						<button @click="switchStatus(task_id, 'secondary')" v-if="task.times.length && task.status != 'secondary'" class="btn btn-secondary">Поставить на паузу</button>
+						<button @click="switchStatus(task_id, 'success')" v-if=" task.status != 'light'" class="btn btn-success">Завершить</button>
+					</div>
+					<div v-if="task.status == 'success'" class="pt-3">
+						<button @click="switchStatus(task_id, 'primary')" class="btn btn-primary">Вернуть в работу</button>
+					</div>
+					
+					<div class="pt-2" v-if="task.times.length">
+						<a href="#" class="link" v-if="!task.show_times" @click.prevent="task.show_times=!0">&equiv; Показать полностью</a>
+						<a href="#" class="link" v-if="task.show_times" @click.prevent="task.show_times=!1">&times; Свернуть времена</a>
+					</div>
+
+					<div class="text-right d-flex justify-content-between pt-2">
+						<div>
+							<table>
+								<tr>
+									<td>Часы:</td>
+									<td class="pl-2 text-left"><b>{{getProcessInfo(task).hours}}</b></td>
+								</tr>
+								<tr>
+									<td>Минуты:</td>
+									<td class="pl-2 text-left"><b>{{getProcessInfo(task).minutes}}</b></td>
+								</tr>
+								<tr>
+									<td>Стоимость:</td>
+									<td class="pl-2 text-left"><b>{{getProcessInfo(task).money}}₽</b></td>
+								</tr>
+								<tr>
+									<td>Почасовая ставка:</td>
+									<td class="pl-2 text-left"><b>{{task.rate}}</b></td>
+								</tr>
+							</table>
+						</div>
+						<b class="mt-auto">{{statuses[task.status]}}</b>
+					</div>
+				</div>
+
+				<div v-if="!tasks.length">
+					<div class="alert alert-info">
+				
+						<h4 class="alert-heading">Нет открытых задач</h4>
+						
+						<p class="m-0">
+							<a href="#" onclick="modalOpen(event, '#task-adding')">Добавьте задачу / проект</a>, чтобы контролировать время, трачимое на нее.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+
+let template2 = [
+	{
+		title : "Верстка лендинга по макету",
+		desc : "Нужно сверстать лендинг предоставленный Васей Пупкиным.",
+		status : 'secondary',
+		show_times : false,
+		rate : 400,
+		times : [
+			{
+				title : 'Верстка шапки',
+				start : 1554160847645,
+				end : 1554160947645,
+				comment : 'Сверстал шапку',
+			},
+			{
+				title : 'Верстка второго экрана',
+				start : 1554160847645,
+				end : 1554160947645,
+				comment : 'Сверстал второй экран',
+			},
+			{
+				title : 'Верстка третьего экрана',
+				start : 1554160847645,
+				end : 0,
+				comment : '',
+			},
+		],
+	},
+	{
+		title : "Верстка лендинга по макету 2",
+		desc : "Нужно сверстать лендинг предоставленный Васей Пупкиным. 2",
+		status : 'success',
+		show_times : false,
+		rate : 400,
+		times : [
+			{
+				title : 'Верстка шапки',
+				start : 1554160847645,
+				end : 1554160947645,
+				comment : 'Сверстал шапку',
+			},
+			{
+				title : 'Верстка второго экрана',
+				start : 1554160847645,
+				end : 1554160947645,
+				comment : 'Сверстал второй экран',
+			},
+			{
+				title : 'Верстка последнего экрана',
+				start : 1554160847645,
+				end : 1554160947645,
+				comment : 'Все! Проектище завершенейще!',
+			},
+		],
+	},
+	{
+		title : "Верстка лендинга по макету 2",
+		desc : "Нужно сверстать лендинг предоставленный Васей Пупкиным. 2",
+		status : 'light',
+		show_times : false,
+		rate : 400,
+		times : [],
+	},
+];
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
