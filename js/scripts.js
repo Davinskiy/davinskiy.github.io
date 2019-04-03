@@ -4,6 +4,7 @@ let conf = {
 	allPages : {
 				"#about" : "Главная",
 				"#cooperation" : "Услуги",
+				"#calc" : "Калькулятор",
 				"#portfolios" : "Портфолио",
 				/* "#reviews" : "Отзывы", */
 				"#contacts" : "Контакты",
