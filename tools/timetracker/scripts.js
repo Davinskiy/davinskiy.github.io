@@ -29,11 +29,10 @@ let tracker_app = new Vue({
 		switchStatus : function(task_id, btn_stat){
 			let change = true;
 			let cmt;
+			let times_last_index = this.tasks[task_id].times.length-1;
 
 			switch(btn_stat) {
-				case 'light' /*Еще не начат*/:
-					break;
-				case 'primary' /*В работе*/:
+				case 'primary' /*В работу*/:
 					this.tasks[task_id].times.push({
 						title : prompt('Какая задача стоит?'),
 						start : new Date().getTime(),
@@ -41,7 +40,7 @@ let tracker_app = new Vue({
 						comment : '',
 					});
 					break;
-				case 'secondary' /*На паузе*/:
+				case 'secondary' /*На паузу*/:
 					cmt = prompt('Хотите добавить комментарий к действию?');
 					
 					if (!cmt) {
@@ -49,19 +48,22 @@ let tracker_app = new Vue({
 						break;
 					}
 					
-					this.tasks[task_id].times[this.tasks[task_id].times.length-1].comment = cmt;
-					this.tasks[task_id].times[this.tasks[task_id].times.length-1].end = new Date().getTime();
+					this.tasks[task_id].times[times_last_index].comment = cmt;
+					this.tasks[task_id].times[times_last_index].end = new Date().getTime();
 					break;
-				case 'success' /*Завершено*/:
-					cmt = prompt('Хотите добавить/обновить комментарий к действию?', this.tasks[task_id].times[this.tasks[task_id].times.length-1].comment);
+				case 'success' /*Завершение*/:
+					cmt = prompt('Хотите добавить/обновить комментарий к действию?', this.tasks[task_id].times[times_last_index].comment);
 					
 					if (!cmt) {
 						change = false;
 						break;
 					}
 
-					this.tasks[task_id].times[this.tasks[task_id].times.length-1].comment = cmt;
-					this.tasks[task_id].times[this.tasks[task_id].times.length-1].end = new Date().getTime();
+					this.tasks[task_id].times[times_last_index].comment = cmt;
+
+					/* делаем проверку, на случае если перед этим работа была приостановлена */
+					if (!this.tasks[task_id].times[times_last_index].end)
+						this.tasks[task_id].times[times_last_index].end = new Date().getTime();
 					break;
 			}
 			
