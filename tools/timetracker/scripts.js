@@ -9,7 +9,7 @@ let tracker_app = new Vue({
 			'light' : 'Еще не начат',
 			'primary' : 'В работе',
 			'secondary' : 'На паузе',
-			'success' : 'Завершено',
+			'success' : 'Завершен',
 		},
 	},
 	created : function(){
@@ -119,6 +119,22 @@ let tracker_app = new Vue({
 				'hours' : hours.toFixed(2),
 				'money' : money,
 			};
+		},
+		getStringifyDate : function(ts){
+			let d = new Date(ts);
+			let s = ((d.getDate() < 10)?'0':'') + d.getDate();
+				s += '.';
+				s += (((d.getMonth()+1) < 10)?'0':'') + (d.getMonth()+1);
+				s += '.';
+				s += ((d.getFullYear() < 10)?'0':'') + d.getFullYear();
+				s += ' в ';
+				s += ((d.getHours() < 10)?'0':'') + d.getHours();
+				s += ':';
+				s += ((d.getMinutes() < 10)?'0':'') + d.getMinutes();
+				s += ':';
+				s += ((d.getSeconds() < 10)?'0':'') + d.getSeconds();
+
+			return s;
 		},
 	}
 });
