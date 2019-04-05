@@ -18,6 +18,7 @@
 
 				<div class="modals">
 					<div class="modals__wrapper">
+
 						<div class="modals__item  task-adding" id="task-adding">
 							<div class="task-adding__wrapper">
 								<div class="modals__close" onclick="modalClose(event)">&times;</div>
@@ -25,18 +26,17 @@
 								<form action="" @submit.prevent="addProject();" class="form pt-4">
 									
 									<div class="form-group">
-										<label for="exampleInputEmail1">Название задачи/проекта</label>
+										<label>Название задачи/проекта</label>
 										<input type="text" ref="new_title" name="title" class="form-control mb-2" required placeholder="Сверстать лендинг" autocomplete="off">
 									</div>
 
 									<div class="form-group">
-										<label for="exampleInputEmail1">Описание задачи/проекта</label>
+										<label>Описание задачи/проекта</label>
 										<input type="text" ref="new_desc" name="desc" class="form-control mb-2" placeholder="Выполнить внезапно и очень быстро" autocomplete="off">
 									</div>
 									
 									<div class="form-group">
-										<label for="exampleInputEmail1">Почасовая ставка</label>
-										<!-- <input type="number" ref="new_rate" :value="rate" name="rate" class="form-control" autocomplete="off"> -->
+										<label>Почасовая ставка</label>
 										<input type="number" ref="new_rate" value="400" name="rate" class="form-control" autocomplete="off">
 									</div>
 
@@ -44,11 +44,40 @@
 								</form>
 							</div>
 						</div>
+
+						<div class="modals__item  task-adding" id="confirm-edit">
+							<div class="task-adding__wrapper">
+								<div class="modals__close" onclick="modalClose(event)">&times;</div>
+								<h2 class="text-center" ref="confirm_heading">Новый проект/задача</h2>
+								<form action="" @submit.prevent="action();" class="form">
+									<input type="hidden" ref="confirm_btn_stat">
+									<input type="hidden" ref="confirm_task_id">
+									
+									<div class="form-group">
+										<label ref="confirm_field_heading"></label>
+										<input type="text" ref="confirm_text_input" name="text" class="form-control mb-2" required autocomplete="off">
+									</div>
+
+									<button class="btn btn-block btn-primary" ref="confirm_btn_text">Добавьте комментарие</button>
+								</form>
+							</div>
+						</div>
+
+						<div class="modals__item  task-adding" id="confirm-remove">
+							<div class="task-adding__wrapper text-center">
+								<div class="modals__close" onclick="modalClose(event)">&times;</div>
+								<h2 class="text-center mb-3" ref="confirm_heading">Хотите удалить?</h2>
+								<p>Проект "<b ref="remove_task_title"></b>" будет удален навсегда.</p>
+								<form action="" @submit.prevent="remove();" class="form">
+									<input type="hidden" ref="task_id">
+									<button class="btn btn-block btn-outline-danger">Да, удалить</button>
+									<a href="javascript:void(0)" @click="modalClose();" class="btn btn-block btn-outline-success">Нет, оставить</a>
+								</form>
+							</div>
+						</div>
 						<div class="modals__bg" onclick="modalClose(event)"></div>
 					</div>
 				</div> <!-- /.modals -->
-
-				<!-- <pre>{{this.tasks}}</pre> -->
 
 				<div class="text-right mb-4 pb-2">
 					<button onclick="modalOpen(event, '#task-adding')" class="btn btn-outline-primary">Добавить задачу / проект</button>
@@ -58,16 +87,16 @@
 
 					<div class="d-flex justify-content-between pb-3">
 						<i class="mr-3">{{statuses[task.status]}}</i>
-						<button class="close" @click="remove(task_id)" data-toggle="tooltip" data-title="Удалить задачу">
+						<span class="close" @click="removeConfirm(task_id)" data-toggle="tooltip" data-title="Удалить задачу">
 							<span>&times;</span>
-						</button>
+						</span>
 					</div>
 					
 					<h4 class="alert-heading pr-3">{{task.title}}</h4>
 					
 					<p class="m-0">{{task.desc}}</p>
 					
-					<div class="times pt-3 list-group" v-if="task.times.length && task.show_times">
+					<div class="times pt-3 list-group hidden" :ref="'times_' + task_id" v-if="task.times.length">
 						
 						<div class="times pt-3 list-group">
 							<div	class="times-item list-group-item list-group-item-action"
@@ -75,8 +104,8 @@
 									:class="{'active':task.times.length-1==key}"
 									>
 								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1">{{time.title||'Название подзадачи/шага'}}</h5>
-									<small>{{(getSpendeingTime(time.start,time.end))}}</small>
+									<h5 class="mb-1">{{time.title||'Подзадача №' + (key+1)}}</h5>
+									<small>{{(getPassedTime((time.end||new Date().getTime()) - time.start))}}</small>
 								</div>
 								<p class="mb-0">{{time.comment}}</p>
 								<div v-if="task.times.length-1==key && task.status!='secondary' && task.status!='success'" class="pt-3">
@@ -92,26 +121,29 @@
 							<button @click="switchStatus(task_id, 'secondary')" v-if="task.times.length && task.status != 'secondary'" class="btn btn-secondary">Поставить на паузу</button>
 							<button @click="switchStatus(task_id, 'success')" v-if=" task.status != 'light'" class="btn btn-success">Завершить</button>
 						</div>
-						<div v-if="task.status == 'success'" class="pt-3">
-							<button @click="switchStatus(task_id, 'primary')" class="btn btn-primary">Вернуть в работу</button>
+						<div v-if="task.status == 'success'" class="pt-3 text-right">
+							<button @click="switchStatus(task_id, 'primary')" class="btn btn-outline-primary">Вернуть в работу</button>
+							<button v-if="!task.paid" @click="task.paid=new Date().getTime();" class="btn btn-outline-success">Оплачено</button>
+							<button v-if="task.paid" @click="task.paid=0;" class="btn btn-outline-danger">Не оплачено</button>
 						</div>
 
 						<table class="table table-striped rounded mt-3">
 							<tr>
-								<th class="text-right">Часы:</th>
-								<td class="pl-1">{{getProcessInfo(task).hours}}</td>
+								<th class="text-right">Почасовая ставка:</th>
+								<td class="pl-1">{{task.rate}}₽</td>
 							</tr>
 							<tr>
-								<th class="text-right">Минуты:</th>
-								<td class="pl-1">{{getProcessInfo(task).minutes}}</td>
+								<th class="text-right">Потраченное время:</th>
+								<td class="pl-1">{{getProcessInfo(task).time}}</td>
 							</tr>
 							<tr>
-								<th class="text-right">Стоимость:</th>
+								<th class="text-right">Общая сумма:</th>
 								<td class="pl-1">{{getProcessInfo(task).money}}₽</td>
 							</tr>
 							<tr>
-								<th class="text-right">Почасовая ставка:</th>
-								<td class="pl-1">{{task.rate}}</td>
+								<th class="text-right">Оплачено:</th>
+								<td class="pl-1" v-if="task.paid">{{getStringifyDate(task.paid)}}</td>
+								<td class="pl-1" v-else><i>Не оплачено</i></td>
 							</tr>
 							<tr v-if="task.times.length">
 								<th class="text-right">Начало работы:</th>
@@ -126,9 +158,14 @@
 					</div>
 					
 					<div class="pt-2" v-if="task.times.length">
-						<a href="#" class="link" v-if="!task.show_times" @click.prevent="task.show_times=!0">&equiv; Показать информацию</a>
-						<a href="#" class="link" v-if="task.show_times" @click.prevent="task.show_times=!1">&times; Свернуть информацию</a>
+						<a href="javascript:void(0)"
+							@click="toggleTimes(event, 'times_' + task_id);"
+							class="link"
+							data-orgin-text="&equiv; Показать информацию"
+							data-replace-text="&times; Скрыть информацию"
+							>&times; Показать информацию</a>
 					</div>
+
 					<div class="pt-2" v-if="!task.times.length">
 						<button @click="switchStatus(task_id, 'primary')" class="btn btn-primary">Начать</button>
 					</div>
