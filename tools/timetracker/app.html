@@ -137,13 +137,13 @@
 								<td class="pl-1">{{getProcessInfo(task).time}}</td>
 							</tr>
 							<tr>
-								<th class="text-right">Общая сумма:</th>
+								<th class="text-right">Общая стоимость:</th>
 								<td class="pl-1">{{getProcessInfo(task).money}}₽</td>
 							</tr>
 							<tr>
 								<th class="text-right">Оплачено:</th>
 								<td class="pl-1" v-if="task.paid">{{getStringifyDate(task.paid)}}</td>
-								<td class="pl-1" v-else><i>Не оплачено</i></td>
+								<td class="pl-1" v-else><i class="text-danger">Нет</i></td>
 							</tr>
 							<tr v-if="task.times.length">
 								<th class="text-right">Начало работы:</th>
