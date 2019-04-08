@@ -13,17 +13,17 @@ let tracker_app = new Vue({
 		statusesVerb : {
 			'primary' : {
 				heading : 'В работу',
-				text_input : 'Начну верстку с хедера и меню...',
+				text_input : 'Пора что-то делать ...',
 				btn_text : 'Начать работу',
 			},
 			'secondary' : {
 				heading : 'На паузу',
-				text_input : 'Сверстал хедер и меню...',
+				text_input : 'Пойду поем чуть-чуть...',
 				btn_text : 'Поставить на паузу',
 			},
 			'success' : {
 				heading : 'Завершение',
-				text_input : 'Сверстал весь макет, отправляю на согласованию ...',
+				text_input : 'Вроде все, осталось все остальное ...',
 				btn_text : 'Завершить',
 			},
 		},
