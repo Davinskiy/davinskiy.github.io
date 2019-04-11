@@ -86,7 +86,13 @@
 				<div class="alert p-relative" v-for="(task, task_id) in tasks" :class="'alert-'+task.status">
 
 					<div class="d-flex justify-content-between pb-3">
-						<i class="mr-3">{{statuses[task.status]}}</i>
+						<div class="mr-3">
+							<i class="mr-2">{{statuses[task.status]}}</i>
+							<i>
+								<b v-if="task.paid">Оплачено</b>
+								<b class="text-danger" v-else>Не оплачено</b>
+							</i>
+						</div>
 						<span class="close" @click="removeConfirm(task_id)" data-toggle="tooltip" data-title="Удалить задачу">
 							<span>&times;</span>
 						</span>
