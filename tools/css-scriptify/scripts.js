@@ -94,9 +94,19 @@ let app = new Vue({
 			}
 			return replaceText;
 		},
-		// removeEmptyStyles : function(css){
-		// 	return css.replace(/(?<=})([^{]*{\s*})/g, '');
-		// },
+		removeEmptyStyles : function(css){
+			// return css.replace(/(?<=})([^{]*{\s*})/g, '');
+			let all_occurs = css.match(/}([^{]*{\s*})/g);
+
+			for (let i = 0, len = this.all_occurs; i < len; i++) {
+				css = this.replaceTemplate(css, {
+					[all_occurs[i]] : '}'
+				});
+			}
+
+			return css;
+
+		},
 		replaceAllProperties : function(css){
 			
 			for (let i = 0, len = this.properties.length; i < len; i++) {
@@ -212,7 +222,7 @@ let app = new Vue({
 
 			css = lines_tmp.join(' ');
 			css = this.replaceTemplate(css, this.minifies);
-			// css = this.removeEmptyStyles(css);
+			css = this.removeEmptyStyles(css);
 
 			return css;
 		},
