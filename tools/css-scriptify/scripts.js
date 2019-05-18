@@ -35,7 +35,6 @@ let app = new Vue({
 		start : function(css){
 			if (!css) return '';
 
-
 			this.replace_object = {};
 			this.replace_index = 0;
 			this.chars_whitelist = '';
@@ -56,7 +55,7 @@ let app = new Vue({
 			css = this.replaceAllProperties(css);
 
 			// units
-			css = this.replace(css, '-?(.?[0-9]){2,}[%|cm|em|ex|in|mm|pc|pt|px|vh|vw|vmin]+');
+			// css = this.replace(css, '-?(.?[0-9]){2,}[%|cm|em|ex|in|mm|pc|pt|px|vh|vw|vmin]+');
 
 			// RGB colors
 			css = this.replace(css, '[#a-f0-9]{3,6}');
@@ -128,6 +127,8 @@ let app = new Vue({
 
 		replace : function(code, re, min_occur){
 
+			console.time();
+
 			let all_occurs = code.match(new RegExp(re, "gi"));
 
 			if (all_occurs) {
@@ -135,9 +136,10 @@ let app = new Vue({
 					return b.length - a.length;
 				});
 			} else {
-				console.error('bad regular expression or just no matches -_-: ', re);
+				console.warn('bad regular expression or just no matches -_-: ', re);
 				return code;
 			}
+
 
 			let occurs_counter = {};
 
@@ -150,19 +152,25 @@ let app = new Vue({
 
 			for(let index in all_occurs){
 				let origin = all_occurs[index];
-				let _replace = this.getSymbol(this.replace_index);
-				if (this.isGoodReplace(code, origin, _replace)) {
 
-					code = this.replaceTemplate(code, {
-						[origin] : _replace
-					});
+				if (origin.trim()) {
+					let _replace = this.getSymbol(this.replace_index);
 
-					this.replace_object[_replace] = origin;
-					this.replace_index++;
+					if (this.isGoodReplace(code, origin, _replace)) {
+
+						code = this.replaceTemplate(code, {
+							[origin] : _replace
+						});
+
+						this.replace_object[_replace] = origin;
+						this.replace_index++;
+					}
 				}
+				
 				
 			}
 
+			console.timeEnd();
 			return code;
 		},
 

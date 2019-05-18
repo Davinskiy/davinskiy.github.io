@@ -38,17 +38,14 @@
 								<div><b><i>-{{getMinusedPercent(getInputSize, getOutputSize)}}%</i></b></div>
 								<p class="counts-replace"><i>Counts of replacers: <b>{{replace_index-1}}</b></i></p>
 								<p class="text-info">
-									Minified version: <b>{{getSize(minified_weight)}}</b>,<br/>
-									<b>-{{getMinusedPercent(getInputSize, minified_weight)}}%</b>
-								</p>
 							</div>
 							<div class="pt-2 text-center text-danger" v-else>
 								<div>After: {{getSize(getOutputSize)}}</div>
 								<div><b><i>+{{Math.abs(getMinusedPercent(getInputSize, getOutputSize))}}%</i></b></div>
-								<p class="text-info">
-									Minified version: <b>{{getSize(minified_weight)}}</b>,<br/>
-									<b>-{{getMinusedPercent(getInputSize, minified_weight)}}%</b>
-								</p>
+							</div>
+							<div class="text-info text-center">
+								Minified version: <b>{{getSize(minified_weight)}}</b>,<br/>
+								<b>-{{Math.abs(getMinusedPercent(getInputSize, minified_weight))}}%</b>
 							</div>
 						</div>
 					</div>
