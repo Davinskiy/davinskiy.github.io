@@ -39,6 +39,8 @@ let app = new Vue({
 			this.replace_index = 0;
 			this.chars_whitelist = '';
 
+			console.clear();
+
 			// adding chars to whitelist
 			for (let i = 0, len = this.chars.length; i < len; i++) {
 				if (css.indexOf(this.chars[i]) === -1) {
@@ -58,10 +60,13 @@ let app = new Vue({
 			// css = this.replace(css, '-?(.?[0-9]){2,}[%|cm|em|ex|in|mm|pc|pt|px|vh|vw|vmin]+');
 
 			// RGB colors
-			css = this.replace(css, '[#a-f0-9]{3,6}');
+			css = this.replace(css, '#[a-f0-9]{3,6}');
 
 			// any words
-			css = this.replace(css, '[a-z]*');
+			css = this.replace(css, '[a-z]{3,}', 'g');
+
+			// any units
+			css = this.replace(css, '[0-9]{3,}');
 
 			// changing pathes
 			css = this.replaceTemplate(css, {
@@ -72,6 +77,8 @@ let app = new Vue({
 				"css_json" : JSON.stringify(css),
 				"obj_json" : JSON.stringify(this.objectReverse(this.replace_object)),
 			}, '{', '}');
+
+			console.log(this.replace_object);
 
 			return css;
 		},
@@ -112,12 +119,12 @@ let app = new Vue({
 				let origin = this.properties[i];
 				let _replace = this.getSymbol(this.replace_index);
 
-				if (this.isGoodReplace(css, origin, _replace)) {
+				if (css.indexOf(origin) != -1 && this.isGoodReplace(css, origin, _replace)) {
 					css = this.replaceTemplate(css, {
 						[origin] : _replace
 					});
 
-					this.replace_index++;
+					++this.replace_index;
 					this.replace_object[_replace] = origin;
 				}
 			}
@@ -125,11 +132,11 @@ let app = new Vue({
 			return css;
 		},
 
-		replace : function(code, re, min_occur){
+		replace : function(code, re, keys){
 
 			console.time();
 
-			let all_occurs = code.match(new RegExp(re, "gi"));
+			let all_occurs = code.match(new RegExp(re, keys || 'gi'));
 
 			if (all_occurs) {
 				all_occurs = all_occurs.sort(function(a,b){
@@ -163,7 +170,7 @@ let app = new Vue({
 						});
 
 						this.replace_object[_replace] = origin;
-						this.replace_index++;
+						++this.replace_index;
 					}
 				}
 				
@@ -178,10 +185,12 @@ let app = new Vue({
 
 			let json = JSON.stringify({[replace_text] : origin_text});
 			let json_len = json.length;
-			let occurs_count = code.split(origin_text).length;
+			let occurs_count = code.split(origin_text).length - 1;
 
 			let old_len = origin_text.length * occurs_count;
 			let new_len = (replace_text.length * occurs_count) + (json_len - 2 + 1); // не смейся, это просто для наглядности ジ
+
+			console.log('isGood: ' + origin_text, replace_text + ' ('+ occurs_count +')', new_len < old_len);
 
 			return new_len < old_len;
 		},
