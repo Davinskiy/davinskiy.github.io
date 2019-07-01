@@ -58,6 +58,9 @@ new Vue({
 			}));
 		},
 		load: function() {
+			if (!localStorage.getItem(location.href)) {
+				return false;
+			}
 			let obj = JSON.parse(localStorage.getItem(location.href));
 			this.counts = obj.counts;
 			this.time_start = obj.time_start;
