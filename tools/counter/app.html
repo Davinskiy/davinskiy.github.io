@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Counter</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+	<div id="counter" style="display: none" :style="{display:'block'}">
+
+		<div class="counter">
+			<div class="counter__nav">
+				<span class="btn" @click="newCount()">save</span>
+			</div>
+			
+			<div class="counter__number">{{ counts }}</div>
+
+			<div class="counter__big-btn-wrapper">
+				<span 
+						class="plus-btn  plus-btn--big  counter__big-btn"
+						@click="countPlus()"
+						></span>
+			</div>
+		</div>
+
+		<div class="counter-list" v-if="getAllCounts">
+			<div class="counter-list__item" v-for="count_item in counts_list">
+				<div class="counter-list__number">
+					{{ count_item.counts }}
+				</div>
+				<div class="counter-list__date">
+					<div class="counter-list__date-item">{{ getStrDate(count_item.time_start) }}</div>
+					<div class="counter-list__date-item">{{ getStrDate(count_item.time_end) }}</div>
+				</div>
+			</div>
+			<div class="counter-list__item">
+				<div class="counter-list__text">
+					<div class="counter-list__text-caption">All counts</div>
+					<div class="counter-list__text-number">{{ getAllCounts }}</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>
