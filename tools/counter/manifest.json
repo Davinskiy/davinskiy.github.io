@@ -1,0 +1,7 @@
+{
+	"name": "Counter",
+	"short_name": "Counter",
+	"start_url": ".",
+	"display": "standalone",
+	"description": "Just another counter script",
+}
