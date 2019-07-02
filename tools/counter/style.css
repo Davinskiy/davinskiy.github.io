@@ -3,6 +3,18 @@
 	margin: 0;
 	list-style-type: none;
 	box-sizing: border-box;
+
+	user-select: none;
+}
+
+#counter {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	overflow-y: auto;
 }
 
 .btn {
@@ -10,6 +22,9 @@
 	border-radius: 3px;
 	padding: 5px 10px;
 	letter-spacing: 0.05em;
+
+	user-select: none;
+	cursor: pointer;
 }
 
 .plus-btn {
@@ -109,6 +124,9 @@
 
 	margin-bottom: 15px;
 }
+.counter-list__item:last-child {
+	margin-bottom: 0;
+}
 .counter-list__number {
 	padding-right: 30px;
 }
@@ -133,6 +151,16 @@
 }
 
 
+.footer-buttons {
+	padding: 0 15px 15px;
+}
+.footer-buttons__item {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 15px;
+	background-color: #eee;
+}
 
 @media screen and (min-width: 666px) {
 	.counter__number {

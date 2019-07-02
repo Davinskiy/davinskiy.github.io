@@ -1,26 +1,26 @@
 new Vue({
-	el : '#counter',
-	data : {
+	el: '#counter',
+	data: {
 		counts: 0,
 		time_start: 0,
-		counts_list : [],
+		counts_list: [],
 	},
-	watch : {
-		counts : function() {
+	watch: {
+		counts: function() {
 			this.save();
 		},
-		time_start : function() {
+		time_start: function() {
 			this.save();
 		},
-		counts_list : function() {
+		counts_list: function() {
 			this.save();
 		},
 	},
 	created: function() {
 		this.load();
 	},
-	methods : {
-		getStrDate : function(ts){
+	methods: {
+		getStrDate: function(ts){
 			let d = new Date(ts);
 			let s = '';
 				s += ((d.getHours() < 10)?'0':'') + d.getHours();
@@ -42,11 +42,17 @@ new Vue({
 			this.counts++;
 		},
 		newCount: function() {
+			if (!this.counts) {
+				return false;
+			}
 			this.counts_list.unshift({
 				counts: this.counts,
 				time_start: this.time_start,
 				time_end: new Date().getTime()
 			});
+			this.clear();
+		},
+		clear: function() {
 			this.counts = 0;
 			this.time_start = 0;
 		},
@@ -65,6 +71,10 @@ new Vue({
 			this.counts = obj.counts;
 			this.time_start = obj.time_start;
 			this.counts_list = obj.counts_list;
+		},
+		clearAll: function() {
+			this.clear();
+			this.counts_list = [];
 		},
 	},
 	computed: {

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Counter</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -14,6 +14,7 @@
 
 		<div class="counter">
 			<div class="counter__nav">
+				<span class="btn" @click="clear()">clear</span>
 				<span class="btn" @click="newCount()">save</span>
 			</div>
 			
@@ -44,12 +45,14 @@
 				</div>
 			</div>
 		</div>
-
-
+		
+		<div class="footer-buttons">
+			<span class="footer-buttons__item  btn" @click="clearAll()">Clear All Counts</span>
+		</div>
 
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="scripts.js"></script>
+	<script src="scripts.js?v=2"></script>
 </body>
 </html>
