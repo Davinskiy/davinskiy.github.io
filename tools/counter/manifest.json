@@ -1,7 +1,7 @@
 {
 	"name": "Counter",
-	"short_name": "Counter",
-	"start_url": ".",
-	"display": "standalone",
-	"description": "Just another counter script",
+	"icons": [{
+		"src": "https://404.su/img/icons/ahrefs.com.ico",
+		"sizes": "64x64"
+	}]
 }
