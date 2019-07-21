@@ -1,5 +1,5 @@
 new Vue({
-	el : '.note',
+	el : '#app',
 	data : {
 		create_title : '',
 		create_text : '',
@@ -22,6 +22,9 @@ new Vue({
 		add : function() {
 			if (!this.notes)
 				this.notes = [];
+
+			if (!this.create_title)
+				return;
 
 			this.notes.unshift({
 				title : this.create_title,
