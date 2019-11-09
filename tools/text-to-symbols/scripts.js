@@ -1,7 +1,7 @@
 new Vue({
 	el : '#app',
 	data : {
-		input_text : 'Миля, ты тут?',
+		input_text : 'произвольный текст ...',
 		output_text : '',
 		show_params : false,
 		symbols : {
@@ -490,6 +490,13 @@ new Vue({
 	},
 	methods : {
 		convert : function() {
+
+			if (!this.symbols || !this.input_text) {
+				console.log(this.input_text);
+				console.log(this.symbols);
+				return false;
+			}
+
 			let text = '';
 			for (let i = 0, len = this.input_text.length; i < len; i++) {
 				if (this.symbols[this.input_text[i]]) {
@@ -507,8 +514,12 @@ new Vue({
 			localStorage.setItem('jh_symbols', JSON.stringify(this.symbols));
 		},
 		load : function() {
-			this.input_text = localStorage.getItem('jh_input_text');
-			this.symbols = JSON.parse(localStorage.getItem('jh_symbols'));
+			if (localStorage.getItem('jh_input_text')) {
+				this.input_text = localStorage.getItem('jh_input_text');
+			}
+			if (localStorage.getItem('jh_symbols')) {
+				this.symbols = JSON.parse(localStorage.getItem('jh_symbols'));
+			}
 		},
 	},
 });
