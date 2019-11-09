@@ -481,8 +481,8 @@ new Vue({
 		},
 	},
 	created : function(){
-		this.convert();
 		this.load();
+		this.convert();
 	},
 	updated : function(){
 		this.convert();
