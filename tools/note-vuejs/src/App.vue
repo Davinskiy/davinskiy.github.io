@@ -50,7 +50,7 @@
     data (){
       return {
         notes : [],
-        page_per_post : 3,
+        page_per_post : 10,
         this_page : 1,
       }
     },
@@ -80,13 +80,7 @@
         }
       },
       save(){
-
-        // eslint-disable-next-line
-        console.log(localStorage.getItem(location.href + "__notes"));
-
         localStorage.setItem(location.href + "__notes", JSON.stringify(this.notes))
-        // if(localStorage.getItem(location.href + "__notes")){
-        // }
       },
       load(){
         if(localStorage.getItem(location.href + "__notes")){
@@ -94,8 +88,6 @@
         }
       },
       onPageChange(data){
-        // eslint-disable-next-line
-        // console.log(data);
         this.this_page = data;
       },
     },

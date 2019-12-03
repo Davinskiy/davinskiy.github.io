@@ -107,7 +107,7 @@
         this.$emit("save");
 
         // eslint-disable-next-line
-        console.log(this.note_copy);
+        // console.log(this.note_copy);
       },
       cancel(){
         this.note_copy.title = this.note.title;
