@@ -1,0 +1,131 @@
+@import "./custom-normalize.scss";
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f6f6f6;
+  color: #000;
+}
+
+.container {
+  max-width: 1026px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.page-heading {
+  margin: 47px 0 42px;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.tabs {
+  &-head {
+    display: flex;
+    &-btn {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      padding: 27px 59px 0 31px;
+      height: 64px;
+
+      background-color: #edeeef;
+      color: #8288a2;
+      font-size: 14px;
+      border-radius: 10px 10px 0 0;
+
+      filter: drop-shadow(2px 0 0 #dadbdc);
+      border-left: 1px solid #dadbdc;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -31px;
+        width: 32px;
+        height: 100%;
+        background-color: inherit;
+        clip-path: polygon(0 6px, 100% 100%, 0 100%);
+      }
+
+      &.active {
+        z-index: 2;
+        background-color: #fff;
+        color: #212bff;
+        border-left-color: transparent;
+      }
+      &:hover {
+        color: #212bff;
+      }
+    }
+  }
+  &-content {
+    background-color: #fff;
+    padding: 36px 32px;
+
+    &-btn {
+      display: none;
+    }
+  }
+}
+
+
+@media all and (max-width: 1026px) {
+  .container {
+    max-width: 766px;
+  }
+  .tabs {
+    border-top: 1px solid #dadef0;
+    &-head {
+      display: none;
+    }
+    &-content {
+      padding: 0;
+
+      &-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        padding: 22px 17px;
+        color: #8288a2;
+        font-size: 14px;
+        border-bottom: 1px solid #dadef0;
+
+        &:after {
+          content: "";
+          min-width: 8px;
+          height: 8px;
+          border: 2px solid;
+          border-left: 0;
+          border-bottom: 0;
+          margin-left: 15px;
+
+          transform: rotate(135deg);
+        }
+
+        &:hover {
+          color: #212bff;
+        }
+        &.active {
+          color: #212bff;
+
+          &:after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      &-inner {
+        border-bottom: 1px solid #dadef0;
+        padding: 22px 17px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
