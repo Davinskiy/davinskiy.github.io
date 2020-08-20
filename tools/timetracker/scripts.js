@@ -89,6 +89,10 @@ let tracker_app = new Vue({
 			this.$refs.confirm_task_id.value = task_id;
 
 			this.$refs.confirm_text_input.setAttribute('placeholder', this.statusesVerb[btn_stat].text_input);
+			
+			setTimeout(() => {
+				this.$refs.confirm_text_input.focus();
+			}, 50);
 
 			if (btn_stat == 'success') {
 				this.$refs.confirm_text_input.value = this.tasks[task_id].times[this.tasks[task_id].times.length-1].comment;

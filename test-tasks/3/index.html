@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML/CSS (LESS) Layout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="page">
+    <div class="container">
+      <h1 class="page-header">Ты сегодня покормил кота?</h1>
+      <div class="page-content">
+        <div class="products">
+          <div class="products__item">
+            <div class="product  js-product">
+              <div class="product-cart  js-product-buy">
+                <div class="product-cart-inner">
+                  <div class="product-cart-caption">Сказочное заморское яство</div>
+                  <div class="product-cart-title">
+                    Нямушка
+                    <div class="product-cart-title--small">с фуа-гра</div>
+                  </div>
+                  <div class="product-cart-desc">
+                    <span class="product-cart-desc--bold">10</span> порций<br/>
+                    мышь в подарок
+                  </div>
+                  <div class="product-cart-weight">
+                    0,5
+                    <div class="product-cart-weight--small">кг</div>
+                  </div>
+                  <img src="public/images/cat.png" alt="cat" class="product-cart-img" />
+                </div>
+              </div>
+              <div class="product-text">
+                <div class="js-default-show">
+                  Чего сидишь? Порадуй котэ, <a href="#1" class="product-text-link  js-product-buy">купи.</a>
+                </div>
+                <div class="js-selected-show" style="display: none">
+                  Печень утки разварная с артишоками.
+                </div>
+                <div class="product-text--yellow  js-disabled-show" style="display: none">
+                  Печалька, с фуа-гра закончился.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="products__item">
+            <div class="product  js-product  selected">
+              <div class="product-cart  js-product-buy">
+                <div class="product-cart-inner">
+                  <div class="product-cart-caption">Сказочное заморское яство</div>
+                  <div class="product-cart-title">
+                    Нямушка
+                    <div class="product-cart-title--small">с рыбой</div>
+                  </div>
+                  <div class="product-cart-desc">
+                    <span class="product-cart-desc--bold">40</span> порций<br/>
+                    <span class="product-cart-desc--bold">2</span> мыши в подарок
+                  </div>
+                  <div class="product-cart-weight">
+                    2
+                    <div class="product-cart-weight--small">кг</div>
+                  </div>
+                  <img src="public/images/cat.png" alt="cat" class="product-cart-img" />
+                </div>
+              </div>
+              <div class="product-text">
+                <div class="js-default-show" style="display: none">
+                  Чего сидишь? Порадуй котэ, <a href="#1" class="product-text-link  js-product-buy">купи.</a>
+                </div>
+                <div class="js-selected-show">
+                  Головы щучьи с чесноком да свежайшая сёмгушка.
+                </div>
+                <div class="product-text--yellow  js-disabled-show" style="display: none">
+                  Печалька, с рыбой закончился.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="products__item">
+            <div class="product  js-product  disabled">
+              <div class="product-cart  js-product-buy">
+                <div class="product-cart-inner">
+                  <div class="product-cart-caption">Сказочное заморское яство</div>
+                  <div class="product-cart-title">
+                    Нямушка
+                    <div class="product-cart-title--small">с курой</div>
+                  </div>
+                  <div class="product-cart-desc">
+                    <span class="product-cart-desc--bold">10</span> порций<br/>
+                    мышь в подарок
+                  </div>
+                  <div class="product-cart-weight">
+                    0,5
+                    <div class="product-cart-weight--small">кг</div>
+                  </div>
+                  <img src="public/images/cat.png" alt="cat" class="product-cart-img" />
+                </div>
+              </div>
+              <div class="product-text">
+                <div class="js-default-show" style="display: none">
+                  Чего сидишь? Порадуй котэ, <a href="#1" class="product-text-link  js-product-buy">купи.</a>
+                </div>
+                <div class="js-selected-show" style="display: none">
+                  Филе из цыплят с трюфелями в бульоне.
+                </div>
+                <div class="product-text--yellow  js-disabled-show">
+                  Печалька, с курой закончился.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dist/main.js"></script>
+</body>
+</html>
