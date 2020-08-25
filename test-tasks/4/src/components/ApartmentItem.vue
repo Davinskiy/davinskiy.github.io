@@ -27,7 +27,7 @@
       :class="{'apartment__like--liked' : isLiked}"
       @click="onClickLike"
     >
-      <img src="/img/icons/heart.svg">
+      <img src="@/assets/img/icons/heart.svg">
     </button>
   </div>
 </template>

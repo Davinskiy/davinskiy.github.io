@@ -1,7 +1,7 @@
 export default {
   state(){
     return {
-      apartments: require('@/../public/json/apartments.json'),
+      apartments: require('@/json/apartments.json'),
       liked_apartments: JSON.parse(localStorage.liked_apartments || '[2]'),
     }
   },
