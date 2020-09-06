@@ -123,6 +123,26 @@ let tracker_app = new Vue({
 			modalClose();
 			this.$refs.new_title.form.reset();
 		},
+		removeTime : function(){
+
+			let task_id = this.$refs.task_id.value;
+			let time_id = this.$refs.time_id.value;
+			this.tasks[task_id].times.splice(time_id, 1);
+			// this.tasks.splice(task_id, 1);
+
+			modalClose();
+			this.$refs.new_title.form.reset();
+
+		},
+		removeTimeConfirm : function(task_id, time_id){
+
+			// console.log(this.tasks[task_id].times[time_id].title)
+
+			window.modalOpen('', '#' + 'confirm-remove-time');
+			this.$refs.time_title.innerText = this.tasks[task_id].times[time_id].title;
+			this.$refs.task_id.value = task_id;
+			this.$refs.time_id.value = time_id;
+		},
 		remove : function(){
 			let task_id = this.$refs.task_id.value;
 			this.tasks.splice(task_id, 1);
