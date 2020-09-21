@@ -125,7 +125,12 @@
 									>
 								<div class="d-flex w-100 justify-content-between">
 									<h5 class="mb-1">{{time.title||'Подзадача №' + (key+1)}}</h5>
-									<small>{{(getPassedTime((time.end||new Date().getTime()) - time.start))}}</small>
+									<div class="text-right">
+										<div>
+											<small>{{(getPassedTime((time.end||new Date().getTime()) - time.start))}}</small>
+										</div>
+										<small>{{ getStringifyDate(time.start) }}</small> – <small>{{ getStringifyDate(time.end) }}</small>
+									</div>
 								</div>
 								<p class="mb-0">{{time.comment}}</p>
 								<div v-if="task.times.length-1==key && task.status!='secondary' && task.status!='success'" class="pt-3">
