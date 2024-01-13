@@ -1,8 +1,0 @@
----*
--*min*.jpg
-*.lnk
-*.psd
-*.zip
-*.rar
----ignore*
-node_modules
