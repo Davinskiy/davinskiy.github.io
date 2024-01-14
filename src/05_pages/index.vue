@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TopHeader from '@/03_features/top-header.vue'
-import Footer from '@/03_features/footer.vue'
+import TopHeader from '@/04_widgets/top-header.vue'
+import Footer from '@/04_widgets/footer.vue'
 
 defineOptions({ name: 'Pages' })
 </script>
