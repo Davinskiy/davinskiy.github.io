@@ -10,6 +10,8 @@ defineOptions({ name: 'PortfoliosWidget' })
 
 <template>
   <div>
+    <h2 class="section-heading">Портфолио</h2>
+
     <div class="flex justify-content-center">
       <filters :tags="store.getAllTags">
         <template #item>

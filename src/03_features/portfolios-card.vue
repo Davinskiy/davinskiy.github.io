@@ -17,7 +17,10 @@ const props = defineProps<IPortfolio>()
     class="min-h-full flex flex-column"
    >
     <template #header>
-      <img alt="user header" class="w-full" :src="props.preview_img" />
+      <i
+        class="portfolios-card__img"
+        :style="{ backgroundImage: `url(${ props.preview_img })` }"
+      />
     </template>
     
     <template #content>
@@ -31,6 +34,15 @@ const props = defineProps<IPortfolio>()
 </template>
 
 <style lang="scss">
+
+.portfolios-card__img {
+  display: block;
+  padding-top: 50%;
+  background: center center no-repeat;
+  background-size: contain;
+  background-color: #eee;
+  border-radius: 8px 8px 0 0;
+}
 
 .p-card-content {
   padding: 0;

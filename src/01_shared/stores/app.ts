@@ -12,24 +12,23 @@ export const storeApp = defineStore('app', {
     portfolios,
     selectedTags: [],
   }),
+
   getters: {
     getAllTags() {
       const tags: any = new Set(this.portfolios.map((p) => p.tags).flat())
 
       return [...tags]
     },
+
     getFilteredPortfolios(): IPortfolio[] {
-      if (!this.selectedTags.length) {
-        return this.portfolios
-      }
-      
       return this.portfolios.filter(
         (p) => this.selectedTags.every(
-          (_p) => p.tags.includes(_p)
+          (tag) => p.tags.includes(tag)
         )
       )
     },
   },
+
   actions: {
     isTagChecked(tag: string) {
       return this.selectedTags.includes(tag)

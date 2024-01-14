@@ -8,7 +8,7 @@ defineOptions({ name: 'Pages' })
 <template>
   <div class="flex flex-column min-h-screen">
     <TopHeader />
-    <div>
+    <div class="pb-5">
       <div class="container">
         <RouterView />
       </div>

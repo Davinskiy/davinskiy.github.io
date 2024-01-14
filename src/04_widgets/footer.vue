@@ -11,7 +11,7 @@
 
 <style lang="scss">
 .footer {
-  padding: 15px;
+  padding: 15px 0;
   border-top: 1px solid #eee;
 }
 </style>
