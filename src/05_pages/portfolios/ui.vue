@@ -5,7 +5,7 @@ defineOptions({ name: 'portfolios' })
 </script>
 
 <template>
-  <div class="container py-5">
+  <div class="py-5">
     <PortfoliosWidget />
   </div>
 </template>
