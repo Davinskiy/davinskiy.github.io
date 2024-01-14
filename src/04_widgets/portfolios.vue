@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Filters from '@/03_features/filters.vue'
 import PortfoliosCard from '@/03_features/portfolios-card.vue'
 import { storeApp } from '@/01_shared/stores/'
 
@@ -10,16 +9,6 @@ defineOptions({ name: 'PortfoliosWidget' })
 
 <template>
   <div>
-    <h2 class="section-heading">Портфолио</h2>
-
-    <div class="flex justify-content-center">
-      <filters :tags="store.getAllTags">
-        <template #item>
-          <b>Фильтрация: </b>
-        </template>
-      </filters>
-    </div>
-    
     <div
       v-if="store.getFilteredPortfolios.length"
       class="grid grid-nogutter -mx-2 mt-4"
