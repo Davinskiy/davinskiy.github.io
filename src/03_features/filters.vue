@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { defineProps } from 'vue'
 import Tag from 'primevue/tag'
 import { storeApp } from '@/01_shared/stores/'
 
 const store = storeApp()
 
-console.log(store.getAllTags)
+interface IProps {
+  tags: string[]
+}
+
+const props = defineProps<IProps>()
 
 </script>
 
 <template>
-  <div class="card flex flex-wrap justify-content-center gap-2">
+  <div class="flex flex-wrap align-items-center gap-2">
+    <slot name="item" />
     <Tag
-      v-for="tag in store.getAllTags"
+      v-for="tag in props.tags"
       :key="tag"
-      :icon="store.isTagChecked(tag) ? 'pi pi-check' : ''"
       :severity="store.isTagChecked(tag) ? 'success' : ''"
       :value="tag"
       class="select-none cursor-pointer"
@@ -26,7 +30,7 @@ console.log(store.getAllTags)
 <style>
 
 .p-tag:not(.p-tag-success) {
-  background-color: #333;
+  background-color: #444;
 }
 
 </style>

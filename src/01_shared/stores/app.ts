@@ -17,7 +17,18 @@ export const storeApp = defineStore('app', {
       const tags: any = new Set(this.portfolios.map((p) => p.tags).flat())
 
       return [...tags]
-    }
+    },
+    getFilteredPortfolios(): IPortfolio[] {
+      if (!this.selectedTags.length) {
+        return this.portfolios
+      }
+      
+      return this.portfolios.filter(
+        (p) => this.selectedTags.every(
+          (_p) => p.tags.includes(_p)
+        )
+      )
+    },
   },
   actions: {
     isTagChecked(tag: string) {

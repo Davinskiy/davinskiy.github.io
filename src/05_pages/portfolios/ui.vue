@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Filters from '@/03_features/filters.vue'
+import PortfoliosWidget from '@/04_widgets/portfolios-widget.vue'
 
 defineOptions({ name: 'portfolios' })
 </script>
 
 <template>
-  <div>
-    <filters />
+  <div class="container py-5">
+    <PortfoliosWidget />
   </div>
 </template>
