@@ -14,7 +14,7 @@ export const portfolios: IPortfolio[] = [
     id: 1,
     title: 'Легкий wysiwyg редактор',
     preview_img: '/previews/wysiwyg.png',
-    tags: ['vue', 'primevue', 'primeflex', 'primeicons', 'jest', 'sass', 'vue-i18n', 'vue-router', 'vuex', 'vuex-persist', 'app'],
+    tags: ['vue', 'typescript', 'app'],
     links: {
       demo: 'https://jhasuev.github.io/vue-light-wysiwyg/dist/index.html',
       code: 'https://github.com/jhasuev/vue-light-wysiwyg',
@@ -24,7 +24,7 @@ export const portfolios: IPortfolio[] = [
     id: 2,
     title: 'Игра "Судоку"',
     preview_img: '/previews/suduku.png',
-    tags: ['vue', 'game'],
+    tags: ['vue', 'typescript', 'primevue', 'primeflex', 'primeicons', 'jest', 'sass', 'vue-i18n', 'vue-router', 'vuex', 'vuex-persist', 'game'],
     links: {
       demo: 'https://jhasuev.github.io/suduku-game/dist/index.html',
       code: 'https://github.com/jhasuev/suduku-game',
@@ -112,9 +112,9 @@ export const portfolios: IPortfolio[] = [
   },
   {
     id: 11,
-    title: 'Игра Flappy Bird',
+    title: 'Погода',
     preview_img: '/previews/weather-react.png',
-    tags: ['react', 'react-redux', 'app'],
+    tags: ['react', 'mui', 'react-redux', 'app'],
     links: {
       demo: 'https://jhasuev.github.io/weather-react/build/index.html',
       code: 'https://github.com/jhasuev/weather-react',
