@@ -14,7 +14,7 @@ export const portfolios: IPortfolio[] = [
     id: 1,
     title: 'Легкий wysiwyg редактор',
     preview_img: '/previews/wysiwyg.png',
-    tags: ['vue', 'app'],
+    tags: ['vue', 'primevue', 'primeflex', 'primeicons', 'jest', 'sass', 'vue-i18n', 'vue-router', 'vuex', 'vuex-persist', 'app'],
     links: {
       demo: 'https://jhasuev.github.io/vue-light-wysiwyg/dist/index.html',
       code: 'https://github.com/jhasuev/vue-light-wysiwyg',
@@ -34,7 +34,7 @@ export const portfolios: IPortfolio[] = [
     id: 3,
     title: 'Игра "Бласт"',
     preview_img: '/previews/blast.png',
-    tags: ['vue', 'phaser', 'game'],
+    tags: ['vue', 'vuex', 'vue-router', 'mitt', 'sass', 'phaser', 'game'],
     links: {
       demo: 'https://jhasuev.github.io/blast/dist/index.html',
       code: 'https://github.com/jhasuev/blast',
@@ -44,7 +44,7 @@ export const portfolios: IPortfolio[] = [
     id: 4,
     title: 'Игра "BlackJack"',
     preview_img: '/previews/blackjack.png',
-    tags: ['vue', 'game'],
+    tags: ['vue', 'sass', 'vuex', 'game'],
     links: {
       demo: 'https://jhasuev.github.io/blackjack/dist/index.html',
       code: 'https://github.com/jhasuev/blackjack',
@@ -74,7 +74,7 @@ export const portfolios: IPortfolio[] = [
     id: 7,
     title: 'Игра "Tanks"',
     preview_img: '/previews/tanks-game.png',
-    tags: ['game', 'canvas'],
+    tags: ['game', 'sass', 'webpack-cli', 'canvas'],
     links: {
       demo: 'https://jhasuev.github.io/tanks-game/',
       code: 'https://github.com/jhasuev/tanks-game',
@@ -84,17 +84,17 @@ export const portfolios: IPortfolio[] = [
     id: 8,
     title: 'Блог SPA',
     preview_img: '/previews/blog-vue.png',
-    tags: ['vue', 'blog', 'app'],
+    tags: ['vue', 'sass', 'vue-router', 'vuex', 'blog', 'app'],
     links: {
-      demo: 'https://jhasuev.github.io/blog-vue/',
-      code: 'https://jhasuev.github.io/blog-vue/dist/',
+      demo: 'https://jhasuev.github.io/blog-vue/dist',
+      code: 'https://github.com/jhasuev/blog-vue/',
     },
   },
   {
     id: 9,
     title: 'Телефонна книжка',
     preview_img: '/previews/phonebook-vue.png',
-    tags: ['vue', 'app'],
+    tags: ['vue', 'vuetify', 'vuex', 'sass', 'app'],
     links: {
       demo: 'https://jhasuev.github.io/phonebook-vue/dist/',
       code: 'https://github.com/jhasuev/phonebook-vue',
@@ -108,6 +108,16 @@ export const portfolios: IPortfolio[] = [
     links: {
       demo: 'https://jhasuev.github.io/flappy-bird/index.html',
       code: 'https://github.com/jhasuev/flappy-bird',
+    },
+  },
+  {
+    id: 11,
+    title: 'Игра Flappy Bird',
+    preview_img: '/previews/weather-react.png',
+    tags: ['react', 'react-redux', 'app'],
+    links: {
+      demo: 'https://jhasuev.github.io/weather-react/build/index.html',
+      code: 'https://github.com/jhasuev/weather-react',
     },
   },
 ]
