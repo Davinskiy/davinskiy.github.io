@@ -25,7 +25,7 @@ defineOptions({ name: 'PortfoliosWidget' })
     </div>
     <div v-else class="mt-5 text-center">
       <i class="pi pi-search text-3xl"></i>
-      <div class="text-lg mt-2">Нет таких проектов записей</div>
+      <div class="text-lg mt-2">Нет таких проектов</div>
     </div>
   </div>
 </template>
