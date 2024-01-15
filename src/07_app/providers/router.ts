@@ -9,6 +9,5 @@ export const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   next()
   
-  const title = to.meta.title ? `- ${to.meta.title}` : ''
-  document.title = `[SiteTitle] ${title}`
+  document.title = `${to.meta.title || ''} - [FrontEnd Developer]`
 })

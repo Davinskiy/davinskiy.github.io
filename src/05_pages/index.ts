@@ -14,10 +14,10 @@ export const routes = [
   {
     path: '/contacts',
     name: 'Contacts',
-    meta: { title: 'Портфолио' },
+    meta: { title: 'Контакты' },
     component: () => import('./contacts')
   },
-  { path: '/:pathMatch(.*)*', component: () => import('./error404') }
+  { path: '/:pathMatch(.*)*', meta: { title: '404' }, component: () => import('./error404') }
 ]
 
 export { RouterView }
