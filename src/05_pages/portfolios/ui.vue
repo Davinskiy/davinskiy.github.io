@@ -14,7 +14,7 @@ defineOptions({ name: 'Portfolios' })
     <h2 class="section-heading">Портфолио</h2>
 
     <div class="flex justify-content-center">
-      <filters :tags="store.getAllTags">
+      <filters clickable :tags="store.getAllTags">
         <template #item>
           <b>Фильтрация: </b>
         </template>

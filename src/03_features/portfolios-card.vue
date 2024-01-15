@@ -27,7 +27,24 @@ const props = defineProps<IPortfolio>()
 
       <filters class="mt-auto" :tags="props.tags" />
 
-      <Button label="Посмотреть" size="small" class="w-full mt-3" />
+      <div class="flex gap-2 mt-3">
+        <a
+          v-if="props.links.code"
+          :href="props.links.code"
+          target="_blank"
+          class="w-6"
+        >
+          <Button label="Код" severity="secondary" icon="pi pi-github" size="small" class="w-full" />
+        </a>
+        <a
+          v-if="props.links.demo"
+          :href="props.links.demo"
+          target="_blank"
+          class="w-6"
+        >
+          <Button label="Демо" icon="pi pi-eye" size="small" class="w-full" />
+        </a>
+      </div>
     </template>
   </Card>
 </template>

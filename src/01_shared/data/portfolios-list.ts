@@ -3,31 +3,111 @@ export interface IPortfolio {
   title: string
   preview_img: string
   tags: string[]
+  links: {
+    demo: string
+    code: string
+  }
 }
 
 export const portfolios: IPortfolio[] = [
   {
     id: 1,
-    title: 'Calculator',
-    preview_img: 'https://picsum.photos/200/200',
-    tags: ['vue', 'primevue'],
+    title: 'Легкий wysiwyg редактор',
+    preview_img: '/previews/wysiwyg.png',
+    tags: ['vue', 'app'],
+    links: {
+      demo: 'https://jhasuev.github.io/vue-light-wysiwyg/dist/index.html',
+      code: 'https://github.com/jhasuev/vue-light-wysiwyg',
+    },
   },
   {
     id: 2,
-    title: 'Todo',
-    preview_img: 'https://picsum.photos/200/150',
-    tags: ['nuxt', 'primevue', 'php'],
+    title: 'Игра "Судоку"',
+    preview_img: '/previews/suduku.png',
+    tags: ['vue', 'game'],
+    links: {
+      demo: 'https://jhasuev.github.io/suduku-game/dist/index.html',
+      code: 'https://github.com/jhasuev/suduku-game',
+    },
   },
   {
     id: 3,
-    title: 'Calculator react',
-    preview_img: 'https://picsum.photos/200/200',
-    tags: ['react'],
+    title: 'Игра "Бласт"',
+    preview_img: '/previews/blast.png',
+    tags: ['vue', 'phaser', 'game'],
+    links: {
+      demo: 'https://jhasuev.github.io/blast/dist/index.html',
+      code: 'https://github.com/jhasuev/blast',
+    },
   },
   {
     id: 4,
-    title: 'Todo',
-    preview_img: 'https://picsum.photos/200/100',
-    tags: ['react', 'html', 'php', 'vue'],
+    title: 'Игра "BlackJack"',
+    preview_img: '/previews/blackjack.png',
+    tags: ['vue', 'game'],
+    links: {
+      demo: 'https://jhasuev.github.io/blackjack/dist/index.html',
+      code: 'https://github.com/jhasuev/blackjack',
+    },
+  },
+  {
+    id: 5,
+    title: 'Игра "Cosmo"',
+    preview_img: '/previews/cosmo.png',
+    tags: ['game', 'canvas'],
+    links: {
+      demo: 'https://jhasuev.github.io/cosmo/index.html',
+      code: 'https://github.com/jhasuev/cosmo',
+    },
+  },
+  {
+    id: 6,
+    title: 'Игра "Space Shooter"',
+    preview_img: '/previews/space-shooter.png',
+    tags: ['game', 'phaser'],
+    links: {
+      demo: 'https://jhasuev.github.io/space-shooter/index.html',
+      code: 'https://github.com/jhasuev/space-shooter',
+    },
+  },
+  {
+    id: 7,
+    title: 'Игра "Tanks"',
+    preview_img: '/previews/tanks-game.png',
+    tags: ['game', 'canvas'],
+    links: {
+      demo: 'https://jhasuev.github.io/tanks-game/',
+      code: 'https://github.com/jhasuev/tanks-game',
+    },
+  },
+  {
+    id: 8,
+    title: 'Блог SPA',
+    preview_img: '/previews/blog-vue.png',
+    tags: ['vue', 'blog', 'app'],
+    links: {
+      demo: 'https://jhasuev.github.io/blog-vue/',
+      code: 'https://jhasuev.github.io/blog-vue/dist/',
+    },
+  },
+  {
+    id: 9,
+    title: 'Телефонна книжка',
+    preview_img: '/previews/phonebook-vue.png',
+    tags: ['vue', 'app'],
+    links: {
+      demo: 'https://jhasuev.github.io/phonebook-vue/dist/',
+      code: 'https://github.com/jhasuev/phonebook-vue',
+    },
+  },
+  {
+    id: 10,
+    title: 'Игра Flappy Bird',
+    preview_img: '/previews/flappy-bird.png',
+    tags: ['game', 'canvas'],
+    links: {
+      demo: 'https://jhasuev.github.io/flappy-bird/index.html',
+      code: 'https://github.com/jhasuev/flappy-bird',
+    },
   },
 ]

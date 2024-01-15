@@ -7,6 +7,7 @@ const store = storeApp()
 
 interface IProps {
   tags: string[]
+  clickable?: boolean
 }
 
 const props = defineProps<IProps>()
@@ -21,8 +22,8 @@ const props = defineProps<IProps>()
       :key="tag"
       :severity="store.isTagChecked(tag) ? 'success' : ''"
       :value="tag"
-      class="select-none cursor-pointer"
-      @click="store.toggleTag(tag)"
+      :class="`select-none ${ clickable ? 'cursor-pointer' : '' }`"
+      @click="clickable && store.toggleTag(tag)"
     ></Tag>
   </div>
 </template>
