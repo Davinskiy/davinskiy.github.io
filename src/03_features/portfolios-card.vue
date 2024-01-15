@@ -2,7 +2,6 @@
 import { defineProps } from 'vue'
 import Card from 'primevue/card'
 import Button from 'primevue/button'
-import Tag from 'primevue/tag'
 import type { IPortfolio } from '@/01_shared/data/portfolios-list';
 import Filters from '@/03_features/filters.vue';
 

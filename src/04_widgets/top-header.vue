@@ -2,10 +2,6 @@
 
 const menuList = [
   {
-    label: 'Главная',
-    to: '/',
-  },
-  {
     label: 'Портфолио',
     to: '/portfolios',
   },
