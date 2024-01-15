@@ -1,55 +1,8 @@
 <script setup lang="ts">
 import ContactCard from '@/03_features/contact-card.vue'
+import { contactsData } from '@/01_shared/data/contacts-data'
 
 defineOptions({ name: 'Contacts' })
-
-const linksData = [
-  {
-    caption: 'Соц. сети',
-    links: [
-      {
-        img: 'vk.svg',
-        href: 'https://vk.com/jhasuev',
-        label: 'vk.com/jhasuev',
-      },
-      {
-        img: 'instagram.svg',
-        href: 'https://www.instagram.com/jhasuev',
-        label: 'instagram.com/jhasuev',
-      },
-    ],
-  },
-  {
-    caption: 'Мессенджеры',
-    links: [
-      {
-        img: 'whatsapp.svg',
-        href: 'whatsapp://send?phone=+79286873132',
-        label: 'WhatsApp (+7 (928) 687-31-32)',
-      },
-      {
-        img: 'tg.svg',
-        href: 'tg://resolve?domain=jhasuev',
-        label: 'Telegram (@jhasuev)',
-      },
-    ],
-  },
-  {
-    caption: 'Другие способы',
-    links: [
-      {
-        img: 'email.svg',
-        href: 'mailto:jhasuev@mail.ru',
-        label: 'jhasuev@mail.ru',
-      },
-      {
-        img: 'phone.svg',
-        href: 'tel:+79286873132',
-        label: '+7 (928) 687-31-32',
-      },
-    ],
-  },
-]
 
 </script>
 
@@ -63,7 +16,7 @@ const linksData = [
 
     <div class="contacts__box">
       <template
-        v-for="data, i in linksData"
+        v-for="data, i in contactsData"
         :key="i"
       >
         <i v-if="i" class="contacts__item-circle"></i>

@@ -1,20 +1,10 @@
 <script setup lang="ts">
+import { type IContactsDataItem } from '@/01_shared/data/contacts-data'
 import { defineProps } from 'vue'
 
 defineOptions({ name: 'ContactCard' })
 
-interface ILinkItem {
-  img: string
-  href: string
-  label: string
-}
-
-interface IProps {
-  caption: string
-  links: ILinkItem[]
-}
-
-const props = defineProps<IProps>()
+const props = defineProps<IContactsDataItem>()
 </script>
 
 <template>
