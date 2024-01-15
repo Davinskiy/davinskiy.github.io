@@ -3,8 +3,8 @@
 
 <template>
   <footer class="footer">
-    <div class="container">
-      footer
+    <div class="container text-center">
+      @ Jamal Hasuev
     </div>
   </footer>
 </template>
